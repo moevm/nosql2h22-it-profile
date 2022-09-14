@@ -12,8 +12,8 @@ services:
       client-server:
         ipv4_address: 178.70.100.2
 
-    volumes:
-      - ./server:/usr/src/app
+    # volumes:
+    #   - ./server:/usr/src/app
 
     environment:
       MONGODB_USERNAME: admin
@@ -31,8 +31,8 @@ services:
     ports:
       - 8080:8080
 
-    volumes:
-      - ./client:/usr/src/app
+    # volumes:
+    #   - ./client:/usr/src/app
 
     networks:
       - client-server
