@@ -1,9 +1,9 @@
 FROM node:16
 
-WORKDIR /usr/src/app
+WORKDIR /usr/app
 
 COPY . .
 
 RUN npm i
 
-CMD npm run dev
+CMD npm run prod

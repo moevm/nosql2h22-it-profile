@@ -1,6 +1,6 @@
 export class UsersService {
   async getUsers() {
-    return "server connected";
+    return "server connected wow...";
   }
 }
 
