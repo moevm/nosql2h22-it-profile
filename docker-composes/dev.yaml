@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ../server
+      dockerfile: docker/dev.dockerfile
+    container_name: it-profile__dev-server
+    ports:
+      - 55000:3000
+
+    environment:
+      DATABASE_USERNAME: admin
+      DATABASE_PASSWORD: password
+      DATABASE_URL: "mongodb://database"
+      DATABASE_NAME: "it-profile"
+
+    volumes:
+      - ../server/src:/usr/app/src
+
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ../client
+      dockerfile: docker/dev.dockerfile
+
+    container_name: it-profile__dev-client
+
+    volumes:
+      - ../client/src:/usr/app/src
+
+    ports:
+      - 8080:8080
+
+    depends_on:
+      - backend
+
+  database:
+    image: mongo
+    container_name: it-profile__dev-database
+    restart: always
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+    ports:
+      - 57017:27017
