@@ -1,0 +1,41 @@
+@import "./../../../styles/colors";
+
+.text--field {
+    padding-top: 4px;
+    width: 100%;
+    margin-top: 8px;
+    display: block;
+
+    &__title {
+        display: block;
+        font-size: 1rem;
+        width: 100%;
+        font-size: 1rem;
+    };
+
+    &__input {
+        border: none;
+        border-bottom: 1.5px map-get($map: $secondary, $key: 'light') solid;
+        outline: none;
+        display: block;
+        font-size: 1rem;
+        width: 100%;
+    };
+
+    &__textarea {
+        display: block;
+        resize: none;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-bottom: 1.5px map-get($map: $secondary, $key: 'light') solid;
+        outline: none;
+    };
+
+    &__error {
+        display: block;
+        color: tomato;
+        font-size: 1rem;
+        width: 100%;
+    };
+}
