@@ -10,9 +10,13 @@ import DateInput from '../../shared/components/Form/DateInput';
 import TextArea from '../../shared/components/Form/TextArea';
 import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
+import Menu from '../../shared/components/Menu';
+import { useState } from 'react';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
+
+    const [openMenu, setOpenMenu] = useState(false);
 
     return (
         <>
@@ -28,7 +32,7 @@ export default function HomePage() {
                     </div>
                 </>
             </HomePageContent>
-            <div style={{ width: 200, height: 100 }}>
+            {/* <div style={{ width: 200, height: 100 }}>
                 <SubmitButton variant="primary">BUTTON</SubmitButton>
             </div>
             <div style={{ width: 400, height: 100 }}>
@@ -50,11 +54,27 @@ export default function HomePage() {
             <div style={{ width: 400, height: 100 }}>
                 <DateInput title="Date" name="name" />
             </div>
-            <div style={{ width: 100, height: 100 }}>
-                <Avatar />
-            </div>
             <div style={{ width: 200 }}>
                 <GenderToggle/>
+            </div> */}
+            <div
+                style={{ width: 35, height: 35, cursor: 'pointer' }}
+                onClick={() => setOpenMenu((cur) => !cur)}>
+                <Avatar />
+            </div>
+            <div style={{ position: 'relative' }}>
+                <Menu open={openMenu}>
+                    <Menu.Body>
+                        <Menu.MenuItemGroup>
+                            <Menu.MenuItem to={'/'}>Profile</Menu.MenuItem>
+                            <Menu.MenuItem to={'/'}>Edit Profile</Menu.MenuItem>
+                            <Menu.MenuItem to={'/'}>Favorites</Menu.MenuItem>
+                        </Menu.MenuItemGroup>
+                    </Menu.Body>
+                    <Menu.Footer>
+                        <Menu.MenuItem to={'/'}>Sign Out</Menu.MenuItem>
+                    </Menu.Footer>
+                </Menu>
             </div>
             <footer></footer>
         </>
