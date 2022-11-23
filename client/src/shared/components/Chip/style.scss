@@ -1,0 +1,68 @@
+@import "./../../styles/colors";
+
+.chip {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 8px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin: 4px;
+
+    &.primary {
+        background-color: map-get($map: $primary, $key: 'main');
+        color: map-get($map: $primary, $key: 'contrast-text');
+
+        .chip__cls--btn {
+            border-color: map-get($map: $secondary, $key: 'main');
+
+            &:hover {
+                background-color: map-get($map: $primary, $key: 'dark');
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: map-get($map: $secondary, $key: 'main');
+        color: map-get($map: $secondary, $key: 'contrast-text');
+
+        .chip__cls--btn {
+            border-color: map-get($map: $primary, $key: 'main');
+
+            &:hover {
+                background-color: map-get($map: $secondary, $key: 'light');
+            }
+        }
+    }
+
+    &__icon {
+        height: 14px;
+        width: 14px;
+        flex: 0 1 14px;
+    }
+
+    &__title {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 100%;
+    }
+
+    &__cls--btn {
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: 1px solid;
+    }
+
+}

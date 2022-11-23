@@ -12,6 +12,7 @@ import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
 import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
+import Chip from '../../shared/components/Chip/chip';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -57,6 +58,14 @@ export default function HomePage() {
             <div style={{ width: 200 }}>
                 <GenderToggle/>
             </div> */}
+
+
+            <div style={{display: 'flex'}}>
+                <Chip variant='primary' title='React'/>
+                <Chip variant='secondary' title='C++'/>
+                <Chip variant='secondary' title='и'/>
+            </div>
+
             <div
                 style={{ width: 35, height: 35, cursor: 'pointer' }}
                 onClick={() => setOpenMenu((cur) => !cur)}>
