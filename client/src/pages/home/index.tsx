@@ -12,8 +12,7 @@ import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
 import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
-import Chip from '../../shared/components/Chip/chip';
-import MultiSelect from '../../shared/components/MultiSelect';
+import { Chips } from '@components';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -21,6 +20,19 @@ export default function HomePage() {
     const [openMenu, setOpenMenu] = useState(false);
 
     const items = ["C", "C++", "Python", "Java", "JavaScript", "Kotlin", "ASM"]
+    const [chips, setChips] = useState<string[]>([
+        'React',
+        'C++',
+        'Vue',
+        'Python',
+        "JavaScript",
+        "Git",
+        "figma"
+    ]);
+
+    function removeChip(value: string) {
+        setChips((prev) => prev.filter((curr) => curr !== value));
+    }
 
     return (
         <>
@@ -67,6 +79,17 @@ export default function HomePage() {
                 <Chip variant='primary' title='React'/>
                 <Chip variant='secondary' title='C++'/>
                 <Chip variant='secondary' title='и'/>
+            <div
+                style={{
+                    width: 300
+                }}>
+                <Chips
+                    values={chips}
+                    onRemove={removeChip}
+                    closable
+                    // direction="vertical"
+                    variant="primary"
+                />
             </div>
 
             <div
@@ -89,7 +112,7 @@ export default function HomePage() {
                 </Menu>
             </div> */}
 
-            <MultiSelect title='LANGUAGE' items={items} />
+            {/* <MultiSelect title='LANGUAGE' items={items} /> */}
             <footer></footer>
         </>
     );

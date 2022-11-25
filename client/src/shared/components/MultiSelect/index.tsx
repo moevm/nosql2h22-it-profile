@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Chip from '../Chip/chip';
+
 import './style.scss';
 
 interface IMultiSelectProps {

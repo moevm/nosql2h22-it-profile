@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './style.scss';
 
 interface IChipProps {
@@ -5,7 +6,7 @@ interface IChipProps {
     title: string;
     icon?: string;
     isClosable?: boolean;
-    onDelete?: (argv: any) => void;
+    onDelete?: (value: string) => void;
 }
 
 export default function Chip({
@@ -15,8 +16,24 @@ export default function Chip({
     isClosable = true,
     onDelete = (item) => {}
 }: IChipProps): JSX.Element {
+    const [removed, setRemoved] = useState(false);
+
+    function onRemove() {
+        setRemoved(true);
+        if (onDelete) {
+            setTimeout(() => onDelete(title), 300);
+        }
+    }
+
     return (
-        <div className={'chip ' + variant}>
+        <div
+            className={
+                'chip ' +
+                variant +
+                ` ${isClosable ? 'chip_closable' : ''} ${
+                    removed ? 'removed' : ''
+                }`
+            }>
             {icon && (
                 <div className="chip__icon">
                     <img src={icon} />
@@ -26,9 +43,9 @@ export default function Chip({
                 <span>{title}</span>
             </div>
             {isClosable && (
-                <div className="chip__cls--btn" onClick={() => onDelete(title)}>
+                <button className="chip__cls--btn" onClick={onRemove}>
                     &times;
-                </div>
+                </button>
             )}
         </div>
     );

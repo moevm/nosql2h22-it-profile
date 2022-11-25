@@ -1,0 +1,14 @@
+.chips {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+    transition: all 0.5s;
+    &.vertical {
+        flex-direction: column;
+    }
+    
+    &.horizontal {
+        flex-direction: row;
+    }
+}
