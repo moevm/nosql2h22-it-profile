@@ -14,7 +14,7 @@ export default function Chip({
     title,
     icon = '',
     isClosable = true,
-    onDelete
+    onDelete = (item) => {}
 }: IChipProps): JSX.Element {
     const [removed, setRemoved] = useState(false);
 

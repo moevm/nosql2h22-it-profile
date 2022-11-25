@@ -1,0 +1,76 @@
+@import "./../../styles/colors";
+
+.multi--select {
+    text-align: left;
+    border: none;
+    width: 280px;
+    position: relative;
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        border-bottom: 2px solid map-get($map: $secondary, $key: 'light');
+        
+        &.open {
+            .multi--select__icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__search {
+        box-sizing: border-box;
+        padding: 4px;
+        position: sticky;
+        top: 0;
+        background-color: map-get($map: $primary, $key: 'main');
+        
+        input {
+            width: 100%;
+            padding: 4px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+    }
+
+    &__selected--items {
+        height: 100px;
+        overflow: auto;
+        padding: 4px;
+    }
+
+    &__menu {
+        position: absolute;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 0;
+        background-color: map-get($map: $primary, $key: 'main');
+        max-height: 150px;
+        overflow: auto;
+        z-index: 99;
+        box-sizing: border-box;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 4px;
+
+        &:hover {
+            background-color: rgb(219, 218, 218);
+        }
+
+        &.selected {
+            color: map-get($map: $secondary, $key: 'contrast-text');
+            background-color: map-get($map: $secondary, $key: 'light');
+        }
+    }
+
+
+}

@@ -20,7 +20,8 @@ export default defineConfig({
             '@interfaces': path.resolve(__dirname, 'src/shared/interfaces'),
             '@components': path.resolve(__dirname, 'src/shared/components'),
             '@pages'     : path.resolve(__dirname, 'src/pages'),
-            '@store'     : path.resolve(__dirname, 'src/shared/store')
+            '@store'     : path.resolve(__dirname, 'src/shared/store'),
+            '@asserts'     : path.resolve(__dirname, 'src/asserts')
         }
     }
 });
