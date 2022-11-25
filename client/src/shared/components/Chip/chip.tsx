@@ -5,7 +5,7 @@ interface IChipProps {
     title: string;
     icon?: string;
     isClosable?: boolean;
-    onDelete?: () => void;
+    onDelete?: (argv: any) => void;
 }
 
 export default function Chip({
@@ -13,7 +13,7 @@ export default function Chip({
     title,
     icon = '',
     isClosable = true,
-    onDelete
+    onDelete = (item) => {}
 }: IChipProps): JSX.Element {
     return (
         <div className={'chip ' + variant}>
@@ -26,7 +26,7 @@ export default function Chip({
                 <span>{title}</span>
             </div>
             {isClosable && (
-                <div className="chip__cls--btn" onClick={onDelete}>
+                <div className="chip__cls--btn" onClick={() => onDelete(title)}>
                     &times;
                 </div>
             )}

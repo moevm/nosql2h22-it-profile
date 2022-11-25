@@ -13,11 +13,14 @@ import GenderToggle from '../../shared/components/Form/GenderToggle';
 import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
 import Chip from '../../shared/components/Chip/chip';
+import MultiSelect from '../../shared/components/MultiSelect';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
 
     const [openMenu, setOpenMenu] = useState(false);
+
+    const items = ["C", "C++", "Python", "Java", "JavaScript", "Kotlin", "ASM"]
 
     return (
         <>
@@ -60,7 +63,7 @@ export default function HomePage() {
             </div> */}
 
 
-            <div style={{display: 'flex'}}>
+            {/* <div style={{display: 'flex'}}>
                 <Chip variant='primary' title='React'/>
                 <Chip variant='secondary' title='C++'/>
                 <Chip variant='secondary' title='и'/>
@@ -84,7 +87,9 @@ export default function HomePage() {
                         <Menu.MenuItem to={'/'}>Sign Out</Menu.MenuItem>
                     </Menu.Footer>
                 </Menu>
-            </div>
+            </div> */}
+
+            <MultiSelect title='LANGUAGE' items={items} />
             <footer></footer>
         </>
     );
