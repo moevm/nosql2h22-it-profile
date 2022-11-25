@@ -12,7 +12,7 @@ import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
 import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
-import { Chips } from '@components';
+import { Chips, MultiSelect } from '@components';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -112,7 +112,7 @@ export default function HomePage() {
                 </Menu>
             </div> */}
 
-            {/* <MultiSelect title='LANGUAGE' items={items} /> */}
+            <MultiSelect title='LANGUAGE' items={items} />
             <footer></footer>
         </>
     );
