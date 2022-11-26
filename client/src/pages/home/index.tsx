@@ -2,7 +2,6 @@ import HomePageHeader from './components/Header';
 import HomePageContent from './components/Main';
 import { useCheckServer } from './hooks/useCheckServer';
 import './styles/index.scss';
-import SubmitButton from '../../shared/components/Form/SubmitButton';
 import TextInput from '../../shared/components/Form/TextInput';
 import PasswordInput from '../../shared/components/Form/PasswordInput';
 import EmailInput from '../../shared/components/Form/EmailInput';
@@ -12,7 +11,7 @@ import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
 import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
-import { Chips, MultiSelect } from '@components';
+import { Button, Chips, MultiSelect } from '@components';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -48,9 +47,7 @@ export default function HomePage() {
                     </div>
                 </>
             </HomePageContent>
-            {/* <div style={{ width: 200, height: 100 }}>
-                <SubmitButton variant="primary">BUTTON</SubmitButton>
-            </div>
+            {/*
             <div style={{ width: 400, height: 100 }}>
                 <TextInput
                     title="title"
@@ -113,7 +110,13 @@ export default function HomePage() {
             </div> */}
 
             <MultiSelect title='LANGUAGE' items={items} />
+            
+            {/* <div style={{ width: 200, height: 100 }}>
+                <Button type='submit' variant='primary'>BUTTON</Button>
+            </div> */}
+
             <footer></footer>
+
         </>
     );
 }
