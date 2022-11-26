@@ -4,6 +4,5 @@ export * as EmailInput from './EmailInput';
 export * as Field from './Field';
 export * as GenderToggle from './GenderToggle';
 export * as PasswordInput from './PasswordInput';
-export * as SubmitButton from './SubmitButton';
 export * as TextArea from './TextArea';
 export * as TextInput from './TextInput';
