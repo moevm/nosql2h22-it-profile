@@ -1,0 +1,41 @@
+@import "./../../styles/colors";
+
+.header {
+    display: flex;
+    background-color: map-get($map: $primary, $key: 'main');
+    align-items: stretch;
+    width: 100%;
+    // max-width: 1000px;
+
+    &__item--link {
+        text-decoration: none;
+        color: map-get($map: $primary, $key: 'contrast-text');
+        font-weight: bold;
+        font-size: larger;
+    }
+
+    &__left--layout {
+        flex: 1 1 auto;
+        order: 1;
+        padding: 0 1rem;
+    }
+
+    &__center--layout {
+        flex: 1 1 100%;
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    &__right--layout {
+        flex: 1 1 200px;
+        order: 3;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
