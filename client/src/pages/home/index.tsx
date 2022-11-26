@@ -7,16 +7,14 @@ import PasswordInput from '../../shared/components/Form/PasswordInput';
 import EmailInput from '../../shared/components/Form/EmailInput';
 import DateInput from '../../shared/components/Form/DateInput';
 import TextArea from '../../shared/components/Form/TextArea';
-import Avatar from '../../shared/components/Form/Avatar';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
-import Menu from '../../shared/components/Menu';
 import { useState } from 'react';
-import { Button, Chips, MultiSelect } from '@components';
+import { Avatar, Button, Chips, Header, Menu, MultiSelect } from '@components';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
 
-    const [openMenu, setOpenMenu] = useState(false);
+    // const [openMenu, setOpenMenu] = useState(false);
 
     const items = ["C", "C++", "Python", "Java", "JavaScript", "Kotlin", "ASM"]
     const [chips, setChips] = useState<string[]>([
@@ -47,6 +45,8 @@ export default function HomePage() {
                     </div>
                 </>
             </HomePageContent>
+
+
             {/*
             <div style={{ width: 400, height: 100 }}>
                 <TextInput
@@ -87,9 +87,9 @@ export default function HomePage() {
                     // direction="vertical"
                     variant="primary"
                 />
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
                 style={{ width: 35, height: 35, cursor: 'pointer' }}
                 onClick={() => setOpenMenu((cur) => !cur)}>
                 <Avatar />
