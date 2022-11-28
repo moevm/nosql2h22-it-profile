@@ -1,0 +1,51 @@
+@import "./../../styles/colors";
+
+.exp--card {
+    background-color: map-get($map: $primary, $key: 'main');
+    width: 600px;
+    
+    &__header {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__descr {
+        margin: 16px 0;
+        color: map-get($map: $secondary, $key: 'light');
+        overflow: auto;
+        max-height: 120px;
+    }
+
+    &__tech {
+        color: map-get($map: $secondary, $key: 'light');
+        margin: 16px 0;
+        overflow: auto;
+        max-height: 100px;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+
+        &__item--link {
+            color: map-get($map: $secondary, $key: 'light');
+        }
+
+        &__links {
+            flex: 1 1 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            overflow: auto;
+        }
+
+        &__btns {
+            flex: 1 1 200px;
+            gap: 8px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+}

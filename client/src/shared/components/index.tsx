@@ -5,10 +5,11 @@ import Button from './Button';
 import Header from './Header';
 import Menu from './Menu';
 import Avatar from './Form/Avatar';
+import ExperienceCard from './ExperienceCard';
 
 // export * from './Button'
 // export * from './Form';
 // export * from './List'
 // export * as Menu from './Menu';
 
-export { Chip, Chips, MultiSelect, Button, Header, Menu, Avatar };
+export { Chip, Chips, MultiSelect, Button, Header, Menu, Avatar, ExperienceCard };
