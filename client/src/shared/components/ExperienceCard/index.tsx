@@ -1,0 +1,61 @@
+import { Button, Chips } from '@components';
+import { Link } from 'react-router-dom';
+import './style.scss';
+
+interface IExperienceCardProps {
+    title: string;
+    position: string;
+    period: string;
+    description: string;
+    techStack: string[];
+    links?: Array<{ to: string; title: string }>;
+    onView?: boolean;
+}
+
+export default function ExperienceCard({
+    title,
+    position,
+    period,
+    description,
+    techStack,
+    links,
+    onView = false
+}: IExperienceCardProps) {
+    return (
+        <div className="exp--card">
+            <div className="exp--card__header">
+                {title}
+                <div>
+                    {position} | {period}
+                </div>
+            </div>
+            <div className="exp--card__descr">{description}</div>
+            <div className="exp--card__tech">
+                Tech Stack:
+                <Chips values={techStack} />
+            </div>
+            <div className="exp--card__bottom">
+                <div className="exp--card__bottom__links">
+                    {links?.map((link) => (
+                        <Link
+                            to={link.to}
+                            key={link.to}
+                            className="exp--card__bottom__item--link">
+                            {link.title}
+                        </Link>
+                    ))}
+                </div>
+                {!onView && (
+                    <div className="exp--card__bottom__btns">
+                        <div>
+                            <Button type="button" variant='primary'>Remove</Button>
+                        </div>
+                        <div>
+                            <Button type="button" variant='primary'>Edit</Button>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}

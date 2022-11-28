@@ -9,23 +9,34 @@ import DateInput from '../../shared/components/Form/DateInput';
 import TextArea from '../../shared/components/Form/TextArea';
 import GenderToggle from '../../shared/components/Form/GenderToggle';
 import { useState } from 'react';
-import { Avatar, Button, Chips, Header, Menu, MultiSelect } from '@components';
+import {
+    Avatar,
+    Button,
+    Chips,
+    ExperienceCard,
+    Header,
+    Menu,
+    MultiSelect
+} from '@components';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
 
     // const [openMenu, setOpenMenu] = useState(false);
 
-    const items = ["C", "C++", "Python", "Java", "JavaScript", "Kotlin", "ASM"]
+    const items = ['C', 'C++', 'Python', 'Java', 'JavaScript', 'Kotlin', 'ASM'];
     const [chips, setChips] = useState<string[]>([
         'React',
         'C++',
         'Vue',
         'Python',
-        "JavaScript",
-        "Git",
-        "figma"
+        'JavaScript',
+        'Git',
+        'figma'
     ]);
+
+    let description =
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
     function removeChip(value: string) {
         setChips((prev) => prev.filter((curr) => curr !== value));
@@ -45,7 +56,6 @@ export default function HomePage() {
                     </div>
                 </>
             </HomePageContent>
-
 
             {/*
             <div style={{ width: 400, height: 100 }}>
@@ -70,7 +80,6 @@ export default function HomePage() {
             <div style={{ width: 200 }}>
                 <GenderToggle/>
             </div> */}
-
 
             {/* <div style={{display: 'flex'}}>
                 <Chip variant='primary' title='React'/>
@@ -109,14 +118,22 @@ export default function HomePage() {
                 </Menu>
             </div> */}
 
-            <MultiSelect title='LANGUAGE' items={items} />
-            
+            <MultiSelect title="LANGUAGE" items={items} />
+
+            <ExperienceCard
+                title="Project title"
+                position="Junior Frontend"
+                period="2020-2022"
+                description={description}
+                techStack={['TypeScript', 'React', 'Redux', 'CSS']}
+                links={[{to: '/', title: 'Link 1'}, {to: '/', title: 'Link 2'}]}
+            />
+
             {/* <div style={{ width: 200, height: 100 }}>
                 <Button type='submit' variant='primary'>BUTTON</Button>
             </div> */}
 
             <footer></footer>
-
         </>
     );
 }
