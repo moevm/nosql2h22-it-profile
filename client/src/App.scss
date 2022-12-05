@@ -1,17 +1,27 @@
-@import "./shared/styles/colors";
+@import './shared/styles/colors';
 
 body {
-  background-color: map-get($map: $primary, $key: 'main');
+    background-color: map-get($map: $primary, $key: 'main');
 }
 
+#root {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
-.app {
-  height: 100vh;
-  display: flex;
-  justify-items: center;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: nowrap;
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding-left: 16px;
+    padding-right: 16px;
+    flex: 1 1 100%;
+    display: flex;
 }

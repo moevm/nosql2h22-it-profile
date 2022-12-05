@@ -1,0 +1,146 @@
+.flex {
+    display: flex;
+    &.row {
+        flex-direction: row;
+    }
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-content {
+        &-around {
+            justify-content: space-around;
+        }
+        &-evenly {
+            justify-content: space-evenly;
+        }
+        &-stretch {
+            justify-content: stretch;
+        }
+        &-between {
+            justify-content: space-between;
+        }
+        &-center {
+            justify-content: center;
+        }
+        &-end {
+            justify-content: flex-end;
+        }
+        &-start {
+            justify-content: flex-start;
+        }
+    }
+    &.align-content {
+        &-around {
+            align-content: space-around;
+        }
+        &-stretch {
+            align-content: stretch;
+        }
+        &-between {
+            align-content: space-between;
+        }
+        &-center {
+            align-content: center;
+        }
+        &-end {
+            align-content: flex-end;
+        }
+        &-start {
+            align-content: flex-start;
+        }
+    }
+
+    &.align-items {
+        &-auto {
+            align-items: auto;
+        }
+        &-stretch {
+            align-items: stretch;
+        }
+        &-baseline {
+            align-items: baseline;
+        }
+        &-center {
+            align-items: center;
+        }
+        &-end {
+            align-items: flex-end;
+        }
+        &-start {
+            align-items: flex-start;
+        }
+    }
+
+    &.justify-items {
+        &-auto {
+            justify-items: auto;
+        }
+        &-baseline {
+            justify-items: baseline;
+        }
+        &-center {
+            justify-items: center;
+        }
+        &-end {
+            justify-items: flex-end;
+        }
+        &-start {
+            justify-items: flex-start;
+        }
+    }
+}
+
+.m {
+    &-auto {
+        margin: auto;
+    }
+
+    &t {
+        &-1rem {
+            margin-top: 1rem;
+        }
+    }
+    &b {
+        &-1rem {
+            margin-bottom: 1rem;
+        }
+    }
+    &r {
+        &-1rem {
+            margin-right: 1rem;
+        }
+    }
+    &l {
+        &-1rem {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.p {
+    &-auto {
+        padding: auto;
+    }
+
+    &t {
+        &-1rem {
+            padding-top: 1rem;
+        }
+    }
+    &b {
+        &-1rem {
+            padding-bottom: 1rem;
+        }
+    }
+    &r {
+        &-1rem {
+            padding-right: 1rem;
+        }
+    }
+    &l {
+        &-1rem {
+            padding-left: 1rem;
+        }
+    }
+}

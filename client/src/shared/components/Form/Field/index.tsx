@@ -30,7 +30,7 @@ export default function Field({
                 defaultValue={defaultValue}
                 onChange={onChange}
             />
-            <span className="text--field__error">{error?.message ?? ''}</span>
+            <span className={"text--field__error " + (error?.message ? "" : "no-error")}>{error?.message ?? "on-error"}</span>
         </label>
     );
 }

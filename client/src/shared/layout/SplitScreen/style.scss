@@ -1,0 +1,16 @@
+.split--screen {
+    display: flex;
+    flex-flow: row nowrap;
+
+    height: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+
+    &__left--side {
+        flex: 1 1 100%;
+    }
+
+    &__right--side {
+        flex: 1 1 100%;
+    }
+}

@@ -24,14 +24,19 @@ export default function ExperienceCard({
     return (
         <div className="exp--card">
             <div className="exp--card__header">
-                {title}
-                <div>
+                <div className='exp--card__title'>
+                    {title}
+                </div>
+                <div className='exp--card__sub--title'>
                     {position} | {period}
+
                 </div>
             </div>
             <div className="exp--card__descr">{description}</div>
             <div className="exp--card__tech">
-                Tech Stack:
+                <div className="exp--card__tech--title">
+                    Tech Stack:
+                </div>
                 <Chips values={techStack} />
             </div>
             <div className="exp--card__bottom">
