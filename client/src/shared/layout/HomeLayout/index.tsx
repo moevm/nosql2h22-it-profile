@@ -2,21 +2,21 @@ import { Link, Outlet } from 'react-router-dom';
 import { Avatar, Button, Header, Menu } from '@components';
 import { useState } from 'react';
 
-export default function Layout() {
+export default function HomeLayout() {
     let isAuth = true;
     const [openMenu, setOpenMenu] = useState(false);
 
     return (
         <div className="page">
-            <Header>
+            <Header className="">
                 <Header.Left>
                     <h1>Portfolio</h1>
                 </Header.Left>
                 <Header.Center>
-                    <Link to="/" className='header__item--link'>
+                    <Link to="/" className="header__item--link">
                         SEARCH
                     </Link>
-                    <Link to="/" className='header__item--link'>
+                    <Link to="/" className="header__item--link">
                         STATS
                     </Link>
                 </Header.Center>
@@ -62,7 +62,9 @@ export default function Layout() {
                     )}
                 </Header.Right>
             </Header>
-            <Outlet />
+            <div className="content">
+                <Outlet />
+            </div>
         </div>
     );
 }

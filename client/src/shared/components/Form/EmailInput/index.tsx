@@ -13,16 +13,16 @@ interface IProps {
 export default function EmailInput({
     title,
     name,
-    onChange = () => {},
+    onChange = () => { },
     defaultValue = '',
     placeholder = 'Enter your email...',
     error
 }: IProps) {
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
     const checkValidEmail = (event: ChangeEvent<HTMLInputElement>) => {
         if (!event.target.value.length) {
-            setErrorMessage('');
+            setErrorMessage(undefined);
             return;
         }
 
@@ -30,7 +30,7 @@ export default function EmailInput({
             /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/;
 
         if (event.target.value.match(validRegex)) {
-            setErrorMessage('');
+            setErrorMessage(undefined);
         } else {
             setErrorMessage('Email incorrect');
         }
@@ -39,7 +39,7 @@ export default function EmailInput({
     return (
         <Field
             title={title}
-            error={error ?? { message: errorMessage }}
+            error={error ? error : errorMessage ? { message: errorMessage } : undefined}
             name={name}
             placeholder={placeholder}
             defaultValue={defaultValue}

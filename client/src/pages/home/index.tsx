@@ -1,4 +1,3 @@
-import HomePageHeader from './components/Header';
 import HomePageContent from './components/Main';
 import { useCheckServer } from './hooks/useCheckServer';
 import './styles/index.scss';
@@ -35,27 +34,15 @@ export default function HomePage() {
         'figma'
     ]);
 
-    let description =
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
     function removeChip(value: string) {
         setChips((prev) => prev.filter((curr) => curr !== value));
     }
 
     return (
         <>
-            <HomePageHeader />
-            <HomePageContent>
-                <>
-                    <div>
-                        <h1>
-                            {serverIsConnected
-                                ? 'Сервер подключен'
-                                : 'Нет соединения'}
-                        </h1>
-                    </div>
-                </>
-            </HomePageContent>
+            <div className="content--wrapper">
+                
+            </div>
 
             {/*
             <div style={{ width: 400, height: 100 }}>
@@ -64,12 +51,6 @@ export default function HomePage() {
                     name="name"
                     error={{ message: 'error' }}
                 />
-            </div>
-            <div style={{ width: 400 }}>
-                <PasswordInput title="Password" name="name" />
-            </div>
-            <div style={{ width: 400 }}>
-                <EmailInput title="Email" name="name" onChange={console.log} />
             </div>
             <div style={{ width: 400 }}>
                 <TextArea title="Description" name="name" />
@@ -116,22 +97,25 @@ export default function HomePage() {
                         <Menu.MenuItem to={'/'}>Sign Out</Menu.MenuItem>
                     </Menu.Footer>
                 </Menu>
-            </div> */}
-
+            </div>  
+            
             <MultiSelect title="LANGUAGE" items={items} />
 
-            <ExperienceCard
-                title="Project title"
-                position="Junior Frontend"
-                period="2020-2022"
-                description={description}
-                techStack={['TypeScript', 'React', 'Redux', 'CSS']}
-                links={[{to: '/', title: 'Link 1'}, {to: '/', title: 'Link 2'}]}
-            />
+            <div style={{ width: 500 }}>
+                <ExperienceCard
+                    title="Project title"
+                    position="Junior Frontend"
+                    period="2020-2022"
+                    description={description}
+                    techStack={['TypeScript', 'React', 'Redux', 'CSS']}
+                    links={[
+                        { to: '/', title: 'Link 1' },
+                        { to: '/', title: 'Link 2' }
+                    ]}
+                />
+            </div>
 
-            {/* <div style={{ width: 200, height: 100 }}>
-                <Button type='submit' variant='primary'>BUTTON</Button>
-            </div> */}
+          */}
 
             <footer></footer>
         </>

@@ -4,18 +4,40 @@
     width: 100%;
     height: 100%;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px black solid;
+    border-radius: 6px;
     // font-size: 20px;
     font-weight: 700;
     cursor: pointer;
 
+
     &.primary {
-        background-color: map-get($map: $primary, $key: 'main');
+        border: 1px map-get($map: $secondary, $key: 'light') solid;
         color: map-get($map: $primary, $key: 'contrast-text');
+        background-color: map-get($map: $primary, $key: 'main');
+        
+        &:hover {
+            background-color: map-get($map: $primary, $key: 'light');
+        }
+
+        &:active {
+            background-color: map-get($map: $primary, $key: 'dark');
+        }
     };
+
     &.secondary {
-        background-color: map-get($map: $secondary, $key: 'main');
+        background-color: map-get($map: $secondary, $key: 'dark');
         color: map-get($map: $secondary, $key: 'contrast-text');
-    };
+        border: 1px map-get($map: $primary, $key: 'dark') solid;
+
+        &:hover {
+            background-color: map-get($map: $secondary, $key: 'main');
+        }
+
+        &:active {
+            background-color: map-get($map: $secondary, $key: 'light');
+        }
+
+    }
+
+    ;
 }

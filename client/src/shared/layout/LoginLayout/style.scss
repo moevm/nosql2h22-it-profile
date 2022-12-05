@@ -1,0 +1,37 @@
+.login {
+    &__container {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+
+        margin: auto;
+    }
+
+    &__header {
+    }
+}
+
+
+.content--wrapper {
+    max-width: 1170px;
+}
+
+
+.position--fixed {
+    position: fixed;
+    top: 0;
+}
+
