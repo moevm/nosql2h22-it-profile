@@ -18,6 +18,7 @@ import {
     MultiSelect
 } from '@components';
 import ModalWindow from '../../shared/components/ModalWindow';
+import List from '../../shared/components/List';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -49,12 +50,51 @@ export default function HomePage() {
                         Show Modal
                     </Button>
                 </div>
+
+                <div style={{ width: 400 }}></div>
                 <ModalWindow
                     is_open={modalState}
                     onExitClick={() => {
                         setModalState(false);
                     }}>
-                    <h1>Hi, Its a modal Window</h1>
+                    <List title="Test">
+                        <List.Item>item</List.Item>
+                        <List.Item>item 2</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                        <List.Item>item 3</List.Item>
+                    </List>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'nowrap',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            gap: 4
+                        }}>
+                        <div style={{ flexBasis: '100%' }}>
+                            <TextInput title={''} name={''} />
+                        </div>
+                        <div style={{ flexBasis: 'auto' }}>
+                            <Button>Add</Button>
+                        </div>
+                    </div>
                 </ModalWindow>
             </div>
             <footer></footer>

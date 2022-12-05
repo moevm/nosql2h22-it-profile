@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import ExitButton from '../ExitButton';
 import './style.scss';
 
 interface IProps {
@@ -15,8 +16,8 @@ export default function ModalWindow({
     return ReactDOM.createPortal(
         <div className={'modal--window ' + (is_open ? 'show' : 'hide')}>
             <div className="modal--window__body">
-                <div className="modal--window__exit-btn" onClick={onExitClick}>
-                    <span></span>
+                <div className="modal--window__exit-btn">
+                    <ExitButton onClick={onExitClick} />
                 </div>
                 <div className="modal--window__content">{children}</div>
             </div>
