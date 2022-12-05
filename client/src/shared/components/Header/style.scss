@@ -2,16 +2,36 @@
 
 .header {
     display: flex;
-    background-color: map-get($map: $primary, $key: 'main');
     align-items: stretch;
     width: 100%;
-    // max-width: 1000px;
+
+    grid-area: header;
 
     &__item--link {
         text-decoration: none;
-        color: map-get($map: $primary, $key: 'contrast-text');
+        color: map-get($map: $secondary, $key: 'light');
         font-weight: bold;
         font-size: larger;
+        position: relative;
+        padding: 4px;
+
+        &.active {
+            color: map-get($map: $secondary, $key: 'dark');
+
+            &::after {
+                position: absolute;
+                left: 0;
+                bottom: -0px;
+                content: "";
+                height: 4px;
+                width: 100%;
+                background-color: map-get($map: $secondary, $key: 'main');
+            }
+        }
+
+        &:hover {
+            color: map-get($map: $secondary, $key: 'dark');
+        }
     }
 
     &__left--layout {
@@ -35,7 +55,7 @@
         padding: 0 1.5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
     }
 
 }

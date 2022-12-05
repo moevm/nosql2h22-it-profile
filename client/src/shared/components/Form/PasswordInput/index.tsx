@@ -13,12 +13,12 @@ interface IProps {
 export default function PasswordInput({
     title,
     name,
-    onChange = () => {},
+    onChange = () => { },
     defaultValue = '',
-    placeholder = 'Enter your password',
+    placeholder = 'Please enter your password...',
     error
 }: IProps) {
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
     const checkValidPassword = (event: ChangeEvent<HTMLInputElement>) => {
         if (!event.target.value.length) {
@@ -29,14 +29,14 @@ export default function PasswordInput({
         if (event.target.value.length < 8) {
             setErrorMessage('Password must contain at least 8 characters');
         } else {
-            setErrorMessage('');
+            setErrorMessage(undefined);
         }
     };
 
     return (
         <Field
             title={title}
-            error={error ?? { message: errorMessage }}
+            error={error ? error : errorMessage ? { message: errorMessage } : undefined}
             name={name}
             placeholder={placeholder}
             defaultValue={defaultValue}

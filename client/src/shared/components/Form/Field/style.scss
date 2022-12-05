@@ -14,12 +14,14 @@
     };
 
     &__input {
+        background: #0000;
         border: none;
-        border-bottom: 1.5px map-get($map: $secondary, $key: 'light') solid;
+        border-bottom: 2px map-get($map: $primary, $key: 'dark') solid;
         outline: none;
         display: block;
-        font-size: 1rem;
+        font-size: 1.5rem;
         width: 100%;
+        padding: 4px 0px;
     };
 
     &__textarea {
@@ -37,5 +39,9 @@
         color: tomato;
         font-size: 1rem;
         width: 100%;
+
+        &.no-error {
+            opacity: 0;
+        }
     };
 }
