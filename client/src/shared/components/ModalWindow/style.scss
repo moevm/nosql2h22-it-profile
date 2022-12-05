@@ -1,0 +1,70 @@
+@import '../../styles/colors';
+
+.modal--window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: #0008;
+
+    &.show {
+        display: flex;
+    }
+    &.hide {
+        display: none;
+    }
+    &__body {
+        background-color: map-get($map: $primary, $key: 'main');
+        // border: 2px map-get($map: $primary, $key: 'dark') solid;
+        border-radius: 8px;
+        margin: auto;
+        padding: 2.5rem;
+        position: relative;
+    }
+
+    &__exit-btn {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        span {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            position: relative;
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 50%;
+                width: 1px;
+                height: 100%;
+                background-color: gray;
+                border-radius: 50%;
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+                cursor: pointer;
+                &::after,
+                &::before {
+                    width: 2px;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+
+    &__content {
+    }
+}

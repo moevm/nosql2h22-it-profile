@@ -17,6 +17,7 @@ import {
     Menu,
     MultiSelect
 } from '@components';
+import ModalWindow from '../../shared/components/ModalWindow';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -38,85 +39,24 @@ export default function HomePage() {
         setChips((prev) => prev.filter((curr) => curr !== value));
     }
 
+    const [modalState, setModalState] = useState(false);
+
     return (
         <>
             <div className="content--wrapper">
-                
+                <div>
+                    <Button onClick={() => setModalState(true)}>
+                        Show Modal
+                    </Button>
+                </div>
+                <ModalWindow
+                    is_open={modalState}
+                    onExitClick={() => {
+                        setModalState(false);
+                    }}>
+                    <h1>Hi, Its a modal Window</h1>
+                </ModalWindow>
             </div>
-
-            {/*
-            <div style={{ width: 400, height: 100 }}>
-                <TextInput
-                    title="title"
-                    name="name"
-                    error={{ message: 'error' }}
-                />
-            </div>
-            <div style={{ width: 400 }}>
-                <TextArea title="Description" name="name" />
-            </div>
-            <div style={{ width: 400, height: 100 }}>
-                <DateInput title="Date" name="name" />
-            </div>
-            <div style={{ width: 200 }}>
-                <GenderToggle/>
-            </div> */}
-
-            {/* <div style={{display: 'flex'}}>
-                <Chip variant='primary' title='React'/>
-                <Chip variant='secondary' title='C++'/>
-                <Chip variant='secondary' title='и'/>
-            <div
-                style={{
-                    width: 300
-                }}>
-                <Chips
-                    values={chips}
-                    onRemove={removeChip}
-                    closable
-                    // direction="vertical"
-                    variant="primary"
-                />
-            </div> */}
-
-            {/* <div
-                style={{ width: 35, height: 35, cursor: 'pointer' }}
-                onClick={() => setOpenMenu((cur) => !cur)}>
-                <Avatar />
-            </div>
-            <div style={{ position: 'relative' }}>
-                <Menu open={openMenu}>
-                    <Menu.Body>
-                        <Menu.MenuItemGroup>
-                            <Menu.MenuItem to={'/'}>Profile</Menu.MenuItem>
-                            <Menu.MenuItem to={'/'}>Edit Profile</Menu.MenuItem>
-                            <Menu.MenuItem to={'/'}>Favorites</Menu.MenuItem>
-                        </Menu.MenuItemGroup>
-                    </Menu.Body>
-                    <Menu.Footer>
-                        <Menu.MenuItem to={'/'}>Sign Out</Menu.MenuItem>
-                    </Menu.Footer>
-                </Menu>
-            </div>  
-            
-            <MultiSelect title="LANGUAGE" items={items} />
-
-            <div style={{ width: 500 }}>
-                <ExperienceCard
-                    title="Project title"
-                    position="Junior Frontend"
-                    period="2020-2022"
-                    description={description}
-                    techStack={['TypeScript', 'React', 'Redux', 'CSS']}
-                    links={[
-                        { to: '/', title: 'Link 1' },
-                        { to: '/', title: 'Link 2' }
-                    ]}
-                />
-            </div>
-
-          */}
-
             <footer></footer>
         </>
     );
