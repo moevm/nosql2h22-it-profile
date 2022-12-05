@@ -6,10 +6,20 @@ import Header from './Header';
 import Menu from './Menu';
 import Avatar from './Form/Avatar';
 import ExperienceCard from './ExperienceCard';
+import TextInput from './Form/TextInput';
+import TextArea from './Form/TextArea';
+import DateInput from './Form/DateInput';
 
-// export * from './Button'
-// export * from './Form';
-// export * from './List'
-// export * as Menu from './Menu';
-
-export { Chip, Chips, MultiSelect, Button, Header, Menu, Avatar, ExperienceCard };
+export {
+    Chip,
+    Chips,
+    MultiSelect,
+    Button,
+    Header,
+    Menu,
+    Avatar,
+    ExperienceCard,
+    TextInput,
+    TextArea,
+    DateInput
+};

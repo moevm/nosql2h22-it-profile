@@ -3,7 +3,7 @@
 .multi--select {
     text-align: left;
     border: none;
-    width: 280px;
+    width: 100%;
     position: relative;
 
     &__title {
@@ -41,7 +41,7 @@
     }
 
     &__selected--items {
-        height: 100px;
+        // height: 100px;
         overflow: auto;
         padding: 4px;
     }

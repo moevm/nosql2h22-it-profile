@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { HomePageLazy, LoginPage, RegisterPageLazy } from '@pages';
+import { HomePageLazy, LoginPage, RegisterPageLazy, AddExperiencePage } from '@pages';
 import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense } from 'react';
 import { RegLayout } from './shared/layout';
@@ -27,11 +27,14 @@ function App() {
                     <Route
                         index
                         element={
-                            <Suspense fallback={<div>Loanding...</div>}>
+                            <Suspense fallback={<div>Loading...</div>}>
                                 <RegisterPageLazy />
                             </Suspense>
                         }
                     />
+                </Route>
+                <Route path="/add-experience" element={<HomeLayout />}>
+                    <Route index element={<AddExperiencePage />} />
                 </Route>
             </Routes>
         </>

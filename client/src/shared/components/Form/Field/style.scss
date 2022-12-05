@@ -25,13 +25,15 @@
     };
 
     &__textarea {
+        background-color: map-get($map: $primary, $key: 'main');
         display: block;
         resize: none;
         width: 100%;
-        height: 100%;
+        height: 80%;
         border: none;
-        border-bottom: 1.5px map-get($map: $secondary, $key: 'light') solid;
+        border-bottom: 2px map-get($map: $primary, $key: 'dark') solid;
         outline: none;
+        flex: 1 1 auto;
     };
 
     &__error {

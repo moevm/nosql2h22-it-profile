@@ -5,10 +5,10 @@
     height: 100%;
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    // font-size: 20px;
+    font-size: 1em;
     font-weight: 700;
     cursor: pointer;
-
+    flex: 1 1 100%;
 
     &.primary {
         border: 1px map-get($map: $secondary, $key: 'light') solid;
