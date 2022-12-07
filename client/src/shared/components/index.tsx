@@ -9,6 +9,7 @@ import ExperienceCard from './ExperienceCard';
 import TextInput from './Form/TextInput';
 import TextArea from './Form/TextArea';
 import DateInput from './Form/DateInput';
+import UserCard from './UserCard';
 
 export {
     Chip,
@@ -21,5 +22,6 @@ export {
     ExperienceCard,
     TextInput,
     TextArea,
-    DateInput
+    DateInput,
+    UserCard
 };

@@ -1,0 +1,73 @@
+@import "./../../shared/styles/colors.scss";
+
+.search--page {
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+    flex: 1 1 100%;
+
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        color: map-get($map: $secondary, $key: 'light');
+        border: none;
+        border-bottom: 1px solid map-get($map: $secondary, $key: 'light');
+        padding: 12px 0;
+    }
+
+    &__settings {
+        display: flex;
+        flex-direction: column;
+        gap: 58px;
+        border: none;
+        border-right: 1px solid map-get($map: $secondary, $key: 'light');
+        padding-right: 24px;
+
+        &__text {
+            font-weight: bold;
+            color: black;
+        }
+
+        &__experience {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            font-weight: bold;
+            color: black;
+
+            &--title {
+                flex: 1 0 45px;
+            }
+
+            &--values {
+                display: flex;
+                color: map-get($map: $secondary, $key: 'light');
+                align-items: center;
+                flex-direction: row;
+                gap: 12px;
+                padding-right: 8px;
+
+                input {
+                    flex: 1 1 100%;
+                    outline: none;
+                    background-color: map-get($map: $primary, $key: 'main');
+                    border: none;
+                    border-bottom: 1px solid map-get($map: $secondary, $key: 'light');
+                }
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+    }
+
+    &__results {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+}

@@ -3,6 +3,7 @@ import HomePage from './home';
 import RegisterPage from './register';
 import LoginPage from './login';
 import AddExperiencePage from './AddExperience';
+import SearchPage from './Search';
 
 const HomePageLazy = lazy(() => import('./home'));
 const RegisterPageLazy = lazy(() => import('./register'));
@@ -16,5 +17,6 @@ export {
     RegisterPageLazy,
     LoginPage,
     LoginPageLazy,
-    AddExperiencePage
+    AddExperiencePage,
+    SearchPage
 };

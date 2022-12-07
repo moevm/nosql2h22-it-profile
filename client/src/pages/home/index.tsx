@@ -15,8 +15,11 @@ import {
     ExperienceCard,
     Header,
     Menu,
-    MultiSelect
+    MultiSelect,
+    UserCard
 } from '@components';
+import ModalWindow from '../../shared/components/ModalWindow';
+import List from '../../shared/components/List';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -37,6 +40,8 @@ export default function HomePage() {
     function removeChip(value: string) {
         setChips((prev) => prev.filter((curr) => curr !== value));
     }
+
+    const [modalState, setModalState] = useState(false);
 
     return (
         <>
