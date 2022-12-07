@@ -15,7 +15,8 @@ import {
     ExperienceCard,
     Header,
     Menu,
-    MultiSelect
+    MultiSelect,
+    UserCard
 } from '@components';
 
 export default function HomePage() {
@@ -42,6 +43,10 @@ export default function HomePage() {
         <>
             <div className="content--wrapper">
                 
+            </div>
+
+            <div style={{width: 900}}>
+                {/* <UserCard /> */}
             </div>
 
             {/*

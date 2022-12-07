@@ -1,0 +1,66 @@
+@import "./../../styles/colors";
+
+.user--card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    padding-bottom: 8px;
+    border: none;
+    border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+
+
+    &__avatar {
+        height: 100px;
+        width: 100px;
+        margin: auto;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        padding: 0 12px;
+        border: none;
+        border-right: 1px solid map-get($map: $primary, $key: 'dark');
+        flex: 1 0 200px;
+
+        &__avatar {
+            padding: 8px;
+        }
+
+        &__text{
+            font-weight: bold;
+        }
+
+        &__buttons {
+            display: flex;
+        }
+    }
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 12px;
+        gap: 8px;
+
+        &__specialty {
+            font-weight: bold;
+        }
+
+        &__text {
+            color: map-get($map: $secondary, $key: 'light');
+            max-height: 150px;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    }
+}
