@@ -18,6 +18,8 @@ import {
     MultiSelect,
     UserCard
 } from '@components';
+import ModalWindow from '../../shared/components/ModalWindow';
+import List from '../../shared/components/List';
 
 export default function HomePage() {
     const { serverIsConnected } = useCheckServer();
@@ -39,14 +41,12 @@ export default function HomePage() {
         setChips((prev) => prev.filter((curr) => curr !== value));
     }
 
+    const [modalState, setModalState] = useState(false);
+
     return (
         <>
             <div className="content--wrapper">
                 
-            </div>
-
-            <div style={{width: 900}}>
-                {/* <UserCard /> */}
             </div>
 
             {/*

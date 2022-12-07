@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.scss';
 
 interface IProps {
-    mode: 'edit' | 'create';
+    mode?: 'edit' | 'create';
 }
 
 export default function AddExperiencePage({ mode }: IProps) {
