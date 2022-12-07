@@ -1,0 +1,72 @@
+@import "./../../shared/styles/colors.scss";
+
+.view--page {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    &__title {
+        font-weight: bold;
+        font-size: 30px;
+        color: map-get($map: $secondary, $key: 'main')
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        &__avatar {
+            height: 110px;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: map-get($map: $secondary, $key: 'light');
+        max-width: 1300px;
+    }
+
+    &__addition {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 28px;
+
+        &__exp {
+            display: flex;
+            flex-direction: column;
+            border: none;
+            border-right: 1px solid map-get($map: $primary, $key: 'dark');
+            padding-right: 12px;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            flex: 1 1 100%;
+        }
+        
+        &--item {
+            border: none;
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+
+    }
+
+}

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { HomePageLazy, LoginPage, RegisterPageLazy, AddExperiencePage, SearchPage } from '@pages';
+import { HomePageLazy, LoginPage, RegisterPageLazy, AddExperiencePage, SearchPage, ViewProfilePage } from '@pages';
 import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense } from 'react';
 import { RegLayout } from './shared/layout';
@@ -38,6 +38,9 @@ function App() {
                 </Route>
                 <Route path="/search" element={<HomeLayout />}>
                     <Route index element={<SearchPage />} />
+                </Route>
+                <Route path="/view" element={<HomeLayout />}>
+                    <Route index element={<ViewProfilePage />} />
                 </Route>
             </Routes>
         </>
