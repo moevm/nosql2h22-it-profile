@@ -15,7 +15,8 @@ import {
     ExperienceCard,
     Header,
     Menu,
-    MultiSelect
+    MultiSelect,
+    UserCard
 } from '@components';
 
 export default function HomePage() {
@@ -40,8 +41,66 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="content--wrapper">
-                
+            <div className="content--wrapper"></div>
+
+            <div style={{ width: 1000 }}>
+                <UserCard
+                    data={{
+                        birth_date: 946711800000,
+                        email: 'user@email.com',
+                        first_name: 'Mr. Loykonen',
+                        information: {
+                            about: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro libero sint necessitatibus enim nihil sunt quos, dolor dolore at eius ut facilis impedit officiis, expedita quidem. Iure, nisi vel? 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro libero sint necessitatibus enim nihil sunt quos, dolor dolore at eius ut facilis impedit officiis, expedita quidem. Iure, nisi vel?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro libero sint necessitatibus enim nihil sunt quos, dolor dolore at eius ut facilis impedit officiis, expedita quidem. Iure, nisi vel?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro libero sint necessitatibus enim nihil sunt quos, dolor dolore at eius ut facilis impedit officiis, expedita quidem. Iure, nisi vel?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro libero sint necessitatibus enim nihil sunt quos, dolor dolore at eius ut facilis impedit officiis, expedita quidem. Iure, nisi vel?
+                        
+                        `,
+                            city: 'St.Petersburg',
+                            contacts: [],
+                            country: 'Russia',
+                            educations: [],
+                            experiences: [
+                                {
+                                    company: 'ooo wow',
+                                    start: 1546327800000,
+                                    end: 1577863800000,
+                                    links: ['https://github.com'],
+                                    position_in_project: 'Team Lid',
+                                    project_name: 'Happy Code',
+                                    tech_stack: ['Wow'],
+                                    description: ''
+                                }
+                            ],
+                            favorites: [],
+                            languages: ['JavaScript'],
+                            skills: [
+                                {
+                                    title: 'Git',
+                                    level: ''
+                                },
+                                {
+                                    title: 'JavaScript',
+                                    level: ''
+                                },
+                                {
+                                    title: 'C++',
+                                    level: ''
+                                }
+                            ],
+                            specialties: [
+                                {
+                                    direction: 'Frontender',
+                                    level: 'Senior'
+                                }
+                            ]
+                        },
+                        last_name: '',
+                        role: ['USER'],
+                        sex: 'M'
+                    }}
+                />
             </div>
 
             {/*
