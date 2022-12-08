@@ -1,6 +1,7 @@
 import { IUser } from '@interfaces';
 import { useState } from 'react';
 import avatar from '../../asserts/avatar.jpg';
+import ExperienceCard from '../../shared/components/ExperienceCard';
 import Avatar from '../../shared/components/Form/Avatar';
 import './style.scss';
 
@@ -21,6 +22,7 @@ export default function ViewProfilePage() {
             ]
         }
     };
+
     const [age, setAge] = useState(() => {
         const diff =
             new Date().getFullYear() - new Date(data.birth_date).getFullYear();
@@ -30,26 +32,36 @@ export default function ViewProfilePage() {
     return (
         <div className="view--page">
             <div className="view--page__header">
-                <div className="view--page__header__avatar">
+                <div className="view--page__header--avatar">
                     <Avatar src={avatar} />
                 </div>
-                <div className="view--page__header__info">
-                    <div className="view--page__title">
-                        {data.last_name} {data.first_name}
-                    </div>
-                    <div>{age} Years old</div>
+                <div className="view--page__user--info">
                     <div>
-                        {data.information.specialties[0].direction}{' '}
-                        {data.information.specialties[0].level}
+                        <div className="view--page__user--name">
+                            {data.last_name} {data.first_name}
+                        </div>
+                        <div className="view--page__user--age">
+                            {age} Years old
+                        </div>
+                    </div>
+                    <div className="view--page__user--specialty">
+                        {data.information.specialties[0].level}{' '}
+                        {data.information.specialties[0].direction}
                     </div>
                 </div>
-                <div className="view--page__header__contacts">
+                <div>
                     <div className="view--page__title">CONTACTS</div>
-                    {data.information.contacts.map((item) => 
-                        <div key={item.value}>{item.value}</div>
-                    )}
-                    <div>
-                        {data.information.city}, {data.information.country}
+                    <div className="view--page__contacts">
+                        {data.information.contacts.map((item) => (
+                            <div
+                                className="view--page__contact"
+                                key={item.value}>
+                                {item.value}
+                            </div>
+                        ))}
+                        <div className="view--page__contact">
+                            {data.information.city}, {data.information.country}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,20 +73,46 @@ export default function ViewProfilePage() {
 
             <div className="view--page__addition">
                 <div className="view--page__addition__exp">
-                    <div className="view--page__addition--item view--page__title">
+                    <div className="view--page__experiences--title view--page__title">
                         EXPERIENCES
                     </div>
-                    <div style={{ width: 900 }}></div>
+                    <div className="view--page__experiences">
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i, index) => (
+                            <div
+                                key={index}
+                                className="view--page__experiences--item">
+                                <ExperienceCard
+                                    viewOnly={true}
+                                    title={'ooo studo'}
+                                    position={'Team Lid'}
+                                    period={'2019-2022'}
+                                    description={
+                                        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit hic labore a tempore porro inventore pariatur deserunt animi dignissimos nam similique, laudantium aliquam magnam molestias fugit minima cum commodi molestiae?'
+                                    }
+                                    techStack={['div']}
+                                    links={[
+                                        {
+                                            to: 'https://github.com',
+                                            title: 'GitHub'
+                                        }
+                                    ]}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="view--page__addition__info">
-                    <div className="view--page__addition--item view--page__title">
-                        EDUCATION
-                    </div>
-                    <div className="view--page__addition--item view--page__title">
-                        SKILLS
-                    </div>
-                    <div className="view--page__addition--item view--page__title">
-                        ACCOUNT
+                <span className="view--page__separator"></span>
+                <div className="view--page__addition--info">
+                    <div className="view--page__addition--infos">
+                        <div className="view--page__addition--item view--page__title">
+                            EDUCATION
+                        </div>
+                        <div className="view--page__addition--item view--page__title">
+                            SKILLS
+                        </div>
+                        <div className="view--page__addition--item view--page__title">
+                            ACCOUNT
+                        </div>
                     </div>
                 </div>
             </div>
