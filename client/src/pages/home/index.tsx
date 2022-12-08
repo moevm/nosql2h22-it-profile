@@ -45,10 +45,7 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="content--wrapper">
-                
-            </div>
-
+            <div className="content--wrapper"></div>
             {/*
             <div style={{ width: 400, height: 100 }}>
                 <TextInput

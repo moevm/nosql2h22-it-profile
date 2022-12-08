@@ -8,4 +8,5 @@ export interface IUser {
     sex: string; //   пол
     role: string[]; //   роль пользователя
     information: IInformation; //   ссылка на дополнительную информацию
+    photo?: string
 }
