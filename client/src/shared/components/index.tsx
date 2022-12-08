@@ -1,6 +1,7 @@
 import Chip from './Chip';
 import Chips from './Chips';
 import MultiSelect from './MultiSelect';
+import Select from './Select';
 import Button from './Button';
 import Header from './Header';
 import Menu from './Menu';
@@ -23,5 +24,6 @@ export {
     TextInput,
     TextArea,
     DateInput,
-    UserCard
+    UserCard,
+    Select
 };

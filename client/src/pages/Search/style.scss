@@ -1,0 +1,162 @@
+@import './../../shared/styles/colors.scss';
+
+.search--page {
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+    flex: 1 1 100%;
+
+    width: 100%;
+    height: 100%;
+
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        color: map-get($map: $secondary, $key: 'light');
+        border: none;
+        padding: 12px 0;
+        border-bottom: 1px solid;
+        border-color: map-get($map: $primary, $key: 'dark');
+    }
+
+    &__separator {
+        width: 1px;
+        height: 100%;
+        background-color: map-get($map: $primary, $key: 'dark');
+    }
+    &__settings {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: none;
+
+        &__text {
+            font-weight: bold;
+            color: black;
+        }
+
+        &__experience {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            font-weight: bold;
+            color: black;
+
+            &--title {
+                flex: 1 0 45px;
+            }
+
+            &--values {
+                display: flex;
+                color: map-get($map: $secondary, $key: 'light');
+                align-items: center;
+                flex-direction: row;
+                gap: 12px;
+                padding-right: 8px;
+
+                input {
+                    flex: 1 1 100%;
+                    outline: none;
+                    background-color: map-get($map: $primary, $key: 'main');
+                    border: none;
+                    border-bottom: 1px solid
+                        map-get($map: $secondary, $key: 'light');
+                }
+            }
+        }
+    }
+
+    &__results {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+
+    &__setting--items {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        padding: 2rem;
+    }
+
+    &__setting--item {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 50px;
+    }
+
+    &__setting--buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        & > div {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__experience {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &--values {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 8px;
+
+            span {
+                flex: 1 0 40px;
+            }
+
+            select,
+            input {
+                border: none;
+                outline: none;
+                background-color: map-get($map: $primary, $key: 'main');
+                border-bottom: 1px solid;
+                border-color: map-get($map: $primary, $key: 'dark');
+            }
+        }
+    }
+
+    &__result--items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        flex: 1 1 100%;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        overflow: auto;
+        box-sizing: border-box;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        &::-webkit-scrollbar-button {
+            width: 30px; //for horizontal scrollbar
+            height: 30px; //for vertical scrollbar
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            // box-shadow: inset 0 0 4px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: map-get($map: $primary, $key: 'dark');
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: darkgray;
+        }
+    }
+}

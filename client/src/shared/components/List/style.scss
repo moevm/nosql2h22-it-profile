@@ -1,0 +1,68 @@
+@import '../../styles/colors';
+
+.list {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    &__title {
+        font-size: 1em;
+        width: 100%;
+        min-width: 100px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        flex: 1 0 100%;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 4px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: map-get($map: $primary, $key: 'dark');
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: darkgray;
+        }
+    }
+
+    &__item {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+        z-index: 1;
+        overflow: visible;
+
+        &--content {
+            flex: 1 1 100%;
+        }
+        &--tools {
+            display: flex;
+        }
+    }
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: map-get($map: $primary, $key: 'dark');
+}
