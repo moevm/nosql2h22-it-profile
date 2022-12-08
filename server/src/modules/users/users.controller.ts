@@ -1,5 +1,17 @@
-import { Controller, Get } from "routing-controllers";
-import { UsersService } from "./users.servise";
+import { Request, Response } from "express";
+import {
+  Body,
+  Controller,
+  Get,
+  Params,
+  Post,
+  Put,
+  QueryParams,
+  Req,
+  Res,
+} from "routing-controllers";
+import { CreateUserDto } from "./dtos/create-user.dto";
+import { UsersService } from "./users.service";
 
 @Controller("/users")
 export class UsersController {
@@ -9,8 +21,12 @@ export class UsersController {
     this.service = new UsersService();
   }
 
-  @Get("/")
-  async getUsers() {
-    return await this.service.getUsers();
+  @Get("/:id")
+  async getInfo() {}
+
+  @Put("/:id")
+  async updateUser(@Body() body: CreateUserDto, @Res() res: Response) {
+    return body;
   }
+
 }

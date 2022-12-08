@@ -5,8 +5,12 @@ import { controllers } from "./modules";
 import * as dotenv from "dotenv";
 import mongoose from "mongoose";
 import { NextFunction, Request } from "express";
+import * as path from "path";
 
-dotenv.config({ path: `./.${process.env.NODE_ENV}.env` });
+dotenv.config({
+  path: path.resolve(__dirname, "..", `.${process.env.NODE_ENV}.env`),
+});
+console.log(path.resolve(__dirname, "..", `.${process.env.NODE_ENV}.env`));
 
 const app = createExpressServer({
   cors: true,
@@ -23,10 +27,12 @@ app.use("*", logger);
 
 async function serve(app, port: number) {
   try {
-    await mongoose.connect(process.env.DATABASE_URL, {
+    mongoose.set("strictQuery", true);
+
+    await mongoose.connect(process.env.DATABASE__URL, {
       auth: {
-        username: process.env.DATABASE_USERNAME,
-        password: process.env.DATABASE_PASSWORD,
+        username: process.env.DATABASE__USERNAME,
+        password: process.env.DATABASE__PASSWORD,
       },
       dbName: process.env.DATABASE__NAME,
     });

@@ -1,6 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { HomePageLazy, LoginPage, RegisterPageLazy, AddExperiencePage, SearchPage, ViewProfilePage } from '@pages';
+import {
+    HomePageLazy,
+    LoginPage,
+    RegisterPageLazy,
+    AddExperiencePage,
+    SearchPage,
+    ViewProfilePage
+} from '@pages';
 import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense } from 'react';
 import { RegLayout } from './shared/layout';
@@ -19,6 +26,17 @@ function App() {
                             </Suspense>
                         }
                     />
+                    <Route path="/stats" element={<div />} />
+                    <Route path="/view" element={<ViewProfilePage />} />
+                    <Route path="/search" element={<SearchPage />} />
+                    <Route
+                        path="/add-experience"
+                        element={<AddExperiencePage />}
+                    />
+                    <Route path="/profile" element={<div />} />
+
+                    <Route path="/edit-profile" element={<div />} />
+                    <Route path="/favorits" element={<div />} />
                 </Route>
                 <Route path="/sign-in" element={<LoginLayout />}>
                     <Route index element={<LoginPage />} />
@@ -32,15 +50,6 @@ function App() {
                             </Suspense>
                         }
                     />
-                </Route>
-                <Route path="/add-experience" element={<HomeLayout />}>
-                    <Route index element={<AddExperiencePage />} />
-                </Route>
-                <Route path="/search" element={<HomeLayout />}>
-                    <Route index element={<SearchPage />} />
-                </Route>
-                <Route path="/view" element={<HomeLayout />}>
-                    <Route index element={<ViewProfilePage />} />
                 </Route>
             </Routes>
         </>

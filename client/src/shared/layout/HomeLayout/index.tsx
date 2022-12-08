@@ -36,13 +36,13 @@ export default function HomeLayout() {
                                 <Menu open={openMenu}>
                                     <Menu.Body>
                                         <Menu.MenuItemGroup>
-                                            <Menu.MenuItem to={'/'}>
+                                            <Menu.MenuItem to={'/profile'}>
                                                 Profile
                                             </Menu.MenuItem>
-                                            <Menu.MenuItem to={'/'}>
+                                            <Menu.MenuItem to={'/edit-profile'}>
                                                 Edit Profile
                                             </Menu.MenuItem>
-                                            <Menu.MenuItem to={'/'}>
+                                            <Menu.MenuItem to={'/favorits'}>
                                                 Favorites
                                             </Menu.MenuItem>
                                         </Menu.MenuItemGroup>

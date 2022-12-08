@@ -10,10 +10,10 @@ services:
       - 55000:3000
 
     environment:
-      DATABASE_USERNAME: admin
-      DATABASE_PASSWORD: password
-      DATABASE_URL: "mongodb://database"
-      DATABASE_NAME: "it-profile"
+      DATABASE__USERNAME: admin
+      DATABASE__PASSWORD: password
+      DATABASE__URL: "mongodb://database"
+      DATABASE__NAME: "it-profile"
 
     volumes:
       - ../server/src:/usr/app/src
