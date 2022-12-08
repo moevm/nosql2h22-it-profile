@@ -3,7 +3,7 @@ import './style.scss';
 
 interface IListProps {
     children?: JSX.Element[] | JSX.Element | string;
-    title: string;
+    title: string | JSX.Element;
 }
 
 export default function List({ children, title }: IListProps) {
@@ -27,9 +27,7 @@ export function ListItem({
     toolElements,
     onClickDelete
 }: IListItemProps) {
-    const tools = toolElements ?? (
-        <ExitButton size="small" onClick={onClickDelete} />
-    );
+    const tools = toolElements;
 
     return (
         <div className="list__item">

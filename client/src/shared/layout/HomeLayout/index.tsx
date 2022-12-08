@@ -13,10 +13,10 @@ export default function HomeLayout() {
                     <h1>Portfolio</h1>
                 </Header.Left>
                 <Header.Center>
-                    <Link to="/" className="header__item--link">
+                    <Link to="/search" className="header__item--link">
                         SEARCH
                     </Link>
-                    <Link to="/" className="header__item--link">
+                    <Link to="/stats" className="header__item--link">
                         STATS
                     </Link>
                 </Header.Center>

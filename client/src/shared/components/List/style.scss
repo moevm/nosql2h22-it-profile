@@ -2,12 +2,13 @@
 
 .list {
     display: flex;
+    flex: 1 1 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
     &__title {
         font-size: 1em;
-        width: 200px;
+        width: 100%;
         min-width: 100px;
         font-weight: 600;
         text-transform: uppercase;
@@ -18,9 +19,8 @@
         flex-direction: column;
         align-items: stretch;
         gap: 4px;
-        max-height: 250px;
+        flex: 1 0 100%;
         overflow-y: auto;
-
         &::-webkit-scrollbar {
             width: 6px;
         }
@@ -49,6 +49,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 8px;
+        z-index: 1;
+        overflow: visible;
 
         &--content {
             flex: 1 1 100%;

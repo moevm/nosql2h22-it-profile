@@ -1,6 +1,6 @@
-@import "./../../styles/colors";
+@import './../../styles/colors';
 
-.multi--select {
+.select {
     text-align: left;
     border: none;
     width: 100%;
@@ -15,10 +15,10 @@
         justify-content: space-between;
         align-items: center;
         user-select: none;
-        border-bottom: 2px solid map-get($map: $secondary, $key: 'light');
-        
+        border-bottom: 2px solid map-get($map: $primary, $key: 'dark');
+
         &.open {
-            .multi--select__icon {
+            .select__icon {
                 transform: rotate(180deg);
             }
         }
@@ -26,18 +26,20 @@
 
     &__search {
         box-sizing: border-box;
-        padding: 4px;
+        // padding: 4px;
         position: sticky;
         top: 0;
+        flex: 1 1 100%;
         background-color: map-get($map: $primary, $key: 'main');
-        
+
         input {
+            background-color: map-get($map: $primary, $key: 'main');
             width: 100%;
             padding: 4px;
             box-sizing: border-box;
             outline: none;
+            border: none;
         }
-
     }
 
     &__selected--items {
@@ -45,7 +47,7 @@
         overflow: auto;
         padding: 4px;
     }
-    
+
     &__menu {
         position: absolute;
         width: 100%;
@@ -71,6 +73,4 @@
             background-color: map-get($map: $secondary, $key: 'light');
         }
     }
-
-
 }
