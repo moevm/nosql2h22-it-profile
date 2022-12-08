@@ -1,0 +1,120 @@
+@import './../../shared/styles/colors.scss';
+
+.view--page {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1200px;
+    margin: auto;
+
+    &__title {
+        font-weight: bold;
+        font-size: x-large;
+        color: map-get($map: $secondary, $key: 'main');
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 1rem 0;
+    }
+    &__experiences {
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &--title {
+            background-color: map-get($map: $primary, $key: 'main');
+            top: 0;
+            position: sticky;
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+
+        &--item {
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+            padding: 20px 0;
+        }
+    }
+    &__user {
+        &--info {
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+        &--name {
+            text-transform: uppercase;
+            font-size: 32pt;
+        }
+        &--age {
+            font-weight: bold;
+            font-size: 16pt;
+        }
+        &--specialty {
+            border-left: 6px solid map-get($map: $secondary, $key: 'light');
+            padding: 4px 1rem;
+            font-size: 18pt;
+            color: map-get($map: $secondary, $key: 'light');
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+    &__header {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        &--avatar {
+            height: 160px;
+        }
+
+        &--info {
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: map-get($map: $secondary, $key: 'light');
+        max-width: 1300px;
+    }
+    &__separator {
+        width: 1px;
+        background-color:  map-get($map: $primary, $key: 'dark');
+    }
+    &__addition {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 28px;
+
+        &--info {
+            flex: 1 1 360px;
+        }
+
+        &--infos {
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            // flex: 1 1 360px;
+        }
+
+        &--item {
+            border: none;
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+    }
+}

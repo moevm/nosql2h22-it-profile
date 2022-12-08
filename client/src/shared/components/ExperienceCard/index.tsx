@@ -9,7 +9,7 @@ interface IExperienceCardProps {
     description: string;
     techStack: string[];
     links?: Array<{ to: string; title: string }>;
-    onView?: boolean;
+    viewOnly?: boolean;
 }
 
 export default function ExperienceCard({
@@ -19,7 +19,7 @@ export default function ExperienceCard({
     description,
     techStack,
     links,
-    onView = false
+    viewOnly: onView = false
 }: IExperienceCardProps) {
     return (
         <div className="exp--card">
