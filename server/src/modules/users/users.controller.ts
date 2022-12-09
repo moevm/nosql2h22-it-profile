@@ -9,9 +9,12 @@ import {
   QueryParams,
   Req,
   Res,
+  UseBefore,
 } from "routing-controllers";
-import { CreateUserDto } from "./dtos/create-user.dto";
+import { validate } from "../../shared/middlewares/validate";
+import { CreateUserSchema } from "./schemas/create-user.schema";
 import { UsersService } from "./users.service";
+import { z } from "zod";
 
 @Controller("/users")
 export class UsersController {
@@ -21,12 +24,10 @@ export class UsersController {
     this.service = new UsersService();
   }
 
-  @Get("/:id")
-  async getInfo() {}
-
-  @Put("/:id")
-  async updateUser(@Body() body: CreateUserDto, @Res() res: Response) {
-    return body;
+  @Post("/")
+  @UseBefore(validate({ body: CreateUserSchema }))
+  async getInfo(@Body() body: z.infer<typeof CreateUserSchema>) {
+    
+    return "okkkk";
   }
-
 }

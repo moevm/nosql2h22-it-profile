@@ -1,7 +1,9 @@
 {
-    "compilerOptions": {
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "rootDir": ".",
-    }
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "rootDir": ".",
+    "strict": true,
+    "noImplicitAny": false,
+  }
 }
