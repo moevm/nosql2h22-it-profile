@@ -90,7 +90,7 @@ export default function SearchPage() {
                                 <input type="text" placeholder="0" />
                                 <select name="experience--from">
                                     <option value="months">months</option>
-                                    <option value="years">yaers</option>
+                                    <option value="years">years</option>
                                 </select>
                             </div>
                             <div className="search--page__experience--values">
@@ -98,7 +98,7 @@ export default function SearchPage() {
                                 <input type="text" placeholder="0" />
                                 <select name="experience--to">
                                     <option value="months">months</option>
-                                    <option value="years">yaers</option>
+                                    <option value="years">years</option>
                                 </select>
                             </div>
                         </div>
