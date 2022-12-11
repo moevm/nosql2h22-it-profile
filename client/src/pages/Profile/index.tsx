@@ -94,7 +94,7 @@ export default function ProfilePage() {
                 <div className="profile--page__experiences__head">
                     <div>EXPERIENCES</div>
                     <div>
-                        <AddButton onClick={() => navigate('edit')} />
+                        <AddButton onClick={() => navigate('/add-experience')} />
                     </div>
                 </div>
                 <div className="profile--page__experiences__item">
