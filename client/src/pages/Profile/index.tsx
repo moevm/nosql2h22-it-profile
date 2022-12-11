@@ -15,6 +15,12 @@ export default function ProfilePage() {
 
     const navigate = useNavigate();
 
+    const [first_name, last_name] = ['Mikhail', 'Loykonen'];
+    const birth_date = '15.01.2001';
+    const [country, city] = ['Russia', 'St.Petersburg'];
+    const created_at = '10.12.2022';
+    const updated_at = '11.12.2022';
+
     return (
         <div className="profile--page">
             <div className="profile--page__menu">
@@ -22,54 +28,66 @@ export default function ProfilePage() {
                     <Avatar src={avatar} />
                 </div>
                 <div className="profile--page__menu--bold--text">
-                    Loykonen Mikhail
+                    {last_name} {first_name}
                 </div>
                 <div>
-                    <div className="profile--page__menu--text">15.01.2001</div>
                     <div className="profile--page__menu--text">
-                        St.Petersburg, Russia
+                        {birth_date}
+                    </div>
+                    <div className="profile--page__menu--text">
+                        {city}, {country}
                     </div>
                 </div>
                 <div className="profile--page__menu--times">
                     <div className="profile--page__menu--times--item">
                         <div>Created at:</div>
-                        <div>10.12.2022</div>
+                        <div>{created_at}</div>
                     </div>
                     <div className="profile--page__menu--times--item">
                         <div>Updated at:</div>
-                        <div>11.12.2022</div>
+                        <div>{updated_at}</div>
                     </div>
                 </div>
-                <MenuList
-                    title="SPECIALITY"
-                    state={specialityModal}
-                    changeState={setSpecialityModal}>
-                    <h1>Speciality modal</h1>
-                </MenuList>
-                <MenuList
-                    title="CONTACTS"
-                    state={contactsModal}
-                    changeState={setContactsModal}>
-                    <h1>Contacts modal</h1>
-                </MenuList>
-                <MenuList
-                    title="EDUCATION"
-                    state={educationModal}
-                    changeState={setEducationModal}>
-                    <h1>Education modal</h1>
-                </MenuList>
-                <MenuList
-                    title="SKILLS"
-                    state={skillsModal}
-                    changeState={setSkillsModal}>
-                    <h1>Skills modal</h1>
-                </MenuList>
-                <MenuList
-                    title="LANGUAGES"
-                    state={languagesModal}
-                    changeState={setLanguagesModal}>
-                    <h1>Languages modal</h1>
-                </MenuList>
+                <div>
+                    <MenuList
+                        title="SPECIALITY"
+                        state={specialityModal}
+                        changeState={setSpecialityModal}>
+                        <h1>Speciality modal</h1>
+                    </MenuList>
+                </div>
+                <div>
+                    <MenuList
+                        title="CONTACTS"
+                        state={contactsModal}
+                        changeState={setContactsModal}>
+                        <h1>Contacts modal</h1>
+                    </MenuList>
+                </div>
+                <div>
+                    <MenuList
+                        title="EDUCATION"
+                        state={educationModal}
+                        changeState={setEducationModal}>
+                        <h1>Education modal</h1>
+                    </MenuList>
+                </div>
+                <div>
+                    <MenuList
+                        title="SKILLS"
+                        state={skillsModal}
+                        changeState={setSkillsModal}>
+                        <h1>Skills modal</h1>
+                    </MenuList>
+                </div>
+                <div>
+                    <MenuList
+                        title="LANGUAGES"
+                        state={languagesModal}
+                        changeState={setLanguagesModal}>
+                        <h1>Languages modal</h1>
+                    </MenuList>
+                </div>
             </div>
 
             <div className="profile--page__experiences">
@@ -79,7 +97,7 @@ export default function ProfilePage() {
                         <AddButton onClick={() => navigate('edit')} />
                     </div>
                 </div>
-                <div className='profile--page__experiences__item'>
+                <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
@@ -88,7 +106,7 @@ export default function ProfilePage() {
                         techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
                     />
                 </div>
-                <div className='profile--page__experiences__item'>
+                <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
@@ -97,7 +115,7 @@ export default function ProfilePage() {
                         techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
                     />
                 </div>
-                <div className='profile--page__experiences__item'>
+                <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
@@ -106,7 +124,7 @@ export default function ProfilePage() {
                         techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
                     />
                 </div>
-                <div className='profile--page__experiences__item'>
+                <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
@@ -115,7 +133,7 @@ export default function ProfilePage() {
                         techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
                     />
                 </div>
-                <div className='profile--page__experiences__item'>
+                <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
