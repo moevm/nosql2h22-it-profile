@@ -18,15 +18,14 @@ export default function TextInput({
     error
 }: IProps) {
     return (
-        <Field title={title} error={error}>
-            <input
-                name={name}
-                className="text--field__input"
-                type="text"
-                placeholder={placeholder}
-                defaultValue={defaultValue}
-                onChange={onChange}
-            />
-        </Field>
+        <Field
+            title={title}
+            name={name}
+            type="text"
+            placeholder={placeholder}
+            defaultValue={defaultValue}
+            onChange={onChange}
+            error={error}
+        />
     );
 }

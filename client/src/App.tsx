@@ -12,6 +12,7 @@ import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense } from 'react';
 import { RegLayout } from './shared/layout';
 import LoginLayout from './shared/layout/LoginLayout';
+import EditProfile from './pages/EditProfile';
 
 function App() {
     return (
@@ -35,7 +36,7 @@ function App() {
                     />
                     <Route path="/profile" element={<div />} />
 
-                    <Route path="/edit-profile" element={<div />} />
+                    <Route path="/profile/edit" element={<EditProfile />} />
                     <Route path="/favorits" element={<div />} />
                 </Route>
                 <Route path="/sign-in" element={<LoginLayout />}>
