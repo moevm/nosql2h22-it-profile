@@ -48,53 +48,50 @@ export default function ProfilePage() {
                         <div>{updated_at}</div>
                     </div>
                 </div>
-                <div>
-                    <MenuList
-                        title="SPECIALITY"
-                        state={specialityModal}
-                        changeState={setSpecialityModal}>
-                        <h1>Speciality modal</h1>
-                    </MenuList>
-                </div>
-                <div>
-                    <MenuList
-                        title="CONTACTS"
-                        state={contactsModal}
-                        changeState={setContactsModal}>
-                        <h1>Contacts modal</h1>
-                    </MenuList>
-                </div>
-                <div>
-                    <MenuList
-                        title="EDUCATION"
-                        state={educationModal}
-                        changeState={setEducationModal}>
-                        <h1>Education modal</h1>
-                    </MenuList>
-                </div>
-                <div>
-                    <MenuList
-                        title="SKILLS"
-                        state={skillsModal}
-                        changeState={setSkillsModal}>
-                        <h1>Skills modal</h1>
-                    </MenuList>
-                </div>
-                <div>
-                    <MenuList
-                        title="LANGUAGES"
-                        state={languagesModal}
-                        changeState={setLanguagesModal}>
-                        <h1>Languages modal</h1>
-                    </MenuList>
-                </div>
+
+                <MenuList
+                    title="SPECIALITY"
+                    state={specialityModal}
+                    changeState={setSpecialityModal}>
+                    <h1>Speciality modal</h1>
+                </MenuList>
+
+                <MenuList
+                    title="CONTACTS"
+                    state={contactsModal}
+                    changeState={setContactsModal}>
+                    <h1>Contacts modal</h1>
+                </MenuList>
+
+                <MenuList
+                    title="EDUCATION"
+                    state={educationModal}
+                    changeState={setEducationModal}>
+                    <h1>Education modal</h1>
+                </MenuList>
+
+                <MenuList
+                    title="SKILLS"
+                    state={skillsModal}
+                    changeState={setSkillsModal}>
+                    <h1>Skills modal</h1>
+                </MenuList>
+
+                <MenuList
+                    title="LANGUAGES"
+                    state={languagesModal}
+                    changeState={setLanguagesModal}>
+                    <h1>Languages modal</h1>
+                </MenuList>
             </div>
 
             <div className="profile--page__experiences">
                 <div className="profile--page__experiences__head">
                     <div>EXPERIENCES</div>
                     <div>
-                        <AddButton onClick={() => navigate('/add-experience')} />
+                        <AddButton
+                            onClick={() => navigate('/add-experience')}
+                        />
                     </div>
                 </div>
                 <div className="profile--page__experiences__item">

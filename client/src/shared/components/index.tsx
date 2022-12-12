@@ -31,7 +31,7 @@ export {
     UserCard,
     Select,
     GenderToggle,
-    EmailInput
+    EmailInput,
     AddButton,
     ModalWindow
 };
