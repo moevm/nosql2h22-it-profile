@@ -1,0 +1,83 @@
+@import './../../shared/styles/_colors.scss';
+
+.profile--page {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex: 1 1 100%;
+    
+
+    &__menu {
+        padding: 0 24px;
+        border: none;
+        border-right: 1px solid map-get($map: $primary, $key: 'dark');
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 300px;
+        
+
+        &--avatar {
+            max-width: 150px;
+            margin: 0 auto;
+        }
+
+        &--text {
+            font-size: 16px;
+        }
+
+        &--bold--text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        &--times {
+            color: map-get($map: $secondary, $key: 'light');
+            border: none;
+            border-top: 1px solid map-get($map: $primary, $key: 'dark');
+            padding: 12px 0;
+
+            &--item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        // &--list {
+        //     &__head {
+        //         display: flex;
+        //         flex-direction: row;
+        //         justify-content: space-between;
+        //         border: none;
+        //         border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        //         padding: 4px 0;
+        //     }
+        // }
+    }
+
+    &__experiences {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 75%;
+        gap: 32px;
+        overflow: auto;
+        padding-right: 16px;
+
+        &__head {
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 32px;
+            gap: 18px;
+            border: none;
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+
+        &__item {
+            padding: 16px 0;
+            border: none;
+            border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+    }
+}

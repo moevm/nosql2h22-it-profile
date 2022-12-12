@@ -13,6 +13,8 @@ import EmailInput from './Form/EmailInput';
 import DateInput from './Form/DateInput';
 import UserCard from './UserCard';
 import GenderToggle from './Form/GenderToggle';
+import AddButton from './AddButton';
+import ModalWindow from './ModalWindow';
 
 export {
     Chip,
@@ -30,4 +32,6 @@ export {
     Select,
     GenderToggle,
     EmailInput
+    AddButton,
+    ModalWindow
 };
