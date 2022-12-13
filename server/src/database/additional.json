@@ -1,0 +1,388 @@
+[{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf2"
+  },
+  "city": "St.Petersburg",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Frontend",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79539264831"
+    },
+    {
+      "type": "mail",
+      "value": "felis.eget.varius@protonmail.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "JavaScipt",
+    "TypeScript"
+  ],
+  "skills": [
+    "Git",
+    "Figma",
+    "React",
+    "Redux",
+    "Bootstrap 5",
+    "Docker",
+    "Vite"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf3"
+  },
+  "city": "New York",
+  "country": "USA",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "1-628-925-7582"
+    },
+    {
+      "type": "mail",
+      "value": "egestas.nunc@icloud.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "JavaScipt",
+    "TypeScript"
+  ],
+  "skills": [
+    "Git",
+    "Docker",
+    "Node",
+    "Express",
+    "NestJS",
+    "MySQL",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf4"
+  },
+  "city": "Mumbai",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Middle"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 117 6943769"
+    },
+    {
+      "type": "mail",
+      "value": "torquent.per@outlook.ca"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "JavaScipt",
+    "Python"
+  ],
+  "skills": [
+    "Git",
+    "Docker",
+    "Node",
+    "express",
+    "Django",
+    "PostgreSQL",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf5"
+  },
+  "city": "St.Petersburg",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Gamedev",
+      "level": "Middle"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79899234832"
+    },
+    {
+      "type": "mail",
+      "value": "eleifend.nunc@aol.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "C++",
+    "C#",
+    "Java"
+  ],
+  "skills": [
+    "Git",
+    ".NET",
+    "Unity3D",
+    "Android",
+    "iOS"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf6"
+  },
+  "city": "Moscow",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Gamedev",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79539264831"
+    },
+    {
+      "type": "mail",
+      "value": "mattis@icloud.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "C++",
+    "C#",
+    "Java"
+  ],
+  "skills": [
+    "Git",
+    "OpenGL",
+    "DirectX",
+    "Unreal Engine 4",
+    "UI",
+    "Blender"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf7"
+  },
+  "city": "Delhi",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Mobile Developer",
+      "level": "Junior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 72 54608684"
+    },
+    {
+      "type": "mail",
+      "value": "gravida@hotmail.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "Kotlin",
+    "Swift"
+  ],
+  "skills": [
+    "Git",
+    "Android",
+    "iOS",
+    "SQLite"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf8"
+  },
+  "city": "Astana",
+  "country": "Kazakhstan",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "DevOps",
+      "level": "Junior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79317561031"
+    },
+    {
+      "type": "mail",
+      "value": "aliquam@aol.com"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "Java",
+    "Scala"
+  ],
+  "skills": [
+    "Git",
+    "PostgreSQL",
+    "Gitlab",
+    "Nginx",
+    "Docker",
+    "Jenkins",
+    "RabbitMQ"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf9"
+  },
+  "city": "Mumbai",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "DevOps",
+      "level": "Expert"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 236 0878041"
+    },
+    {
+      "type": "mail",
+      "value": "arcu@protonmail.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "Python",
+    "Java"
+  ],
+  "skills": [
+    "Git",
+    "MySQL",
+    "Docker",
+    "Kubernetes",
+    "GitLab",
+    "Bash",
+    "Ansible",
+    "Cassandra",
+    "Prometheus",
+    "RabbitMQ",
+    "Grafana"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbfa"
+  },
+  "city": "Astana",
+  "country": "Kazakhstan",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Team Lead"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+77339374812"
+    },
+    {
+      "type": "mail",
+      "value": "aliquam.enim@aol.org"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "Java",
+    "Python"
+  ],
+  "skills": [
+    "Git",
+    "FastAPI",
+    "Flask",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker"
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbfb"
+  },
+  "city": "Moscow",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Frontend",
+      "level": "Intern"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79933264230"
+    },
+    {
+      "type": "mail",
+      "value": "molestie.sodales@yahoo.org"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [],
+  "languages": [
+    "JavaScipt",
+    "TypeScript"
+  ],
+  "skills": [
+    "Git",
+    "React",
+    "Redux",
+    "Bootstrap 5",
+    "WebPack"
+  ]
+}]

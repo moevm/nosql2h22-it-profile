@@ -6,8 +6,6 @@
   "last_name": "Howell",
   "email": "felis.eget.varius@protonmail.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Poland",
-  "city": "Languedoc-Roussillon",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -15,7 +13,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf2"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d0480f"
@@ -24,8 +24,6 @@
   "last_name": "Hardin",
   "email": "egestas.nunc@icloud.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Vietnam",
-  "city": "Biobío",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -33,7 +31,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf3"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04810"
@@ -42,8 +42,6 @@
   "last_name": "Emerson",
   "email": "torquent.per@outlook.ca",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "New Zealand",
-  "city": "Istanbul",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -51,7 +49,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf4"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04811"
@@ -60,8 +60,6 @@
   "last_name": "Vincent",
   "email": "eleifend.nunc@aol.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Italy",
-  "city": "Arequipa",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -69,7 +67,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf5"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04812"
@@ -78,8 +78,6 @@
   "last_name": "Stone",
   "email": "mattis@icloud.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Brazil",
-  "city": "Calabarzon",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -87,7 +85,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf6"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04813"
@@ -96,8 +96,6 @@
   "last_name": "Castro",
   "email": "gravida@hotmail.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "South Africa",
-  "city": "Ceuta",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -105,7 +103,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf7"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04814"
@@ -114,8 +114,6 @@
   "last_name": "Farmer",
   "email": "aliquam@aol.com",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Peru",
-  "city": "Sumy oblast",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -123,7 +121,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf8"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04815"
@@ -132,8 +132,6 @@
   "last_name": "Beasley",
   "email": "arcu@protonmail.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Colombia",
-  "city": "Małopolskie",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -141,7 +139,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf9"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04816"
@@ -150,8 +150,6 @@
   "last_name": "Mccarthy",
   "email": "aliquam.enim@aol.org",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Ukraine",
-  "city": "Podkarpackie",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -159,7 +157,9 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbfa"
+  }
 },{
   "_id": {
     "$oid": "639780520fa7b7e483d04817"
@@ -168,8 +168,6 @@
   "last_name": "Rogers",
   "email": "molestie.sodales@yahoo.org",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
-  "country": "Chile",
-  "city": "Rio Grande do Sul",
   "brith_date": {
     "$numberLong": "946677660000"
   },
@@ -177,5 +175,7 @@
   "role": [
     "USER"
   ],
-  "information": null
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbfb"
+  }
 }]

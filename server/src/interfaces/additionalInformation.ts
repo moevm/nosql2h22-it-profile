@@ -15,7 +15,7 @@ export interface IAdditionalInformation {
 }
 
 interface ISpecialty {
-    directoion: string;
+    direction: string;
     level: string;
 }
 
