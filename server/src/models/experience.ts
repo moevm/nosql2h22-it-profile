@@ -1,9 +1,8 @@
-import { Document, model, Schema, Types } from "mongoose";
-import { IExperience } from "../interfaces/experience.interface";
-
+import { IExperience } from "../interfaces";
+import { model, Schema, Types } from "mongoose";
 export type ExperienceDocument = IExperience & Document;
 
-const experienceSchema = new Schema(
+const ExperienceSchema = new Schema(
   {
     company: String,
     project_name: String,
@@ -11,10 +10,8 @@ const experienceSchema = new Schema(
     description: String,
     start: Number,
     end: Number,
-    links: { type: [String] },
-    tech_stack: { type: [String] },
-    created_at: Number,
-    updated_at: Number,
+    links: [String],
+    tech_stack: [String],
   },
   {
     timestamps: {
@@ -25,7 +22,7 @@ const experienceSchema = new Schema(
   }
 );
 
-export const ExperiencesModel = model<ExperienceDocument>(
+export const ExperienceModel = model<ExperienceDocument>(
   "Experiences",
-  experienceSchema
+  ExperienceSchema
 );

@@ -1,13 +1,14 @@
 import "reflect-metadata";
-import { createExpressServer, useExpressServer } from "routing-controllers";
+import { useExpressServer } from "routing-controllers";
 import { DisableCorsMiddleware } from "./middlewares/disable-cors";
 import { controllers } from "./modules";
 import * as dotenv from "dotenv";
 import mongoose from "mongoose";
-import { NextFunction, Request } from "express";
 import * as path from "path";
-import bodyParser = require("body-parser");
+import * as bodyParser from "body-parser";
+import * as cookieParser from "cookie-parser";
 import express = require("express");
+import { authorizationChecker } from "./middlewares/auth";
 
 dotenv.config({
   path: path.resolve(__dirname, "..", `.${process.env.NODE_ENV}.env`),
@@ -15,14 +16,16 @@ dotenv.config({
 
 const app = express();
 
+app.use(cookieParser());
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
 
-
 const server = useExpressServer(app, {
+  authorizationChecker,
   cors: true,
   controllers,
   middlewares: [DisableCorsMiddleware],

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import {
+  Authorized,
   Body,
   Controller,
   Get,
@@ -17,6 +18,7 @@ import { UsersService } from "./users.service";
 import { z } from "zod";
 
 @Controller("/users")
+@Authorized(["USER"])
 export class UsersController {
   private readonly service: UsersService;
 
@@ -27,7 +29,6 @@ export class UsersController {
   @Post("/")
   @UseBefore(validate({ body: CreateUserSchema }))
   async getInfo(@Body() body: z.infer<typeof CreateUserSchema>) {
-    
     return "okkkk";
   }
 }
