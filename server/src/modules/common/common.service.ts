@@ -1,14 +1,24 @@
-import { ExperiencesModel } from "../../models/experiences";
-import { UsersModel } from "../../models/users";
+import { UserDocument } from "../../models";
+import { UsersService } from "../profile/users.service";
+
+interface IUserService {
+  getUsers: (limit: number, skip: number) => Promise<any[]>;
+  getUserForView: (id: string) => Promise<any>;
+}
 
 export class CommonService {
+  userService!: IUserService;
+
+  constructor() {
+    this.userService = new UsersService();
+  }
   async searchUsers(params: any) {
     // const new_exp = new ExperiencesModel({});
     // await new_exp.save();
 
     let limit = parseInt(params.limit);
     let skip = limit * (parseInt(params.page) - 1);
-    
+
     let searchedUsers: any = {}; // не знаю какой тут тип указать
     if (params?.specialization) {
       searchedUsers.specialization = params.specialization;
@@ -28,10 +38,14 @@ export class CommonService {
     if (params?.experience_to) {
       searchedUsers.experience_to = params.experience_to;
     }
-    
+
     // Здесь необходимо добавить запрос к БД для получения списка пользователей, которые удовлетворяют переданным параметрам
     // skip и limit нужны для пагинации
 
-    return {limit, skip};
+    return this.userService.getUsers(limit, skip);
+  }
+
+  async getUserForView(id: string) {
+    return await this.userService.getUserForView(id);
   }
 }

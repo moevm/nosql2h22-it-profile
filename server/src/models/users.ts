@@ -10,7 +10,7 @@ const userSchema = new Schema(
     last_name: { type: String },
     birth_date: { type: Number },
     sex: { type: String },
-    role: { type: [String] },
+    roles: { type: [String] },
     information: { type: Types.ObjectId, ref: "Information", default: null },
     photo: { type: String, default: null },
     password: { type: String },
@@ -21,6 +21,8 @@ const userSchema = new Schema(
       createdAt: "created_at",
       updatedAt: "updated_at",
     },
+
+    versionKey: false,
   }
 );
 

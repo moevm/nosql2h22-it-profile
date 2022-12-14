@@ -5,3 +5,4 @@ export * from './information.interface';
 export * from './specialty.interface';
 export * from './user.interface';
 export * from './skills.interface';
+export * from './languages.interface';

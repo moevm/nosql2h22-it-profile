@@ -1,15 +1,16 @@
 import { IInformation } from "../interfaces";
 import { model, Schema, Types } from "mongoose";
 import { EducationModel } from "./educations";
-import { ExperienceModel } from "./experience";
-export type InformationDocument = IInformation & Document;
+import { ExperiencesModel } from "./experiences";
+
+export interface InformationDocument extends IInformation, Document {}
 
 const SpecialtySchema = new Schema(
   {
     direction: String,
     level: String,
   },
-  { _id: false }
+  { versionKey: false }
 );
 
 const ContactsSchema = new Schema(
@@ -17,13 +18,24 @@ const ContactsSchema = new Schema(
     type: String,
     value: String,
   },
-  { _id: false }
+  { versionKey: false }
 );
 
-const skillsSchema = new Schema({
-  title: String,
-  level: String,
-});
+const skillsSchema = new Schema(
+  {
+    title: String,
+    level: String,
+  },
+  { versionKey: false }
+);
+
+const languageSchema = new Schema(
+  {
+    title: String,
+    level: String,
+  },
+  { versionKey: false }
+);
 
 const InformationSchema = new Schema(
   {
@@ -45,19 +57,24 @@ const InformationSchema = new Schema(
       default: [],
     },
     favorites: {
-      type: [String],
+      type: [
+        {
+          type: Types.ObjectId,
+          ref: "Users",
+        },
+      ],
       default: [],
     },
     experiences: {
       type: [
         {
           type: Types.ObjectId,
-          ref: ExperienceModel.modelName,
+          ref: ExperiencesModel.modelName,
         },
       ],
       default: [],
     },
-    languages: { type: [String], default: [] },
+    languages: { type: [languageSchema], default: [] },
     skills: { type: [skillsSchema], default: [] },
   },
   {

@@ -8,7 +8,8 @@ import * as path from "path";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import express = require("express");
-import { authorizationChecker } from "./middlewares/auth";
+import { authorizationChecker } from "./middlewares/authorizationChecker";
+import { currentUserChecker } from "./middlewares/currentUserChecker";
 
 dotenv.config({
   path: path.resolve(__dirname, "..", `.${process.env.NODE_ENV}.env`),
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const server = useExpressServer(app, {
+  currentUserChecker,
   authorizationChecker,
   cors: true,
   controllers,

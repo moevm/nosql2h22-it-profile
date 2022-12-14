@@ -1,4 +1,4 @@
-import { Document, model, Schema} from "mongoose";
+import { Document, model, Schema } from "mongoose";
 import { IAdditionalInformation } from "../interfaces/additionalInformation";
 
 export type AdditionDocument = IAdditionalInformation & Document;
@@ -15,6 +15,9 @@ const additionSchema = new Schema(
     experiences: { type: [String] },
     languages: { type: [String] },
     skills: { type: [String] },
+  },
+  {
+    versionKey: false,
   }
 );
 

@@ -1,5 +1,5 @@
 import { AdminController } from "./admin/admin.controller";
-import { AuthController } from "./auth/auth.controller";
+import { AuthController } from "../prifile/users.controller
 import { CommonController } from "./common/common.controller";
 import { UsersController } from "./users/users.controller";
 
