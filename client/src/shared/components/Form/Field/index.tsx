@@ -17,7 +17,7 @@ export default function Field({
     onChange,
     defaultValue,
     placeholder,
-    error
+    error,
 }: IProps) {
     return (
         <label className="text--field">

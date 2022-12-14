@@ -13,7 +13,7 @@ export function validate({
 }) {
   return class implements ExpressMiddlewareInterface {
     use(request: Request, response: Response, next: NextFunction) {
-      console.log(request.body);
+      console.log(request.query);
 
       try {
         body?.parse(request.body);

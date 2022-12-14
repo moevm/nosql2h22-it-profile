@@ -1,0 +1,181 @@
+[{
+  "_id": {
+    "$oid": "639780520fa7b7e483d0480e"
+  },
+  "first_name": "Rana",
+  "last_name": "Howell",
+  "email": "felis.eget.varius@protonmail.couk",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "W",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf2"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d0480f"
+  },
+  "first_name": "Zenia",
+  "last_name": "Hardin",
+  "email": "egestas.nunc@icloud.edu",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "W",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf3"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04810"
+  },
+  "first_name": "Arthur",
+  "last_name": "Emerson",
+  "email": "torquent.per@outlook.ca",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf4"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04811"
+  },
+  "first_name": "Dominic",
+  "last_name": "Vincent",
+  "email": "eleifend.nunc@aol.edu",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf5"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04812"
+  },
+  "first_name": "Amela",
+  "last_name": "Stone",
+  "email": "mattis@icloud.couk",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "W",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf6"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04813"
+  },
+  "first_name": "Paloma",
+  "last_name": "Castro",
+  "email": "gravida@hotmail.couk",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "W",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf7"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04814"
+  },
+  "first_name": "Keane",
+  "last_name": "Farmer",
+  "email": "aliquam@aol.com",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf8"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04815"
+  },
+  "first_name": "Kaseem",
+  "last_name": "Beasley",
+  "email": "arcu@protonmail.edu",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbf9"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04816"
+  },
+  "first_name": "Beau",
+  "last_name": "Mccarthy",
+  "email": "aliquam.enim@aol.org",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbfa"
+  }
+},{
+  "_id": {
+    "$oid": "639780520fa7b7e483d04817"
+  },
+  "first_name": "Hilel",
+  "last_name": "Rogers",
+  "email": "molestie.sodales@yahoo.org",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "brith_date": {
+    "$numberLong": "946677660000"
+  },
+  "sex": "M",
+  "role": [
+    "USER"
+  ],
+  "information": {
+    "$oid": "6398ec4111dbd7caec8ddbfb"
+  }
+}]

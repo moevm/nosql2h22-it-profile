@@ -9,8 +9,12 @@ import Avatar from './Form/Avatar';
 import ExperienceCard from './ExperienceCard';
 import TextInput from './Form/TextInput';
 import TextArea from './Form/TextArea';
+import EmailInput from './Form/EmailInput';
 import DateInput from './Form/DateInput';
 import UserCard from './UserCard';
+import GenderToggle from './Form/GenderToggle';
+import AddButton from './AddButton';
+import ModalWindow from './ModalWindow';
 
 export {
     Chip,
@@ -25,5 +29,9 @@ export {
     TextArea,
     DateInput,
     UserCard,
-    Select
+    Select,
+    GenderToggle,
+    EmailInput,
+    AddButton,
+    ModalWindow
 };

@@ -1,0 +1,22 @@
+@import './../../../../shared/styles/_colors.scss';
+
+.menu--list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 300px;
+
+    &--bold--text {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+        border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        padding: 4px 0;
+    }
+}
