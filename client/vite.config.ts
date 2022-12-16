@@ -9,6 +9,7 @@ export default defineConfig({
     server: {
         host: '0.0.0.0',
         port: 8080,
+        cors: true,
         watch: {
             ignored: ['!**/node_modules/**']
         }
@@ -19,9 +20,9 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'src'),
             '@interfaces': path.resolve(__dirname, 'src/shared/interfaces'),
             '@components': path.resolve(__dirname, 'src/shared/components'),
-            '@pages'     : path.resolve(__dirname, 'src/pages'),
-            '@store'     : path.resolve(__dirname, 'src/shared/store'),
-            '@asserts'     : path.resolve(__dirname, 'src/asserts')
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@store': path.resolve(__dirname, 'src/shared/store'),
+            '@asserts': path.resolve(__dirname, 'src/asserts')
         }
     }
 });

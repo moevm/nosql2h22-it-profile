@@ -16,8 +16,8 @@ export class CommonService {
     // const new_exp = new ExperiencesModel({});
     // await new_exp.save();
 
-    let limit = parseInt(params.limit);
-    let skip = limit * (parseInt(params.page) - 1);
+    let limit = parseInt(params.limit) ?? 10;
+    let skip = limit * (parseInt(params.page) - 1) ?? 0;
 
     let searchedUsers: any = {}; // не знаю какой тут тип указать
     if (params?.specialization) {
@@ -42,7 +42,7 @@ export class CommonService {
     // Здесь необходимо добавить запрос к БД для получения списка пользователей, которые удовлетворяют переданным параметрам
     // skip и limit нужны для пагинации
 
-    return this.userService.getUsers(limit, skip);
+    return await this.userService.getUsers(limit, skip);
   }
 
   async getUserForView(id: string) {

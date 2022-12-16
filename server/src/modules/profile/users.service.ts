@@ -61,7 +61,10 @@ export class UsersService {
     const info = await InformationModel.findById(information_id).exec();
 
     if (info) {
-      info.specialties.push(body);
+      info.specialties.push({
+        direction: body.direction,
+        level: body.level,
+      });
     }
 
     return info?.save();
@@ -81,7 +84,10 @@ export class UsersService {
     const info = await InformationModel.findById(information_id).exec();
 
     if (info) {
-      info.skills.push(body);
+      info.skills.push({
+        title: body.title,
+        level: body.level,
+      });
     }
 
     return info?.save();
@@ -101,7 +107,10 @@ export class UsersService {
     const info = await InformationModel.findById(information_id).exec();
 
     if (info) {
-      info.contacts.push(body);
+      info.contacts.push({
+        type: body.type,
+        value: body.type,
+      });
     }
 
     return info?.save();
@@ -131,7 +140,10 @@ export class UsersService {
     const info = await InformationModel.findById(information_id).exec();
 
     if (info) {
-      info.languages.push(body);
+      info.languages.push({
+        title: body.title,
+        level: body.level,
+      });
     }
 
     return info?.save();

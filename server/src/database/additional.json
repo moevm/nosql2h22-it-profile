@@ -25,17 +25,17 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "JavaScipt",
-    "TypeScript"
+    { "title": "JavaScipt" , "level": "middle" } ,
+    { "title": "TypeScript" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "Figma",
-    "React",
-    "Redux",
-    "Bootstrap 5",
-    "Docker",
-    "Vite"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "Figma" , "level": "middle" } ,
+    { "title": "React" , "level": "middle" } ,
+    { "title": "Redux" , "level": "middle" } ,
+    { "title": "Bootstrap 5" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } ,
+    { "title": "Vite" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -64,17 +64,17 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "JavaScipt",
-    "TypeScript"
+    { "title": "JavaScipt" , "level": "middle" } ,
+    { "title": "TypeScript" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "Docker",
-    "Node",
-    "Express",
-    "NestJS",
-    "MySQL",
-    "MongoDB"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } ,
+    { "title": "Node" , "level": "middle" } ,
+    { "title": "Express" , "level": "middle" } ,
+    { "title": "NestJS" , "level": "middle" } ,
+    { "title": "MySQL" , "level": "middle" } ,
+    { "title": "MongoDB" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -103,17 +103,17 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "JavaScipt",
-    "Python"
+    { "title": "JavaScipt" , "level": "middle" } ,
+    { "title": "Python" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "Docker",
-    "Node",
-    "express",
-    "Django",
-    "PostgreSQL",
-    "MongoDB"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } ,
+    { "title": "Node" , "level": "middle" } ,
+    { "title": "express" , "level": "middle" } ,
+    { "title": "Django" , "level": "middle" } ,
+    { "title": "PostgreSQL" , "level": "middle" } ,
+    { "title": "MongoDB" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -142,16 +142,16 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "C++",
-    "C#",
-    "Java"
+    { "title": "C++" , "level": "middle" } ,
+    { "title": "C#" , "level": "middle" } ,
+    { "title": "Java" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    ".NET",
-    "Unity3D",
-    "Android",
-    "iOS"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": ".NET" , "level": "middle" } ,
+    { "title": "Unity3D" , "level": "middle" } ,
+    { "title": "Android" , "level": "middle" } ,
+    { "title": "iOS" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -180,17 +180,13 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "C++",
-    "C#",
-    "Java"
+    { "title": "C++" , "level": "middle" } ,
+    { "title": "C#" , "level": "middle" } ,
+    { "title": "Java" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "OpenGL",
-    "DirectX",
-    "Unreal Engine 4",
-    "UI",
-    "Blender"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "OpenGL" , "level": "middle" } ,{ "title": "DirectX" , "level": "middle" } ,{ "title":  "Unreal Engine 4" , "level": "middle" } ,{ "title":  "UI" , "level": "middle" } ,{ "title": "Blender" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -223,10 +219,10 @@
     "Swift"
   ],
   "skills": [
-    "Git",
-    "Android",
-    "iOS",
-    "SQLite"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "Android" , "level": "middle" } ,
+    { "title": "iOS" , "level": "middle" } ,
+    { "title": "SQLite" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -255,17 +251,17 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "Java",
-    "Scala"
+    { "title": "Java" , "level": "middle" } ,
+    { "title": "Scala" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "PostgreSQL",
-    "Gitlab",
-    "Nginx",
-    "Docker",
-    "Jenkins",
-    "RabbitMQ"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "PostgreSQL" , "level": "middle" } ,
+    { "title": "Gitlab" , "level": "middle" } ,
+    { "title": "Nginx" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } ,
+    { "title": "Jenkins" , "level": "middle" } ,
+    { "title": "RabbitMQ" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -294,21 +290,21 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "Python",
-    "Java"
+    { "title": "Python" , "level": "middle" } ,
+    { "title": "Java" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "MySQL",
-    "Docker",
-    "Kubernetes",
-    "GitLab",
-    "Bash",
-    "Ansible",
-    "Cassandra",
-    "Prometheus",
-    "RabbitMQ",
-    "Grafana"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "MySQL" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } ,
+    { "title": "Kubernetes" , "level": "middle" } ,
+    { "title": "GitLab" , "level": "middle" } ,
+    { "title": "Bash" , "level": "middle" } ,
+    { "title": "Ansible" , "level": "middle" } ,
+    { "title": "Cassandra" , "level": "middle" } ,
+    { "title": "Prometheus" , "level": "middle" } ,
+    { "title": "RabbitMQ" , "level": "middle" } ,
+    { "title": "Grafana" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -337,16 +333,16 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "Java",
-    "Python"
+    { "title": "Java" , "level": "middle" } ,
+    { "title": "Python" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "FastAPI",
-    "Flask",
-    "PostgreSQL",
-    "MongoDB",
-    "Docker"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "FastAPI" , "level": "middle" } ,
+    { "title": "Flask" , "level": "middle" } ,
+    { "title": "PostgreSQL" , "level": "middle" } ,
+    { "title": "MongoDB" , "level": "middle" } ,
+    { "title": "Docker" , "level": "middle" } 
   ]
 },{
   "_id": {
@@ -375,14 +371,14 @@
   "favorites": [],
   "experiences": [],
   "languages": [
-    "JavaScipt",
-    "TypeScript"
+    { "title": "JavaScipt" , "level": "middle" } ,
+    { "title": "TypeScript" , "level": "middle" } 
   ],
   "skills": [
-    "Git",
-    "React",
-    "Redux",
-    "Bootstrap 5",
-    "WebPack"
+    { "title": "Git" , "level": "middle" } ,
+    { "title": "React" , "level": "middle" } ,
+    { "title": "Redux" , "level": "middle" } ,
+    { "title": "Bootstrap 5" , "level": "middle" } ,
+    { "title": "WebPack" , "level": "middle" } 
   ]
 }]

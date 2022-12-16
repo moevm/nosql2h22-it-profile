@@ -22,7 +22,7 @@ import ModalWindow from '../../shared/components/ModalWindow';
 import List from '../../shared/components/List';
 
 export default function HomePage() {
-    const { serverIsConnected } = useCheckServer();
+    // const { serverIsConnected } = useCheckServer();
 
     // const [openMenu, setOpenMenu] = useState(false);
 

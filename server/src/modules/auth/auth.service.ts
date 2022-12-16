@@ -1,4 +1,3 @@
-import { Service } from "typedi";
 import { sign_in__body } from "./zod-schemas/sign-in.schema";
 import { sign_up__body } from "./zod-schemas/sign-up.schema";
 import * as jwt from "jsonwebtoken";
@@ -7,7 +6,6 @@ import { BadRequestError, UnauthorizedError } from "routing-controllers";
 import * as bcrypt from "bcrypt";
 import { InformationModel } from "../../models/informations";
 
-@Service()
 export class AuthService {
   saltRounds = 10;
 
