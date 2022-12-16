@@ -15,6 +15,13 @@ services:
       DATABASE__URL: "mongodb://database"
       DATABASE__NAME: "it-profile"
 
+    networks:
+      server-database:
+        ipv4_address: 178.70.200.2
+
+      client-server:
+        ipv4_address: 178.70.100.2
+
     volumes:
       - ../server/src:/usr/app/src
 
@@ -31,11 +38,17 @@ services:
     volumes:
       - ../client/src:/usr/app/src
 
+    environment:
+      SERVER__URL: "http://backend"
+
     ports:
       - 8080:8080
 
     depends_on:
       - backend
+
+    networks:
+      - client-server
 
   database:
     image: mongo
@@ -48,3 +61,24 @@ services:
 
     ports:
       - 57017:27017
+
+    networks:
+      server-database:
+        ipv4_address: 178.70.200.5
+
+networks:
+  server-database:
+    name: server-database
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 178.70.200.0/24
+          gateway: 178.70.200.1
+
+  client-server:
+    name: client-server
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 178.70.100.0/24
+          gateway: 178.70.100.1

@@ -7,32 +7,32 @@ export interface InformationDocument extends IInformation, Document {}
 
 const SpecialtySchema = new Schema(
   {
-    direction: String,
-    level: String,
+    direction: { type: String, required: true },
+    level: { type: String, required: true },
   },
   { versionKey: false }
 );
 
 const ContactsSchema = new Schema(
   {
-    type: String,
-    value: String,
+    type: { type: String, required: true },
+    value: { type: String, required: true },
   },
   { versionKey: false }
 );
 
 const skillsSchema = new Schema(
   {
-    title: String,
-    level: String,
+    title: { type: String, required: true },
+    level: { type: String, required: true },
   },
   { versionKey: false }
 );
 
 const languageSchema = new Schema(
   {
-    title: String,
-    level: String,
+    title: { type: String, required: true },
+    level: { type: String, required: true },
   },
   { versionKey: false }
 );

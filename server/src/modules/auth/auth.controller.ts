@@ -3,11 +3,9 @@ import { validate } from "../../shared/middlewares/validate";
 import { AuthService } from "./auth.service";
 import { sign_in__body } from "./zod-schemas/sign-in.schema";
 import { sign_up__body } from "./zod-schemas/sign-up.schema";
-import { Service } from "typedi";
 import { Response } from "express";
 
 @Controller("auth")
-@Service()
 export class AuthController {
   constructor(private readonly service: AuthService) {}
 

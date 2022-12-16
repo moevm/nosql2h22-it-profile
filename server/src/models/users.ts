@@ -1,5 +1,6 @@
 import { IUser } from "../interfaces";
 import { Document, model, Schema, Types } from "mongoose";
+import { InformationModel } from "./informations";
 
 export type UserDocument = IUser & Document;
 
@@ -11,7 +12,11 @@ const userSchema = new Schema(
     birth_date: { type: Number },
     sex: { type: String },
     roles: { type: [String] },
-    information: { type: Types.ObjectId, ref: "Information", default: null },
+    information: {
+      type: Types.ObjectId,
+      ref: InformationModel.modelName,
+      default: null,
+    },
     photo: { type: String, default: null },
     password: { type: String },
   },
