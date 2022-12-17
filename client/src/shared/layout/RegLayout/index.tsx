@@ -23,17 +23,7 @@ export default function RegLayout() {
                 </Header.Right>
             </Header>
             <SplitScreen>
-                <SplitScreen.LeftSide>
-                    <Outlet />
-                </SplitScreen.LeftSide>
-                <SplitScreen.RightSide>
-                    <div
-                        style={{
-                            backgroundColor: 'darkgray',
-                            width: '100%',
-                            height: '100%'
-                        }}></div>
-                </SplitScreen.RightSide>
+                <Outlet />
             </SplitScreen>
         </>
     );

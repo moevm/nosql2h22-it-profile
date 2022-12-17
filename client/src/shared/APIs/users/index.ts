@@ -1,4 +1,4 @@
-import { fetchInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class UsersAPIs {
     async getUser(id: string) {

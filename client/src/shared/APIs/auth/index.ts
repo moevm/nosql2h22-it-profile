@@ -1,17 +1,17 @@
 import { IUser } from '@interfaces';
-import { fetchInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class AuthAPIs {
     async signUp(data: Omit<IUser, 'role' | 'information'>) {
-        return await fetchInstance.post('sign-up', data);
+        return await fetchInstance.post('auth/sign-up', data);
     }
 
     async signIn(data: { password: string; login: string }) {
-        return await fetchInstance.post('sign-in', data);
+        return await fetchInstance.post('auth/sign-in', data);
     }
 
     async signOut() {
-        return await fetchInstance.get('sign-out');
+        return await fetchInstance.get('auth/sign-out');
     }
 }
 

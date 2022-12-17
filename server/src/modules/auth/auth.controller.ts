@@ -5,9 +5,13 @@ import { sign_in__body } from "./zod-schemas/sign-in.schema";
 import { sign_up__body } from "./zod-schemas/sign-up.schema";
 import { Response } from "express";
 
-@Controller("auth")
+@Controller("/auth")
 export class AuthController {
-  constructor(private readonly service: AuthService) {}
+  private service!: AuthService;
+
+  constructor() {
+    this.service = new AuthService();
+  }
 
   @Post("/sign-up")
   @UseBefore(validate({ body: sign_up__body }))
@@ -20,10 +24,7 @@ export class AuthController {
 
   @Post("/sign-in")
   @UseBefore(validate({ body: sign_in__body }))
-  async login(
-    @Body() body: Zod.infer<typeof sign_in__body>,
-    @Res() res: Response
-  ) {
+  async login(@Body() body: any, @Res() res: Response) {
     const tokens = await this.service.login(body);
     return res.status(200).send(tokens);
   }

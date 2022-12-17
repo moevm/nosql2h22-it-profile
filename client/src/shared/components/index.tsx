@@ -8,6 +8,7 @@ import Menu from './Menu';
 import Avatar from './Form/Avatar';
 import ExperienceCard from './ExperienceCard';
 import TextInput from './Form/TextInput';
+import PasswordInput from './Form/PasswordInput';
 import TextArea from './Form/TextArea';
 import EmailInput from './Form/EmailInput';
 import DateInput from './Form/DateInput';
@@ -33,5 +34,6 @@ export {
     GenderToggle,
     EmailInput,
     AddButton,
+    PasswordInput,
     ModalWindow
 };

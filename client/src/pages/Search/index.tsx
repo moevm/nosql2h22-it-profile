@@ -4,20 +4,13 @@ import Button from '../../shared/components/Button';
 import { searchAPIs } from '../../shared/APIs/search';
 import './style.scss';
 import { IUser } from '@interfaces';
+import { useSelect } from '../../shared/hooks/useSelect';
+import cites from './../../shared/data/cities.json';
 
 export default function SearchPage() {
-    const [specializationItems] = useState([
-        'Backend',
-        'Frontend',
-        'DevOps',
-        'Fullstack',
-        'Gamedev',
-        'Data Science',
-        'Desktop'
-    ]);
+    const specializations = useSelect(['Backend', 'Frontend', 'DevOps']);
 
-    const [languages] = useState([
-        'C',
+    const languages = useSelect([
         'C++',
         'C#',
         'Java',
@@ -32,8 +25,8 @@ export default function SearchPage() {
         'PHP'
     ]);
 
-    const [skills] = useState([
-        'MongoDB',
+    const skills = useSelect([
+        'Mongo',
         'MySQL',
         'PostgreSQL',
         'React',
@@ -73,7 +66,7 @@ export default function SearchPage() {
         'Figma'
     ]);
 
-    const [levels] = useState([
+    const levels = useSelect([
         'Intern',
         'Junior',
         'Middle',
@@ -82,13 +75,11 @@ export default function SearchPage() {
         'Team Lead'
     ]);
 
-    const [locations] = useState([
-        'Russia',
-        'India',
-        'USA',
-        'Kazakhstan',
-        'China'
-    ]);
+    const locations = useSelect(
+        (cites as unknown as { country: string; capital: string }[]).map(
+            ({ capital }) => capital
+        )
+    );
 
     const [users, setUsers] = useState<IUser[]>([]);
 
@@ -98,55 +89,27 @@ export default function SearchPage() {
         });
     }, []);
 
-    const [selectedSpecializations, setSelectedSpecializations] = useState<
-        string[]
-    >([]);
-    const onSpecializationSelectChange = (items: string[]) => {
-        setSelectedSpecializations(items);
-        // console.log(selectedSpecializations)
-    };
-
-    const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
-    const onSelectLanguageChange = (items: string[]) => {
-        setSelectedLanguages(items);
-    };
-
-    const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-    const onSkillsSelectChange = (items: string[]) => {
-        setSelectedSkills(items);
-    };
-
-    const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
-    const onLevelsSelectChange = (items: string[]) => {
-        setSelectedLevels(items);
-    };
-
-    const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
-    const onLocationsSelectChange = (items: string[]) => {
-        setSelectedLocations(items);
-    };
-
-    const resetOptions = () => {
-        setSelectedSpecializations([]);
-        setSelectedLanguages([]);
-        setSelectedSkills([]);
-        setSelectedLevels([]);
-        setSelectedLocations([]);
-    };
-
     const sendQuery = () => {
         searchAPIs
             .users({
-                specialization: selectedSpecializations,
-                language: selectedLanguages,
-                skills: selectedSkills,
-                level: selectedLevels,
-                countries: selectedLocations
+                specialization: specializations.items,
+                language: languages.items,
+                skills: skills.items,
+                level: levels.items,
+                countries: locations.items
             })
             .then((data) => {
                 setUsers(data);
             });
     };
+
+    function reset() {
+        specializations.reset();
+        languages.reset();
+        skills.reset();
+        locations.reset();
+        levels.reset();
+    }
 
     return (
         <div className="search--page">
@@ -157,41 +120,46 @@ export default function SearchPage() {
                     <div className="search--page__setting--item">
                         <Select
                             title="SPECIALIZATION"
-                            items={specializationItems}
-                            onChange={onSpecializationSelectChange}
-                            initialState={selectedSpecializations}
+                            items={specializations.items}
+                            variants={specializations.variants}
+                            onChange={specializations.change}
+                            onSearch={specializations.filter}
                         />
                     </div>
                     <div className="search--page__setting--item">
                         <Select
                             title="LANGUAGE"
-                            items={languages}
-                            onChange={onSelectLanguageChange}
-                            initialState={selectedLanguages}
+                            items={languages.items}
+                            variants={languages.variants}
+                            onChange={languages.change}
+                            onSearch={languages.filter}
                         />
                     </div>
                     <div className="search--page__setting--item">
                         <Select
                             title="SKILLS"
-                            items={skills}
-                            onChange={onSkillsSelectChange}
-                            initialState={selectedSkills}
+                            items={skills.items}
+                            variants={skills.variants}
+                            onChange={skills.change}
+                            onSearch={skills.filter}
                         />
                     </div>
                     <div className="search--page__setting--item">
                         <Select
                             title="LEVEL"
-                            items={levels}
-                            onChange={onLevelsSelectChange}
-                            initialState={selectedLevels}
+                            items={levels.items}
+                            variants={levels.variants}
+                            onChange={levels.change}
+                            onSearch={levels.filter}
                         />
                     </div>
                     <div className="search--page__setting--item">
                         <Select
                             title="LOCATION"
-                            items={locations}
-                            onChange={onLocationsSelectChange}
-                            initialState={selectedLocations}
+                            items={locations.items}
+                            variants={locations.variants}
+                            onChange={locations.change}
+                            onSearch={locations.filter}
                         />
                     </div>
                     {/* <div className="search--page__setting--item">
@@ -220,9 +188,7 @@ export default function SearchPage() {
 
                     <div className="search--page__setting--buttons search--page__setting--item">
                         <div>
-                            <Button
-                                variant="primary"
-                                onClick={() => resetOptions()}>
+                            <Button variant="primary" onClick={reset}>
                                 Reset
                             </Button>
                         </div>
@@ -241,7 +207,7 @@ export default function SearchPage() {
                     {users.map((user) => {
                         return (
                             <UserCard
-                                key={(user as unknown as { id: string }).id}
+                                key={(user as unknown as { _id: string })._id}
                                 data={user}></UserCard>
                         );
                     })}

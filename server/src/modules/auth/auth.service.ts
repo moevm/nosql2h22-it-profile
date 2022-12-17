@@ -14,18 +14,21 @@ export class AuthService {
 
     const information = await new InformationModel({}).save();
 
-    const new_user = new UserModel({
+    const new_user = await UserModel.create({
       password: password_hash,
       email: props.email,
       first_name: props.first_name,
       last_name: props.last_name,
-      role: ["USER"],
+      roles: ["USER"],
       sex: props.sex,
+      birth_date: props.birth_date,
       information,
     });
 
-    await new_user.save();
-    return "ok";
+    return {
+      status: 201,
+      message: "user created successfull",
+    };
   }
 
   async login(props: Zod.infer<typeof sign_in__body>) {

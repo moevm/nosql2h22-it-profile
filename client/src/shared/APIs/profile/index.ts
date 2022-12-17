@@ -6,7 +6,7 @@ import {
     ISkills,
     ISpecialty
 } from '@interfaces';
-import { fetchInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class ProfileAPIs {
     async createLanguage(data: ILanguage) {
@@ -28,24 +28,24 @@ class ProfileAPIs {
         return await fetchInstance.post(`expirences/new`, data);
     }
 
-    // async deleteLanguage(id: string) {
-    //     return await fetchInstance.delete(`languages/${id}`);
-    // }
-    // async deleteEducation(id: string) {
-    //     return await fetchInstance.delete(`educations/${id}`);
-    // }
-    // async deleteSpecialty(id: string) {
-    //     return await fetchInstance.delete(`specialties/${id}`);
-    // }
-    // async deleteSkill(id: string) {
-    //     return await fetchInstance.delete(`skills/${id}`);
-    // }
-    // async deleteContact(id: string) {
-    //     return await fetchInstance.delete(`contacts/${id}`);
-    // }
-    // async deleteExperience(id: string) {
-    //     return await fetchInstance.delete(`expirences/${id}`);
-    // }
+    async deleteLanguage(id: string) {
+        return await fetchInstance.delete(`languages/${id}`);
+    }
+    async deleteEducation(id: string) {
+        return await fetchInstance.delete(`educations/${id}`);
+    }
+    async deleteSpecialty(id: string) {
+        return await fetchInstance.delete(`specialties/${id}`);
+    }
+    async deleteSkill(id: string) {
+        return await fetchInstance.delete(`skills/${id}`);
+    }
+    async deleteContact(id: string) {
+        return await fetchInstance.delete(`contacts/${id}`);
+    }
+    async deleteExperience(id: string) {
+        return await fetchInstance.delete(`expirences/${id}`);
+    }
 }
 
 export const profileAPIs = new ProfileAPIs();

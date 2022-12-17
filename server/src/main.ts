@@ -1,14 +1,13 @@
 import "reflect-metadata";
 import { useExpressServer } from "routing-controllers";
-import { DisableCorsMiddleware } from "./middlewares/disable-cors";
 import { controllers } from "./modules";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import path from "path";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import http from "http";
-import https from "https";
+// import http from "http";
+// import https from "https";
 import express = require("express");
 import { authorizationChecker } from "./middlewares/authorizationChecker";
 import { currentUserChecker } from "./middlewares/currentUserChecker";
@@ -19,8 +18,8 @@ dotenv.config({
 
 const app = express();
 
-const httpsServer = https.createServer(app);
-const httpServer = http.createServer(app);
+// const httpsServer = https.createServer(app);
+// const httpServer = http.createServer(app);
 
 app.use(cookieParser());
 
@@ -40,7 +39,7 @@ const server = useExpressServer(app, {
   middlewares: [],
 });
 
-async function serve(servers: any, port: number) {
+async function serve(server: any, port: number) {
   try {
     mongoose.set("strictQuery", true);
 
@@ -52,16 +51,13 @@ async function serve(servers: any, port: number) {
       dbName: process.env.DATABASE__NAME,
     });
 
-    servers[1].listen(80, () => {
-      console.info(`Server is listening on port ${80}`);
+    server.listen(port, () => {
+      console.info(`Server is listening on port ${port}`);
     });
 
-    servers[0].listen(443, () => {
-      console.info(`Server is listening on port ${443}`);
-    });
   } catch (error) {
     console.error(error);
   }
 }
 
-serve([httpsServer, httpServer], (process.env.PORT as any) ?? 3000);
+serve(server, (process.env.PORT as any) ?? 80);

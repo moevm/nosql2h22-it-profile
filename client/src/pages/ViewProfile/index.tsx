@@ -1,12 +1,16 @@
 import { IUser } from '@interfaces';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import avatar from '../../asserts/avatar.jpg';
+import { usersAPIs } from '../../shared/APIs';
 import ExperienceCard from '../../shared/components/ExperienceCard';
 import Avatar from '../../shared/components/Form/Avatar';
 import './style.scss';
 
 export default function ViewProfilePage() {
-    const data = {
+    const { userId } = useParams();
+
+    const [data, setData] = useState(() => ({
         email: 'mr.loykonen@mail.ru',
         last_name: 'Loykonen',
         first_name: 'Mikhail',
@@ -21,13 +25,23 @@ export default function ViewProfilePage() {
                 { type: 'email', value: 'mr.loykonen@mail.ru' }
             ]
         }
-    };
+    }));
 
     const [age, setAge] = useState(() => {
         const diff =
             new Date().getFullYear() - new Date(data.birth_date).getFullYear();
         return diff;
     });
+
+    useEffect(() => {
+        console.log(userId);
+
+        if (userId) {
+            usersAPIs.getUser('/' + userId).then((value) => {
+                setData(value);
+            });
+        }
+    }, []);
 
     return (
         <div className="view--page">
@@ -45,8 +59,8 @@ export default function ViewProfilePage() {
                         </div>
                     </div>
                     <div className="view--page__user--specialty">
-                        {data.information.specialties[0].level}{' '}
-                        {data.information.specialties[0].direction}
+                        {data.information.specialties[0]?.level ?? ''}
+                        {data.information.specialties[0]?.direction ?? ''}
                     </div>
                 </div>
                 <div>

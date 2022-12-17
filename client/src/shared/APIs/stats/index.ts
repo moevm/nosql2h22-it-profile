@@ -1,4 +1,5 @@
-import { fetchInstance } from "../axios";
+import { fetchInstance } from "../fetch";
+
 
 class StatsAPIs {
 

@@ -3,10 +3,15 @@ import ManIcon from '../../../../asserts/mars.png';
 import WomanIcon from '../../../../asserts/femenine.png';
 import './style.scss';
 
-export default function GenderToggle() {
+interface IProps {
+    onChange?: (value: string) => void;
+}
+
+export default function GenderToggle({ onChange }: IProps) {
     const [currentValue, setCurrentValue] = useState(true);
 
     const toggle = (value: boolean) => {
+        if (onChange) onChange(value ? 'man' : 'woman');
         setCurrentValue(value);
     };
 

@@ -1,4 +1,4 @@
-import { fetchInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class CrmAPIs {
     async login(data: { password: string; login: string }) {

@@ -1,4 +1,4 @@
-@import "./../../styles/colors";
+@import './../../styles/colors';
 
 .button {
     width: 100%;
@@ -14,7 +14,7 @@
         border: 1px map-get($map: $secondary, $key: 'light') solid;
         color: map-get($map: $primary, $key: 'contrast-text');
         background-color: map-get($map: $primary, $key: 'main');
-        
+
         &:hover {
             background-color: map-get($map: $primary, $key: 'light');
         }
@@ -22,7 +22,7 @@
         &:active {
             background-color: map-get($map: $primary, $key: 'dark');
         }
-    };
+    }
 
     &.secondary {
         background-color: map-get($map: $secondary, $key: 'dark');
@@ -36,8 +36,12 @@
         &:active {
             background-color: map-get($map: $secondary, $key: 'light');
         }
-
     }
-
-    ;
+    &.disabled {
+        cursor: default;
+        background-color: gray;
+        &:hover {
+            background-color: gray;
+        }
+    }
 }
