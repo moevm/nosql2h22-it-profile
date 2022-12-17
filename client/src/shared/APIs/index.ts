@@ -1,5 +1,5 @@
 export * from './auth';
-export * from './axios';
+export * from './fetch';
 export * from './crm';
 export * from './profile';
 export * from './search';
