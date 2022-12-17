@@ -6,6 +6,7 @@ interface IProps {
     variant?: 'primary' | 'secondary';
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     onSubmit?: React.FormEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
 }
 
 export default function Button({
@@ -13,14 +14,16 @@ export default function Button({
     type = 'button',
     variant = 'secondary',
     onClick,
-    onSubmit
+    onSubmit,
+    disabled = false
 }: IProps): JSX.Element {
     return (
         <button
+            disabled={disabled}
             onClick={onClick}
             onSubmit={onSubmit}
             type={type}
-            className={'button ' + variant}>
+            className={'button ' + variant + (disabled ? ' disabled' : '')}>
             {children}
         </button>
     );

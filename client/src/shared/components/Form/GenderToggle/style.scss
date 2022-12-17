@@ -1,7 +1,8 @@
-@import "./../../../styles/colors";
+@import './../../../styles/colors';
 
 .gender--toggle {
     display: flex;
+    justify-content: center;
 
     &__item {
         background-color: map-get($map: $primary, $key: 'light');

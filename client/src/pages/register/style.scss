@@ -25,6 +25,11 @@
         display: flex;
         gap: 24px;
         flex-direction: column;
+        
+        &--avatar {
+            width: 100px;
+            margin: auto;
+        }
     }
 }
 

@@ -8,7 +8,6 @@ export const sign_up__body = z.object({
   last_name: z.string(),
   birth_date: z.number(),
   sex: z.string(),
-  role: z.string().array(),
   information: z.object({}).nullish(),
   photo: z.string().optional(),
 });
