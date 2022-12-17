@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 export const SearchSchema = z.object({
-  specialization: z.array(z.string()).optional(),
-  language: z.array(z.string()).optional(),
+  specialization: z.array(z.string()).or(z.string()).optional(),
+  language: z.array(z.string()).or(z.string()).optional(),
   skills: z.array(z.string()).optional(),
   level: z.array(z.string()).optional(),
   experience: z
@@ -21,6 +21,7 @@ export const SearchSchema = z.object({
         .optional(),
     })
     .optional(),
+  locations: z.array(z.string()).optional(),
   limit: z
     .string()
     .refine((val) => !Number.isNaN(Number(val))),

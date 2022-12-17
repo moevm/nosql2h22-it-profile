@@ -149,23 +149,33 @@ export class UsersService {
     return info?.save();
   }
 
-  async getUsers(limit: number, skip: number) {
-    return await UserModel.find({})
-      .select("-password -roles")
-      .populate({
-        path: "information",
-        populate: [
-          {
-            path: "experiences",
-          },
-          {
-            path: "educations",
-          },
-        ],
-      })
+  async getUsers(query: any, limit: number, skip: number) {
+    
+    return await UserModel.aggregate([
+      {
+        $lookup: {
+          from: "informations",
+          localField: "information",
+          foreignField: "_id",
+          as: "information",
+        },
+      },
+      {
+        $unwind: "$information",
+      },
+      {
+        $match: query,
+        
+      },
+      // {
+      //   $match: {"information.country": {$in: ['Russia']}}
+            // "information.skills": {
+            //   $elemMatch: { title: { $in: ["React", "Android"] } },
+            // },
+      // }
+    ])
       .skip(skip)
-      .limit(limit)
-      .exec();
+      .limit(limit);
   }
 
   async getUserInfo(id: string) {

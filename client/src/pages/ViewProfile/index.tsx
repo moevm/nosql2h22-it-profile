@@ -59,8 +59,8 @@ export default function ViewProfilePage() {
                         </div>
                     </div>
                     <div className="view--page__user--specialty">
-                        {data.information.specialties[0].level}{' '}
-                        {data.information.specialties[0].direction}
+                        {data.information.specialties[0]?.level ?? ''}
+                        {data.information.specialties[0]?.direction ?? ''}
                     </div>
                 </div>
                 <div>

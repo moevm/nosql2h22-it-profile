@@ -19,7 +19,7 @@ export default function UserCard({ data }: IUserProps) {
     );
 
     const [specialty] = useState(
-        `${specialties[0].direction}, ${specialties[0].level}`
+        `${specialties[0]?.direction ?? ''}, ${specialties[0]?.level ?? ''}`
     );
 
     const [name] = useState(`${first_name}, ${last_name}`);

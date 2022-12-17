@@ -12,19 +12,58 @@ export default function SearchPage() {
 
     const languages = useSelect([
         'C++',
+        'C#',
         'Java',
+        'Scala',
+        'Rust',
+        'Swift',
+        'Kotlin',
         'Python',
         'JavaScript',
-        'TypeScript'
+        'TypeScript',
+        'Go',
+        'PHP'
     ]);
 
     const skills = useSelect([
         'Mongo',
         'MySQL',
+        'PostgreSQL',
         'React',
         'Angular',
-        'Unity',
-        'Unreal Engine'
+        'Vue',
+        'Unity3D',
+        'Unreal Engine 4',
+        'Flask',
+        'FastAPI',
+        'Redis',
+        'RabbitMQ',
+        'Cassandra',
+        'Neo4j',
+        'iOS',
+        'Android',
+        'Jenkins',
+        'Grafana',
+        'Prometheus',
+        'Ansible',
+        'Bash',
+        'Docker',
+        'Kubernetes',
+        'Bootstrap 5',
+        'Redux',
+        'Nginx',
+        'Apache',
+        'SQLite',
+        'Blender',
+        'OpenGL',
+        'DirectX',
+        '.NET',
+        'Express',
+        'NestJS',
+        'Node',
+        'Django',
+        'Vite',
+        'Figma'
     ]);
 
     const levels = useSelect([
@@ -49,6 +88,20 @@ export default function SearchPage() {
             setUsers(data);
         });
     }, []);
+
+    const sendQuery = () => {
+        searchAPIs
+            .users({
+                specialization: specializations.items,
+                language: languages.items,
+                skills: skills.items,
+                level: levels.items,
+                countries: locations.items
+            })
+            .then((data) => {
+                setUsers(data);
+            });
+    };
 
     function reset() {
         specializations.reset();
@@ -109,7 +162,7 @@ export default function SearchPage() {
                             onSearch={locations.filter}
                         />
                     </div>
-                    <div className="search--page__setting--item">
+                    {/* <div className="search--page__setting--item">
                         <div className="search--page__experience">
                             <span className="search--page__experience--title">
                                 EXPERIENCE
@@ -131,7 +184,7 @@ export default function SearchPage() {
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="search--page__setting--buttons search--page__setting--item">
                         <div>
@@ -140,7 +193,7 @@ export default function SearchPage() {
                             </Button>
                         </div>
                         <div>
-                            <Button>Apply</Button>
+                            <Button onClick={() => sendQuery()}>Apply</Button>
                         </div>
                     </div>
                 </div>
