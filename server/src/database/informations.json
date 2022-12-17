@@ -1,0 +1,692 @@
+[{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf2"
+  },
+  "city": "St.Petersburg",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Frontend",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79539264831"
+    },
+    {
+      "type": "mail",
+      "value": "felis.eget.varius@protonmail.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35ee"
+    }
+  ],
+  "languages": [
+    {
+      "title": "JavaScipt",
+      "level": "middle"
+    },
+    {
+      "title": "TypeScript",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "Figma",
+      "level": "middle"
+    },
+    {
+      "title": "React",
+      "level": "middle"
+    },
+    {
+      "title": "Redux",
+      "level": "middle"
+    },
+    {
+      "title": "Bootstrap 5",
+      "level": "middle"
+    },
+    {
+      "title": "Docker",
+      "level": "middle"
+    },
+    {
+      "title": "Vite",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf3"
+  },
+  "city": "New York",
+  "country": "USA",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "1-628-925-7582"
+    },
+    {
+      "type": "mail",
+      "value": "egestas.nunc@icloud.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35ef"
+    }
+  ],
+  "languages": [
+    {
+      "title": "JavaScipt",
+      "level": "middle"
+    },
+    {
+      "title": "TypeScript",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "Docker",
+      "level": "middle"
+    },
+    {
+      "title": "Node",
+      "level": "middle"
+    },
+    {
+      "title": "Express",
+      "level": "middle"
+    },
+    {
+      "title": "NestJS",
+      "level": "middle"
+    },
+    {
+      "title": "MySQL",
+      "level": "middle"
+    },
+    {
+      "title": "MongoDB",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf4"
+  },
+  "city": "Mumbai",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Middle"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 117 6943769"
+    },
+    {
+      "type": "mail",
+      "value": "torquent.per@outlook.ca"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f0"
+    }
+  ],
+  "languages": [
+    {
+      "title": "JavaScipt",
+      "level": "middle"
+    },
+    {
+      "title": "Python",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "Docker",
+      "level": "middle"
+    },
+    {
+      "title": "Node",
+      "level": "middle"
+    },
+    {
+      "title": "Express",
+      "level": "middle"
+    },
+    {
+      "title": "Django",
+      "level": "middle"
+    },
+    {
+      "title": "PostgreSQL",
+      "level": "middle"
+    },
+    {
+      "title": "MongoDB",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf5"
+  },
+  "city": "St.Petersburg",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Gamedev",
+      "level": "Middle"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79899234832"
+    },
+    {
+      "type": "mail",
+      "value": "eleifend.nunc@aol.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f1"
+    }
+  ],
+  "languages": [
+    {
+      "title": "C++",
+      "level": "middle"
+    },
+    {
+      "title": "C#",
+      "level": "middle"
+    },
+    {
+      "title": "Java",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": ".NET",
+      "level": "middle"
+    },
+    {
+      "title": "Unity3D",
+      "level": "middle"
+    },
+    {
+      "title": "Android",
+      "level": "middle"
+    },
+    {
+      "title": "iOS",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf6"
+  },
+  "city": "Moscow",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Gamedev",
+      "level": "Senior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79539264831"
+    },
+    {
+      "type": "mail",
+      "value": "mattis@icloud.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f2"
+    },
+    {
+      "$oid": "639cc794cbdaa9e7566b35f3"
+    }
+  ],
+  "languages": [
+    {
+      "title": "C++",
+      "level": "middle"
+    },
+    {
+      "title": "C#",
+      "level": "middle"
+    },
+    {
+      "title": "Java",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "OpenGL",
+      "level": "middle"
+    },
+    {
+      "title": "DirectX",
+      "level": "middle"
+    },
+    {
+      "title": "Unreal Engine 4",
+      "level": "middle"
+    },
+    {
+      "title": "UI",
+      "level": "middle"
+    },
+    {
+      "title": "Blender",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf7"
+  },
+  "city": "Delhi",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Junior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 72 54608684"
+    },
+    {
+      "type": "mail",
+      "value": "gravida@hotmail.couk"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f4"
+    }
+  ],
+  "languages": [
+    {
+      "title": "Kotlin",
+      "level": "junior"
+    },
+    {
+      "ttile": "Swift",
+      "level": "junior"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "Android",
+      "level": "junior"
+    },
+    {
+      "title": "iOS",
+      "level": "junior"
+    },
+    {
+      "title": "SQLite",
+      "level": "junior"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf8"
+  },
+  "city": "Astana",
+  "country": "Kazakhstan",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "DevOps",
+      "level": "Junior"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79317561031"
+    },
+    {
+      "type": "mail",
+      "value": "aliquam@aol.com"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f5"
+    }
+  ],
+  "languages": [
+    {
+      "title": "Java",
+      "level": "middle"
+    },
+    {
+      "title": "Scala",
+      "level": "junior"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "PostgreSQL",
+      "level": "middle"
+    },
+    {
+      "title": "Gitlab",
+      "level": "middle"
+    },
+    {
+      "title": "Nginx",
+      "level": "middle"
+    },
+    {
+      "title": "Docker",
+      "level": "middle"
+    },
+    {
+      "title": "Jenkins",
+      "level": "junior"
+    },
+    {
+      "title": "RabbitMQ",
+      "level": "junior"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbf9"
+  },
+  "city": "Mumbai",
+  "country": "India",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "DevOps",
+      "level": "Expert"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+91 236 0878041"
+    },
+    {
+      "type": "mail",
+      "value": "arcu@protonmail.edu"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f6"
+    }
+  ],
+  "languages": [
+    {
+      "title": "Python",
+      "level": "expert"
+    },
+    {
+      "title": "Java",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "expert"
+    },
+    {
+      "title": "MySQL",
+      "level": "expert"
+    },
+    {
+      "title": "Docker",
+      "level": "expert"
+    },
+    {
+      "title": "Kubernetes",
+      "level": "senior"
+    },
+    {
+      "title": "GitLab",
+      "level": "expert"
+    },
+    {
+      "title": "Bash",
+      "level": "senior"
+    },
+    {
+      "title": "Ansible",
+      "level": "middle"
+    },
+    {
+      "title": "Cassandra",
+      "level": "middle"
+    },
+    {
+      "title": "Prometheus",
+      "level": "middle"
+    },
+    {
+      "title": "RabbitMQ",
+      "level": "expert"
+    },
+    {
+      "title": "Grafana",
+      "level": "senior"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbfa"
+  },
+  "city": "Astana",
+  "country": "Kazakhstan",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Backend",
+      "level": "Team Lead"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+77339374812"
+    },
+    {
+      "type": "mail",
+      "value": "aliquam.enim@aol.org"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f7"
+    }
+  ],
+  "languages": [
+    {
+      "title": "Java",
+      "level": "middle"
+    },
+    {
+      "title": "Python",
+      "level": "middle"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "middle"
+    },
+    {
+      "title": "FastAPI",
+      "level": "middle"
+    },
+    {
+      "title": "Flask",
+      "level": "middle"
+    },
+    {
+      "title": "PostgreSQL",
+      "level": "middle"
+    },
+    {
+      "title": "MongoDB",
+      "level": "middle"
+    },
+    {
+      "title": "Docker",
+      "level": "middle"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6398ec4111dbd7caec8ddbfb"
+  },
+  "city": "Moscow",
+  "country": "Russia",
+  "about": "I'm a programmer!",
+  "specialties": [
+    {
+      "direction": "Frontend",
+      "level": "Intern"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "+79933264230"
+    },
+    {
+      "type": "mail",
+      "value": "molestie.sodales@yahoo.org"
+    }
+  ],
+  "educations": [],
+  "favorites": [],
+  "experiences": [
+    {
+      "$oid": "639cc794cbdaa9e7566b35f8"
+    }
+  ],
+  "languages": [
+    {
+      "title": "JavaScipt",
+      "level": "junior"
+    },
+    {
+      "title": "TypeScript",
+      "level": "junior"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Git",
+      "level": "junior"
+    },
+    {
+      "title": "React",
+      "level": "junior"
+    },
+    {
+      "title": "Redux",
+      "level": "junior"
+    },
+    {
+      "title": "Bootstrap 5",
+      "level": "junior"
+    },
+    {
+      "title": "WebPack",
+      "level": "junior"
+    }
+  ]
+}]

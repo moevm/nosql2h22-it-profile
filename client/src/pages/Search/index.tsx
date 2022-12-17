@@ -6,26 +6,71 @@ import './style.scss';
 import { IUser } from '@interfaces';
 
 export default function SearchPage() {
-    const [specializationItems, setSpecializationItems] = useState([
+    const [specializationItems] = useState([
         'Backend',
         'Frontend',
-        'DevOps'
+        'DevOps',
+        'Fullstack',
+        'Gamedev',
+        'Data Science',
+        'Desktop'
     ]);
-    const [languages, setLanguages] = useState([
+
+    const [languages] = useState([
+        'C',
         'C++',
+        'C#',
         'Java',
+        'Scala',
+        'Rust',
+        'Swift',
+        'Kotlin',
         'Python',
         'JavaScript',
-        'TypeScript'
+        'TypeScript',
+        'Go',
+        'PHP'
     ]);
 
     const [skills] = useState([
-        'Mongo',
+        'MongoDB',
         'MySQL',
+        'PostgreSQL',
         'React',
         'Angular',
-        'Unity',
-        'Unreal Engine'
+        'Vue',
+        'Unity3D',
+        'Unreal Engine 4',
+        'Flask',
+        'FastAPI',
+        'Redis',
+        'RabbitMQ',
+        'Cassandra',
+        'Neo4j',
+        'iOS',
+        'Android',
+        'Jenkins',
+        'Grafana',
+        'Prometheus',
+        'Ansible',
+        'Bash',
+        'Docker',
+        'Kubernetes',
+        'Bootstrap 5',
+        'Redux',
+        'Nginx',
+        'Apache',
+        'SQLite',
+        'Blender',
+        'OpenGL',
+        'DirectX',
+        '.NET',
+        'Express',
+        'NestJS',
+        'Node',
+        'Django',
+        'Vite',
+        'Figma'
     ]);
 
     const [levels] = useState([
@@ -37,23 +82,12 @@ export default function SearchPage() {
         'Team Lead'
     ]);
 
-    const [locations] = useState(['Russia', 'Chine']);
-
-    const [variants] = useState([
-        'months',
-        'years'
-        // 'January',
-        // 'February',
-        // 'March',
-        // 'April',
-        // 'May',
-        // 'June',
-        // 'July',
-        // 'August',
-        // 'September',
-        // 'October',
-        // 'November',
-        // 'December'
+    const [locations] = useState([
+        'Russia',
+        'India',
+        'USA',
+        'Kazakhstan',
+        'China'
     ]);
 
     const [users, setUsers] = useState<IUser[]>([]);
@@ -63,6 +97,56 @@ export default function SearchPage() {
             setUsers(data);
         });
     }, []);
+
+    const [selectedSpecializations, setSelectedSpecializations] = useState<
+        string[]
+    >([]);
+    const onSpecializationSelectChange = (items: string[]) => {
+        setSelectedSpecializations(items);
+        // console.log(selectedSpecializations)
+    };
+
+    const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
+    const onSelectLanguageChange = (items: string[]) => {
+        setSelectedLanguages(items);
+    };
+
+    const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+    const onSkillsSelectChange = (items: string[]) => {
+        setSelectedSkills(items);
+    };
+
+    const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
+    const onLevelsSelectChange = (items: string[]) => {
+        setSelectedLevels(items);
+    };
+
+    const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+    const onLocationsSelectChange = (items: string[]) => {
+        setSelectedLocations(items);
+    };
+
+    const resetOptions = () => {
+        setSelectedSpecializations([]);
+        setSelectedLanguages([]);
+        setSelectedSkills([]);
+        setSelectedLevels([]);
+        setSelectedLocations([]);
+    };
+
+    const sendQuery = () => {
+        searchAPIs
+            .users({
+                specialization: selectedSpecializations,
+                language: selectedLanguages,
+                skills: selectedSkills,
+                level: selectedLevels,
+                countries: selectedLocations
+            })
+            .then((data) => {
+                setUsers(data);
+            });
+    };
 
     return (
         <div className="search--page">
@@ -74,21 +158,43 @@ export default function SearchPage() {
                         <Select
                             title="SPECIALIZATION"
                             items={specializationItems}
+                            onChange={onSpecializationSelectChange}
+                            initialState={selectedSpecializations}
                         />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LANGUAGE" items={languages} />
+                        <Select
+                            title="LANGUAGE"
+                            items={languages}
+                            onChange={onSelectLanguageChange}
+                            initialState={selectedLanguages}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="SKILLS" items={skills} />
+                        <Select
+                            title="SKILLS"
+                            items={skills}
+                            onChange={onSkillsSelectChange}
+                            initialState={selectedSkills}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LEVEL" items={levels} />
+                        <Select
+                            title="LEVEL"
+                            items={levels}
+                            onChange={onLevelsSelectChange}
+                            initialState={selectedLevels}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LOCATION" items={locations} />
+                        <Select
+                            title="LOCATION"
+                            items={locations}
+                            onChange={onLocationsSelectChange}
+                            initialState={selectedLocations}
+                        />
                     </div>
-                    <div className="search--page__setting--item">
+                    {/* <div className="search--page__setting--item">
                         <div className="search--page__experience">
                             <span className="search--page__experience--title">
                                 EXPERIENCE
@@ -110,14 +216,18 @@ export default function SearchPage() {
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="search--page__setting--buttons search--page__setting--item">
                         <div>
-                            <Button variant="primary">Reset</Button>
+                            <Button
+                                variant="primary"
+                                onClick={() => resetOptions()}>
+                                Reset
+                            </Button>
                         </div>
                         <div>
-                            <Button>Apply</Button>
+                            <Button onClick={() => sendQuery()}>Apply</Button>
                         </div>
                     </div>
                 </div>

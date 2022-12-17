@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Chips } from '@components';
 import './style.scss';
 
@@ -6,16 +6,25 @@ interface ISelectProps {
     title: string;
     items: Array<string>;
     multiple?: boolean;
+    onChange?: (items: string[]) => void;
+    initialState?: Array<string>;
 }
 
 export default function Select({
     title,
     items,
-    multiple = true
+    multiple = true,
+    onChange = () => {},
+    initialState = []
 }: ISelectProps): JSX.Element {
-    const [selectedItems, setSelectedItems] = useState<string[]>([]);
+    // const [selectedItems, setSelectedItems] = useState<string[]>(initialState);
     const [showMenu, setShowMenu] = useState(false);
     const [searchValue, setSearchValue] = useState('');
+
+    let selectedItems = initialState;
+    const setSelectedItems = (arr: string[]) => {
+        selectedItems = arr;
+    };
 
     useEffect(() => {
         setSearchValue('');
@@ -35,8 +44,10 @@ export default function Select({
                 newSelectedItems = [...selectedItems, item];
             }
             setSelectedItems(newSelectedItems);
+            if (onChange) onChange(newSelectedItems);
         } else {
             setSelectedItems([item]);
+            if (onChange) onChange([item]);
         }
     };
 
@@ -65,6 +76,7 @@ export default function Select({
     const onDeleteClick = (item: string) => {
         let newSelectedItems = deleteItem(item);
         setSelectedItems(newSelectedItems);
+        if (onChange) onChange(newSelectedItems);
     };
 
     return (

@@ -2,7 +2,7 @@ import { UserDocument } from "../../models";
 import { UsersService } from "../profile/users.service";
 
 interface IUserService {
-  getUsers: (limit: number, skip: number) => Promise<any[]>;
+  getUsers: (query: any, limit: number, skip: number) => Promise<any[]>;
   getUserForView: (id: string) => Promise<any>;
 }
 
@@ -12,37 +12,72 @@ export class CommonService {
   constructor() {
     this.userService = new UsersService();
   }
-  async searchUsers(params: any) {
-    // const new_exp = new ExperiencesModel({});
-    // await new_exp.save();
 
+  async searchUsers(params: any) {
     let limit = parseInt(params.limit) ?? 10;
     let skip = limit * (parseInt(params.page) - 1) ?? 0;
 
-    let searchedUsers: any = {}; // не знаю какой тут тип указать
+    let searchedUsers: any = {};
+
+    for (const [key, value] of Object.entries(params)) {
+      console.log(key, value);
+      if (!Array.isArray(value)) {
+        params[key] = [value];
+      }
+    }
+
     if (params?.specialization) {
-      searchedUsers.specialization = params.specialization;
+      if (searchedUsers["information.specialties"]) {
+        searchedUsers["information.specialties"]["$elemMatch"]["direction"] = {
+          $in: params.specialization,
+        };
+      } else {
+        searchedUsers["information.specialties"] = {
+          $elemMatch: { direction: { $in: params.specialization } },
+        };
+      }
+
+      console.log(params.specialization)
     }
+
     if (params?.language) {
-      searchedUsers.language = params.language;
+      searchedUsers["information.languages"] = {
+        $elemMatch: { title: { $in: params.language } },
+      };
     }
+
     if (params?.skills) {
-      searchedUsers.skills = params.skills;
+      searchedUsers["information.skills"] = {
+        $elemMatch: { title: { $in: params.skills } },
+      };
     }
+
     if (params?.level) {
-      searchedUsers.level = params.level;
-    }
-    if (params?.experience_from) {
-      searchedUsers.experience_from = params.experience_from;
-    }
-    if (params?.experience_to) {
-      searchedUsers.experience_to = params.experience_to;
+      if (searchedUsers["information.specialties"]) {
+        searchedUsers["information.specialties"]["$elemMatch"]["level"] = {
+          $in: params.level,
+        };
+      } else {
+        searchedUsers["information.specialties"]["$elemMatch"] = {
+          $elemMatch: { level: { $in: params.level } },
+        };
+      }
     }
 
-    // Здесь необходимо добавить запрос к БД для получения списка пользователей, которые удовлетворяют переданным параметрам
-    // skip и limit нужны для пагинации
+    if (params?.countries) {
+      searchedUsers["information.country"] = { $in: params.countries };
+    }
 
-    return await this.userService.getUsers(limit, skip);
+    // if (params?.experience_from) {
+    //   searchedUsers.experience_from = params.experience_from;
+    // }
+    // if (params?.experience_to) {
+    //   searchedUsers.experience_to = params.experience_to;
+    // }
+
+    console.log(JSON.stringify(searchedUsers));
+
+    return await this.userService.getUsers(searchedUsers, limit, skip);
   }
 
   async getUserForView(id: string) {

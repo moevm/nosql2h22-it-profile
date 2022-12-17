@@ -1,12 +1,12 @@
-import axios, { AxiosInterceptorOptions, AxiosRequestConfig } from 'axios';
+import { AxiosInterceptorOptions, AxiosRequestConfig } from 'axios';
 
-export const axiosInstance = axios.create({
-    baseURL: 'http://backend:443/',
-    timeout: 0,
-    headers: {
-        'Content-type': 'application/json'
-    }
-});
+// export const axiosInstance = axios.create({
+//     baseURL: 'http://backend:443/',
+//     timeout: 0,
+//     headers: {
+//         'Content-type': 'application/json'
+//     }
+// });
 
 export const fetchInstance = {
     baseURL: 'http://178.70.100.2:80/',
@@ -15,16 +15,33 @@ export const fetchInstance = {
         config?: RequestInit & { params: Record<string, any> }
     ) {
         const url = new URL(this.baseURL + path);
-        url.search = new URLSearchParams(config?.params).toString();
+        // url.search = new URLSearchParams(config?.params).toString();
+        let params = [];
+        if (config?.params) {
+            for (const [key, value] of Object.entries(config.params)) {
+                if (Array.isArray(value)) {
+                    const items: [string, any][] = value.map((item) => [
+                        key,
+                        item
+                    ]);
+                    params.push(...items);
+                    
+                } else {
+                    params.push([key, value]);
+                }
+            }
+        }
+
+        url.search = new URLSearchParams(params).toString();
 
         const options: RequestInit = {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 ...config?.headers
             },
-            mode: 'no-cors',
-            referrerPolicy: 'no-referrer',
-            credentials: 'include'
+            mode: 'cors',
+            referrerPolicy: 'origin'
+            // credentials: 'include'
         };
 
         console.log(url, options);
