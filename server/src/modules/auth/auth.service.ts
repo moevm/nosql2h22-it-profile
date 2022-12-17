@@ -19,8 +19,9 @@ export class AuthService {
       email: props.email,
       first_name: props.first_name,
       last_name: props.last_name,
-      role: ["USER"],
+      roles: ["USER"],
       sex: props.sex,
+      birth_date: props.birth_date,
       information,
     });
 
