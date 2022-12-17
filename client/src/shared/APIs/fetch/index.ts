@@ -22,14 +22,15 @@ export const fetchInstance = {
             }
         }
 
-        
         url.search = new URLSearchParams(params).toString();
-        
+
+        const token = window.localStorage.getItem('access_token');
 
         const options: RequestInit = {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                ...config?.headers
+                ...config?.headers,
+                Authorization: token ? 'Bearer' + token : ''
             },
             mode: 'cors',
             referrerPolicy: 'origin'
@@ -49,16 +50,44 @@ export const fetchInstance = {
         config?: RequestInit & { params: Record<string, string> }
     ) {
         const url = new URL(this.baseURL + path);
-        url.search = new URLSearchParams(config?.params).toString();
+        const params: [string, string][] = [];
 
-        const response = await fetch(url, {
+        if (config?.params) {
+            for (const [key, value] of Object.entries(config.params)) {
+                if (Array.isArray(value)) {
+                    const items: [string, any][] = value.map((item) => [
+                        key,
+                        item
+                    ]);
+                    params.push(...items);
+                } else {
+                    params.push([key, value]);
+                }
+            }
+        }
+
+        url.search = new URLSearchParams(params).toString();
+
+        const token = window.localStorage.getItem('access_token');
+
+        const options: RequestInit = {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json;charset=utf-8',
+                'Content-type': 'application/json; charset=UTF-8',
+                Authorization: token ? 'Bearer' + token : '',
                 ...config?.headers
-            }
-        });
+            },
+            mode: 'cors',
+            referrerPolicy: 'origin'
+            // credentials: "include"
+        };
+
+        const response = await fetch(url, options);
+
+        if (response.ok) {
+            return await response.json();
+        }
         return await response.json();
     },
 
@@ -68,16 +97,44 @@ export const fetchInstance = {
         config?: RequestInit & { params: Record<string, string> }
     ) {
         const url = new URL(this.baseURL + path);
-        url.search = new URLSearchParams(config?.params).toString();
+        const params: [string, string][] = [];
 
-        const response = await fetch(url, {
-            method: 'DELETE',
+        if (config?.params) {
+            for (const [key, value] of Object.entries(config.params)) {
+                if (Array.isArray(value)) {
+                    const items: [string, any][] = value.map((item) => [
+                        key,
+                        item
+                    ]);
+                    params.push(...items);
+                } else {
+                    params.push([key, value]);
+                }
+            }
+        }
+
+        url.search = new URLSearchParams(params).toString();
+
+        const token = window.localStorage.getItem('access_token');
+
+        const options: RequestInit = {
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json;charset=utf-8',
+                'Content-type': 'application/json; charset=UTF-8',
+                Authorization: token ? 'Bearer' + token : '',
                 ...config?.headers
-            }
-        });
+            },
+            mode: 'cors',
+            referrerPolicy: 'origin'
+            // credentials: "include"
+        };
+
+        const response = await fetch(url, options);
+
+        if (response.ok) {
+            return await response.json();
+        }
         return await response.json();
     },
 
@@ -87,16 +144,44 @@ export const fetchInstance = {
         config?: RequestInit & { params: Record<string, string> }
     ) {
         const url = new URL(this.baseURL + path);
-        url.search = new URLSearchParams(config?.params).toString();
+        const params: [string, string][] = [];
 
-        const response = await fetch(url, {
-            method: 'PUT',
+        if (config?.params) {
+            for (const [key, value] of Object.entries(config.params)) {
+                if (Array.isArray(value)) {
+                    const items: [string, any][] = value.map((item) => [
+                        key,
+                        item
+                    ]);
+                    params.push(...items);
+                } else {
+                    params.push([key, value]);
+                }
+            }
+        }
+
+        url.search = new URLSearchParams(params).toString();
+
+        const token = window.localStorage.getItem('access_token');
+
+        const options: RequestInit = {
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json;charset=utf-8',
+                'Content-type': 'application/json; charset=UTF-8',
+                Authorization: token ? 'Bearer' + token : '',
                 ...config?.headers
-            }
-        });
+            },
+            mode: 'cors',
+            referrerPolicy: 'origin'
+            // credentials: "include"
+        };
+
+        const response = await fetch(url, options);
+
+        if (response.ok) {
+            return await response.json();
+        }
         return await response.json();
     }
 };

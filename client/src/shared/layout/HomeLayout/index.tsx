@@ -48,7 +48,7 @@ export default function HomeLayout() {
                                         </Menu.MenuItemGroup>
                                     </Menu.Body>
                                     <Menu.Footer>
-                                        <Menu.MenuItem to={'/'}>
+                                        <Menu.MenuItem to={'/sign-out'}>
                                             Sign Out
                                         </Menu.MenuItem>
                                     </Menu.Footer>

@@ -31,7 +31,7 @@ export class CommonController {
 
   @Get("/users/:id")
   @UseBefore(validate({ params: IdSchema }))
-  async getUserForView(@Params() params: IdSchemaType) {
-    return await this.service.getUserForView(params.id);
+  async getUserForView(@Params() params: IdSchemaType, @Res() res: Response) {
+    return res.send(await this.service.getUserForView(params.id));
   }
 }
