@@ -1,5 +1,5 @@
 import { IUser } from '../../interfaces/user.interface';
-import { axiosInstance, fetchInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class SearchAPIs {
     async users(params: Record<string, any>): Promise<IUser[]> {

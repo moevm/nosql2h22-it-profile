@@ -60,7 +60,10 @@ export default function UserCard({ data }: IUserProps) {
                     <div>
                         <Link
                             className="user--card__more--link"
-                            to={'users/' + 1}>
+                            to={
+                                '/view/' +
+                                (data as unknown as { _id: string })._id
+                            }>
                             MORE
                         </Link>
                     </div>

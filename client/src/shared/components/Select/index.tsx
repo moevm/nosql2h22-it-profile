@@ -4,16 +4,19 @@ import './style.scss';
 
 interface ISelectProps {
     title: string;
+    variants: Array<string>;
     items: Array<string>;
-    multiple?: boolean;
+    onSearch?: (value: string) => void;
+    onChange?: (current: string) => void;
 }
 
 export default function Select({
     title,
     items,
-    multiple = true
+    onChange,
+    variants,
+    onSearch
 }: ISelectProps): JSX.Element {
-    const [selectedItems, setSelectedItems] = useState<string[]>([]);
     const [showMenu, setShowMenu] = useState(false);
     const [searchValue, setSearchValue] = useState('');
 
@@ -21,50 +24,25 @@ export default function Select({
         setSearchValue('');
     }, [showMenu]);
 
+    useEffect(() => {
+        if (onSearch) onSearch(searchValue);
+    }, [searchValue]);
+
     const handleInputClick = (e: any) => {
         e.stopPropagation();
         setShowMenu((prev) => !prev);
     };
 
-    const onItemClick = (item: string) => {
-        if (multiple) {
-            let newSelectedItems;
-            if (selectedItems.findIndex((val) => val === item) >= 0) {
-                newSelectedItems = deleteItem(item);
-            } else {
-                newSelectedItems = [...selectedItems, item];
-            }
-            setSelectedItems(newSelectedItems);
-        } else {
-            setSelectedItems([item]);
-        }
-    };
-
-    const getItems = () => {
-        if (!searchValue) {
-            return items;
-        }
-
-        return items.filter(
-            (item) => item.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
-        );
-    };
-
     const isSelected = (item: string) => {
-        return selectedItems.filter((val) => val === item).length > 0;
+        return items.includes(item);
     };
 
-    const onSearch = (e: any) => {
+    const onSearchInputChange = (e: any) => {
         setSearchValue(e.target.value);
     };
 
-    const deleteItem = (item: string) => {
-        return selectedItems.filter((val) => val !== item);
-    };
-
-    const onDeleteClick = (item: string) => {
-        let newSelectedItems = deleteItem(item);
-        setSelectedItems(newSelectedItems);
+    const onItemClick = (item: string) => {
+        if (onChange) onChange(item);
     };
 
     return (
@@ -75,7 +53,7 @@ export default function Select({
                         <input
                             type="text"
                             placeholder={title}
-                            onChange={onSearch}
+                            onChange={onSearchInputChange}
                             value={searchValue}
                             autoFocus={true}
                         />
@@ -92,7 +70,7 @@ export default function Select({
             </div>
             {showMenu && (
                 <div className="select__menu">
-                    {getItems().map((item) => (
+                    {variants.map((item) => (
                         <div
                             key={item}
                             className={
@@ -107,12 +85,14 @@ export default function Select({
             )}
 
             <div className="select__selected--items">
-                <Chips
-                    values={selectedItems}
-                    onRemove={onDeleteClick}
-                    closable
-                />
+                <Chips values={items} onRemove={onChange} closable />
             </div>
         </div>
     );
 }
+
+
+
+
+
+

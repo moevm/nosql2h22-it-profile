@@ -7,7 +7,7 @@ services:
       dockerfile: docker/dev.dockerfile
     container_name: it-profile__dev-server
     ports:
-      - 55000:3000
+      - 55000:80
 
     environment:
       DATABASE__USERNAME: admin

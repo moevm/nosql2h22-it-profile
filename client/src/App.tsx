@@ -29,7 +29,9 @@ function App() {
                         }
                     />
                     <Route path="/stats" element={<div />} />
-                    <Route path="/view" element={<ViewProfilePage />} />
+                    <Route path="/view">
+                        <Route path=":userId" element={<ViewProfilePage />} />
+                    </Route>
                     <Route path="/search" element={<SearchPage />} />
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route

@@ -4,14 +4,13 @@ import Button from '../../shared/components/Button';
 import { searchAPIs } from '../../shared/APIs/search';
 import './style.scss';
 import { IUser } from '@interfaces';
+import { useSelect } from '../../shared/hooks/useSelect';
+import cites from './../../shared/data/cities.json';
 
 export default function SearchPage() {
-    const [specializationItems, setSpecializationItems] = useState([
-        'Backend',
-        'Frontend',
-        'DevOps'
-    ]);
-    const [languages, setLanguages] = useState([
+    const specializations = useSelect(['Backend', 'Frontend', 'DevOps']);
+
+    const languages = useSelect([
         'C++',
         'Java',
         'Python',
@@ -19,7 +18,7 @@ export default function SearchPage() {
         'TypeScript'
     ]);
 
-    const [skills] = useState([
+    const skills = useSelect([
         'Mongo',
         'MySQL',
         'React',
@@ -28,7 +27,7 @@ export default function SearchPage() {
         'Unreal Engine'
     ]);
 
-    const [levels] = useState([
+    const levels = useSelect([
         'Intern',
         'Junior',
         'Middle',
@@ -37,24 +36,11 @@ export default function SearchPage() {
         'Team Lead'
     ]);
 
-    const [locations] = useState(['Russia', 'Chine']);
-
-    const [variants] = useState([
-        'months',
-        'years'
-        // 'January',
-        // 'February',
-        // 'March',
-        // 'April',
-        // 'May',
-        // 'June',
-        // 'July',
-        // 'August',
-        // 'September',
-        // 'October',
-        // 'November',
-        // 'December'
-    ]);
+    const locations = useSelect(
+        (cites as unknown as { country: string; capital: string }[]).map(
+            ({ capital }) => capital
+        )
+    );
 
     const [users, setUsers] = useState<IUser[]>([]);
 
@@ -63,6 +49,14 @@ export default function SearchPage() {
             setUsers(data);
         });
     }, []);
+
+    function reset() {
+        specializations.reset();
+        languages.reset();
+        skills.reset();
+        locations.reset();
+        levels.reset();
+    }
 
     return (
         <div className="search--page">
@@ -73,20 +67,47 @@ export default function SearchPage() {
                     <div className="search--page__setting--item">
                         <Select
                             title="SPECIALIZATION"
-                            items={specializationItems}
+                            items={specializations.items}
+                            variants={specializations.variants}
+                            onChange={specializations.change}
+                            onSearch={specializations.filter}
                         />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LANGUAGE" items={languages} />
+                        <Select
+                            title="LANGUAGE"
+                            items={languages.items}
+                            variants={languages.variants}
+                            onChange={languages.change}
+                            onSearch={languages.filter}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="SKILLS" items={skills} />
+                        <Select
+                            title="SKILLS"
+                            items={skills.items}
+                            variants={skills.variants}
+                            onChange={skills.change}
+                            onSearch={skills.filter}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LEVEL" items={levels} />
+                        <Select
+                            title="LEVEL"
+                            items={levels.items}
+                            variants={levels.variants}
+                            onChange={levels.change}
+                            onSearch={levels.filter}
+                        />
                     </div>
                     <div className="search--page__setting--item">
-                        <Select title="LOCATION" items={locations} />
+                        <Select
+                            title="LOCATION"
+                            items={locations.items}
+                            variants={locations.variants}
+                            onChange={locations.change}
+                            onSearch={locations.filter}
+                        />
                     </div>
                     <div className="search--page__setting--item">
                         <div className="search--page__experience">
@@ -114,7 +135,9 @@ export default function SearchPage() {
 
                     <div className="search--page__setting--buttons search--page__setting--item">
                         <div>
-                            <Button variant="primary">Reset</Button>
+                            <Button variant="primary" onClick={reset}>
+                                Reset
+                            </Button>
                         </div>
                         <div>
                             <Button>Apply</Button>
@@ -131,7 +154,7 @@ export default function SearchPage() {
                     {users.map((user) => {
                         return (
                             <UserCard
-                                key={(user as unknown as { id: string }).id}
+                                key={(user as unknown as { _id: string })._id}
                                 data={user}></UserCard>
                         );
                     })}
