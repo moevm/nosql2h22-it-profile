@@ -1,20 +1,20 @@
-import { axiosInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class CrmAPIs {
     async login(data: { password: string; login: string }) {
-        return await axiosInstance.post('crm/login', data);
+        return await fetchInstance.post('crm/login', data);
     }
 
     async logOut() {
-        return await axiosInstance.get('crm/logout');
+        return await fetchInstance.get('crm/logout');
     }
 
     async exportData(props: any) {
-        return await axiosInstance.post('crm/export-data', props);
+        return await fetchInstance.post('crm/export-data', props);
     }
 
     async importData() {
-        return await axiosInstance.get('crm/import-data');
+        return await fetchInstance.get('crm/import-data');
     }
 }
 

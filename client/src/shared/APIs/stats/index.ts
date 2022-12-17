@@ -1,10 +1,10 @@
-import { axiosInstance } from "../axios";
+import { fetchInstance } from "../fetch";
 
 
 class StatsAPIs {
 
     async stats(params: Record<string, any>) {
-        return await axiosInstance.get('stats', {
+        return await fetchInstance.get('stats', {
             params
         });
     }

@@ -6,45 +6,45 @@ import {
     ISkills,
     ISpecialty
 } from '@interfaces';
-import { axiosInstance } from '../axios';
+import { fetchInstance } from '../fetch';
 
 class ProfileAPIs {
     async createLanguage(data: ILanguage) {
-        return await axiosInstance.post(`languages/new`, data);
+        return await fetchInstance.post(`languages/new`, data);
     }
     async createEducation(data: IEducation) {
-        return await axiosInstance.post(`educations/new`, data);
+        return await fetchInstance.post(`educations/new`, data);
     }
     async createSpecialty(data: ISpecialty) {
-        return await axiosInstance.post(`specialties/new`, data);
+        return await fetchInstance.post(`specialties/new`, data);
     }
     async createSkill(data: ISkills) {
-        return await axiosInstance.post(`skills/new`, data);
+        return await fetchInstance.post(`skills/new`, data);
     }
     async createExperience(data: IExperience) {
-        return await axiosInstance.post(`contacts/new`, data);
+        return await fetchInstance.post(`contacts/new`, data);
     }
     async createContact(data: IContacts) {
-        return await axiosInstance.post(`expirences/new`, data);
+        return await fetchInstance.post(`expirences/new`, data);
     }
 
     async deleteLanguage(id: string) {
-        return await axiosInstance.delete(`languages/${id}`);
+        return await fetchInstance.delete(`languages/${id}`);
     }
     async deleteEducation(id: string) {
-        return await axiosInstance.delete(`educations/${id}`);
+        return await fetchInstance.delete(`educations/${id}`);
     }
     async deleteSpecialty(id: string) {
-        return await axiosInstance.delete(`specialties/${id}`);
+        return await fetchInstance.delete(`specialties/${id}`);
     }
     async deleteSkill(id: string) {
-        return await axiosInstance.delete(`skills/${id}`);
+        return await fetchInstance.delete(`skills/${id}`);
     }
     async deleteContact(id: string) {
-        return await axiosInstance.delete(`contacts/${id}`);
+        return await fetchInstance.delete(`contacts/${id}`);
     }
     async deleteExperience(id: string) {
-        return await axiosInstance.delete(`expirences/${id}`);
+        return await fetchInstance.delete(`expirences/${id}`);
     }
 }
 
