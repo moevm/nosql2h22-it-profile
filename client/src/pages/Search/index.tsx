@@ -8,7 +8,13 @@ import { useSelect } from '../../shared/hooks/useSelect';
 import cites from './../../shared/data/cities.json';
 
 export default function SearchPage() {
-    const specializations = useSelect(['Backend', 'Frontend', 'DevOps']);
+    const specializations = useSelect([
+        'Backend',
+        'Frontend',
+        'DevOps',
+        'GameDev',
+        'FullStack'
+    ]);
 
     const languages = useSelect([
         'C++',
@@ -26,7 +32,7 @@ export default function SearchPage() {
     ]);
 
     const skills = useSelect([
-        'Mongo',
+        'MongoDB',
         'MySQL',
         'PostgreSQL',
         'React',
@@ -77,7 +83,7 @@ export default function SearchPage() {
 
     const locations = useSelect(
         (cites as unknown as { country: string; capital: string }[]).map(
-            ({ capital }) => capital
+            ({ country }) => country
         )
     );
 
@@ -109,6 +115,9 @@ export default function SearchPage() {
         skills.reset();
         locations.reset();
         levels.reset();
+        searchAPIs.users({}).then((data) => {
+            setUsers(data);
+        });
     }
 
     return (
