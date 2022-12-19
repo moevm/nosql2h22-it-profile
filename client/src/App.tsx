@@ -7,7 +7,8 @@ import {
     AddExperiencePage,
     SearchPage,
     ViewProfilePage,
-    ProfilePage
+    ProfilePage,
+    AdminPage
 } from '@pages';
 import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense, useContext, useEffect, useState } from 'react';
@@ -21,7 +22,7 @@ import { ProtectedRoute } from './shared/components/ProtectedRoute';
 function App() {
     const [isAuthorized, setIsAuthorized] = useState(false);
 
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(true);
 
     useEffect(() => {
         const token = window.localStorage.getItem('access_token');
@@ -62,6 +63,7 @@ function App() {
                         <Route path="/favorites" element={<div />} />
                     </Route>
                 </Route>
+
                 <Route
                     element={
                         <ProtectedRoute
@@ -69,8 +71,11 @@ function App() {
                             redirectPath="/sign-in"
                         />
                     }>
-                    <Route path="/admin-page" element={<div />} />
+                    <Route path="/" element={<HomeLayout />}>
+                        <Route path="/admin-page" element={<AdminPage />} />
+                    </Route>
                 </Route>
+
                 <Route path="/" element={<HomeLayout />}>
                     <Route path="/stats" element={<div />} />
                     <Route path="/view">

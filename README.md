@@ -15,3 +15,9 @@ docker-compose up --force-recreate -d
 
 ### database
   port: 57017
+
+### Тестовые пользователи
+
+felis.eget.varius@protonmail.couk Qwerty1234 - обычный пользователь
+
+admin@mail.ru Qwerty1234 - администратор

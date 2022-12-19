@@ -77,7 +77,7 @@ export class CommonService {
 
     // console.log(JSON.stringify(searchedUsers));
 
-    searchedUsers["role"] = { $in: ['USER']}
+    searchedUsers["roles"] = { $in: ['USER']}
 
     return await this.userService.getUsers(searchedUsers, limit, skip);
   }
