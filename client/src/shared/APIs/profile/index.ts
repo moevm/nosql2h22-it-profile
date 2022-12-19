@@ -9,6 +9,10 @@ import {
 import { fetchInstance } from '../fetch';
 
 class ProfileAPIs {
+    async getUserInfo() {
+        return await fetchInstance.get(`profile`);
+    }
+
     async createLanguage(data: ILanguage) {
         return await fetchInstance.post(`languages/new`, data);
     }

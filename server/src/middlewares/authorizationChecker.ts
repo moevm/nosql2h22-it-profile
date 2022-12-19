@@ -18,7 +18,8 @@ export async function authorizationChecker(action: Action, roles: string[]) {
     })
     .exec();
 
-  if (user && !roles.length) {
+    
+  if (user && roles.length) {
     for (const role of roles) {
       if (!user.roles.includes(role)) {
         return false;
