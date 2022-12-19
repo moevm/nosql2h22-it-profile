@@ -21,6 +21,8 @@ import { ProtectedRoute } from './shared/components/ProtectedRoute';
 function App() {
     const [isAuthorized, setIsAuthorized] = useState(false);
 
+    const [isAdmin, setIsAdmin] = useState(false);
+
     useEffect(() => {
         const token = window.localStorage.getItem('access_token');
 
@@ -30,7 +32,8 @@ function App() {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isAuthorized, setIsAuthorized }}>
+        <AuthContext.Provider
+            value={{ isAuthorized, setIsAuthorized, isAdmin, setIsAdmin }}>
             <Routes>
                 <Route
                     element={

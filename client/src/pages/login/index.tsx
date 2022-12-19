@@ -18,8 +18,7 @@ export default function LoginPage() {
 
     const navigate = useNavigate();
 
-    const { setIsAuthorized } = useContext(AuthContext);
-
+    const { setIsAuthorized, setIsAdmin } = useContext(AuthContext);
 
     const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
@@ -37,6 +36,14 @@ export default function LoginPage() {
 
             authAPIs.signIn(data as any).then((res) => {
                 window.localStorage.setItem('access_token', res.access);
+
+                let jwtData = res.access.split('.')[1];
+                let decodedJwtJsonData = window.atob(jwtData);
+                let decodedJwtData = JSON.parse(decodedJwtJsonData);
+                
+                if (decodedJwtData.roles.includes('ADMIN')) {
+                    setIsAdmin(true);
+                }
                 setIsAuthorized(true);
                 navigate('/profile');
             });

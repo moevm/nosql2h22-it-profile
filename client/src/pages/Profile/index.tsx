@@ -61,11 +61,11 @@ export default function ProfilePage() {
         }
     });
 
-    // useEffect(() => {
-    //     profileAPIs.getUserInfo().then((value) => {
-    //         setData(value);
-    //     });
-    // }, []);
+    useEffect(() => {
+        profileAPIs.getUserInfo().then((value) => {
+            setData(value);
+        });
+    }, []);
 
     return (
         <div className="profile--page">
