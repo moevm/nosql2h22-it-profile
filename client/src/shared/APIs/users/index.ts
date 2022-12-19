@@ -2,7 +2,7 @@ import { fetchInstance } from '../fetch';
 
 class UsersAPIs {
     async getUser(id: string) {
-        return await fetchInstance.get(`users${id}`);
+        return await fetchInstance.get(`users/${id}`);
     }
 }
 

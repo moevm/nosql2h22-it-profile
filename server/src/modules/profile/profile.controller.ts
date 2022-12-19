@@ -8,6 +8,7 @@ import {
   UseBefore,
   CurrentUser,
   Get,
+  Res,
 } from "routing-controllers";
 import { validate } from "../../shared/middlewares/validate";
 
@@ -30,6 +31,7 @@ import {
 } from "./zod-schemas";
 import { UsersService } from "./users.service";
 import { UserDocument } from "../../models/users";
+import { Response } from "express";
 
 @Controller("/profile")
 @Authorized(["USER"])
@@ -42,9 +44,10 @@ export class UsersController {
 
   @Get("/")
   async getUserInfo(
-    @CurrentUser() user: Omit<UserDocument, "password" | "__V">
+    @CurrentUser() user: Omit<UserDocument, "password" | "__V">,
+    @Res() res: Response
   ) {
-    return await this.service.getUserInfo(user.id);
+    return res.send(await this.service.getUserInfo(user.id));
   }
 
   @Post("/language")

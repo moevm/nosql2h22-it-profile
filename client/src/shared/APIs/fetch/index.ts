@@ -30,7 +30,7 @@ export const fetchInstance = {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 ...config?.headers,
-                Authorization: token ? 'Bearer' + token : ''
+                Authorization: token ? 'Bearer ' + token : ''
             },
             mode: 'cors',
             referrerPolicy: 'origin'
@@ -75,7 +75,7 @@ export const fetchInstance = {
             body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                Authorization: token ? 'Bearer' + token : '',
+                Authorization: token ? 'Bearer ' + token : '',
                 ...config?.headers
             },
             mode: 'cors',
@@ -122,7 +122,7 @@ export const fetchInstance = {
             body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                Authorization: token ? 'Bearer' + token : '',
+                Authorization: token ? 'Bearer ' + token : '',
                 ...config?.headers
             },
             mode: 'cors',
@@ -169,7 +169,7 @@ export const fetchInstance = {
             body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                Authorization: token ? 'Bearer' + token : '',
+                Authorization: token ? 'Bearer ' + token : '',
                 ...config?.headers
             },
             mode: 'cors',
