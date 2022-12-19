@@ -16,12 +16,6 @@ export default function ProfilePage() {
 
     const navigate = useNavigate();
 
-    const [first_name, last_name] = ['Mikhail', 'Loykonen'];
-    const birth_date = '15.01.2001';
-    const [country, city] = ['Russia', 'St.Petersburg'];
-    const created_at = '10.12.2022';
-    const updated_at = '11.12.2022';
-
     const [data, setData] = useState({
         email: '',
         last_name: '',
@@ -33,7 +27,7 @@ export default function ProfilePage() {
             about: '',
             specialties: [{ direction: '', level: '' }],
             contacts: [{ type: '', value: '' }],
-            education: [
+            educations: [
                 {
                     name: '',
                     type: '',
@@ -74,24 +68,24 @@ export default function ProfilePage() {
                     <Avatar src={avatar} />
                 </div>
                 <div className="profile--page__menu--bold--text">
-                    {last_name} {first_name}
+                    {data.last_name} {data.first_name}
                 </div>
                 <div>
                     <div className="profile--page__menu--text">
-                        {birth_date}
+                        {new Date(data.birth_date).toLocaleDateString()}
                     </div>
                     <div className="profile--page__menu--text">
-                        {city}, {country}
+                        {data.information.city}, {data.information.country}
                     </div>
                 </div>
                 <div className="profile--page__menu--times">
                     <div className="profile--page__menu--times--item">
                         <div>Created at:</div>
-                        <div>{created_at}</div>
+                        {/* <div>{created_at}</div> */}
                     </div>
                     <div className="profile--page__menu--times--item">
                         <div>Updated at:</div>
-                        <div>{updated_at}</div>
+                        {/* <div>{updated_at}</div> */}
                     </div>
                 </div>
 
@@ -101,34 +95,69 @@ export default function ProfilePage() {
                     changeState={setSpecialityModal}>
                     <h1>Speciality modal</h1>
                 </MenuList>
-
+                <div className="profile--page__menu--list">
+                    {data.information.specialties.map((item) => (
+                        <li>
+                            {item.direction} ({item.level})
+                        </li>
+                    ))}
+                </div>
                 <MenuList
                     title="CONTACTS"
                     state={contactsModal}
                     changeState={setContactsModal}>
                     <h1>Contacts modal</h1>
                 </MenuList>
-
+                <div className="profile--page__menu--list">
+                    {data.information.contacts.map((item) => (
+                        <li>{item.value}</li>
+                    ))}
+                </div>
                 <MenuList
                     title="EDUCATION"
                     state={educationModal}
                     changeState={setEducationModal}>
                     <h1>Education modal</h1>
                 </MenuList>
-
+                <div className="profile--page__menu--list">
+                    {data.information.educations.map((item) => (
+                        <div>
+                            <div>
+                                {new Date(item.start).getFullYear() +
+                                    ' - ' +
+                                    new Date(item.finish).getFullYear()}
+                            </div>
+                            <div>{item.name}</div>
+                            <div>{item.specialization}</div>
+                        </div>
+                    ))}
+                </div>
                 <MenuList
                     title="SKILLS"
                     state={skillsModal}
                     changeState={setSkillsModal}>
                     <h1>Skills modal</h1>
                 </MenuList>
-
+                <div className="profile--page__menu--list">
+                    {data.information.skills.map((item) => (
+                        <li>
+                            {item.title} ({item.level})
+                        </li>
+                    ))}
+                </div>
                 <MenuList
                     title="LANGUAGES"
                     state={languagesModal}
                     changeState={setLanguagesModal}>
                     <h1>Languages modal</h1>
                 </MenuList>
+                <div className="profile--page__menu--list">
+                    {data.information.languages.map((item) => (
+                        <li>
+                            {item.title} ({item.level})
+                        </li>
+                    ))}
+                </div>
             </div>
 
             <div className="profile--page__experiences">
@@ -140,51 +169,31 @@ export default function ProfilePage() {
                         />
                     </div>
                 </div>
-                {/* <div className="profile--page__experiences__item">
-                    <ExperienceCard
-                        title="Google"
-                        position="Senior Frontend"
-                        period="2010 - 2020"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
-                    />
-                </div>
-                <div className="profile--page__experiences__item">
-                    <ExperienceCard
-                        title="Google"
-                        position="Senior Frontend"
-                        period="2010 - 2020"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
-                    />
-                </div>
-                <div className="profile--page__experiences__item">
-                    <ExperienceCard
-                        title="Google"
-                        position="Senior Frontend"
-                        period="2010 - 2020"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
-                    />
-                </div>
-                <div className="profile--page__experiences__item">
-                    <ExperienceCard
-                        title="Google"
-                        position="Senior Frontend"
-                        period="2010 - 2020"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
-                    />
-                </div>
-                <div className="profile--page__experiences__item">
-                    <ExperienceCard
-                        title="Google"
-                        position="Senior Frontend"
-                        period="2010 - 2020"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
-                    />
-                </div> */}
+                {data.information.experiences.map((item) => (
+                    <div className="profile--page__experiences__item">
+                        <ExperienceCard
+                            title={item.company + ' | ' + item.project_name}
+                            position={item.position_in_project}
+                            period={
+                                new Date(
+                                    item.start
+                                ).toLocaleDateString('en-us', {
+                                    year: 'numeric',
+                                    month: 'short'
+                                }) +
+                                ' - ' +
+                                new Date(
+                                    item.end
+                                ).toLocaleDateString('en-us', {
+                                    year: 'numeric',
+                                    month: 'short'
+                                })
+                            }
+                            description={item.description}
+                            techStack={item.tech_stack}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );

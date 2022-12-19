@@ -62,6 +62,15 @@ function App() {
                         <Route path="/favorites" element={<div />} />
                     </Route>
                 </Route>
+                <Route
+                    element={
+                        <ProtectedRoute
+                            isAllowed={isAdmin}
+                            redirectPath="/sign-in"
+                        />
+                    }>
+                    <Route path="/admin-page" element={<div />} />
+                </Route>
                 <Route path="/" element={<HomeLayout />}>
                     <Route path="/stats" element={<div />} />
                     <Route path="/view">
