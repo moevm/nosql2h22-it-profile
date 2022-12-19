@@ -21,14 +21,14 @@ export default function ViewProfilePage() {
             about: '',
             specialties: [{ direction: '', level: '' }],
             contacts: [{ type: '', value: '' }],
-            education: [
+            educations: [
                 {
                     name: '',
                     type: '',
                     specialization: '',
                     level: '',
-                    start: '',
-                    finish: ''
+                    start: Date.now(),
+                    finish: Date.now()
                 }
             ],
             favorites: [],
@@ -59,6 +59,7 @@ export default function ViewProfilePage() {
                     new Date().getFullYear() -
                         new Date(value.birth_date).getFullYear()
                 );
+                console.log(data);
             });
         }
     }, []);
@@ -128,13 +129,26 @@ export default function ViewProfilePage() {
                                             }
                                             position={i.position_in_project}
                                             period={
-                                                new Date(i.start).toLocaleDateString('en-us', { year:"numeric", month:"short"}) +
+                                                new Date(
+                                                    i.start
+                                                ).toLocaleDateString('en-us', {
+                                                    year: 'numeric',
+                                                    month: 'short'
+                                                }) +
                                                 ' - ' +
-                                                new Date(i.end).toLocaleDateString('en-us', { year:"numeric", month:"short"})
+                                                new Date(
+                                                    i.end
+                                                ).toLocaleDateString('en-us', {
+                                                    year: 'numeric',
+                                                    month: 'short'
+                                                })
                                             }
                                             description={i.description}
                                             techStack={i.tech_stack}
-                                            links={i.links.map((link) => ({to: link, title: 'link'}))}
+                                            links={i.links.map((link) => ({
+                                                to: link,
+                                                title: 'link'
+                                            }))}
                                         />
                                     </div>
                                 )
@@ -147,12 +161,33 @@ export default function ViewProfilePage() {
                         <div className="view--page__addition--item view--page__title">
                             EDUCATION
                         </div>
+                        <div className="view--page__addition--list">
+                            {data.information.educations.map((item) => (
+                                <div>
+                                    <div>
+                                        {new Date(item.start).getFullYear() +
+                                            ' - ' +
+                                            new Date(item.finish).getFullYear()}
+                                    </div>
+                                    <div>{item.name}</div>
+                                    <div>{item.specialization}</div>
+                                </div>
+                            ))}
+                        </div>
                         <div className="view--page__addition--item view--page__title">
                             SKILLS
+                        </div>
+                        <div className="view--page__addition--list">
+                            {data.information.skills.map((item) => (
+                                <li>
+                                    {item.title} ({item.level})
+                                </li>
+                            ))}
                         </div>
                         <div className="view--page__addition--item view--page__title">
                             ACCOUNT
                         </div>
+                        <div className="view--page__addition--list">{}</div>
                     </div>
                 </div>
             </div>

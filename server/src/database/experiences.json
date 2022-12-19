@@ -6,8 +6,12 @@
   "project_name": "Yandex Games",
   "position_in_project": "Senior Frontend",
   "description": "This is web project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1530958800000"
+  },
+  "end": {
+    "$numberLong": "1647030800000"
+  },
   "links": [
     "https://yandex.ru/games/"
   ],
@@ -24,8 +28,12 @@
   "project_name": "Cool project",
   "position_in_project": "Senior Backend",
   "description": "Backend project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1590958800000"
+  },
+  "end": {
+    "$numberLong": "1624030800000"
+  },
   "links": [],
   "tech_stack": [
     "TypeScript",
@@ -41,8 +49,12 @@
   "project_name": "Server",
   "position_in_project": "Middle Backend",
   "description": "Backend project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1580958800000"
+  },
+  "end": {
+    "$numberLong": "1634030800000"
+  },
   "links": [],
   "tech_stack": [
     "Python",
@@ -57,8 +69,12 @@
   "project_name": "Programmer Simulator",
   "position_in_project": "Middle Gamedev",
   "description": "Android game",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1500958800000"
+  },
+  "end": {
+    "$numberLong": "1644030800000"
+  },
   "links": [],
   "tech_stack": [
     "C#",
@@ -72,8 +88,12 @@
   "project_name": "Terminator 2",
   "position_in_project": "Senior Gamedev",
   "description": "Game 2",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1590958800000"
+  },
+  "end": {
+    "$numberLong": "1654030800000"
+  },
   "links": [],
   "tech_stack": [
     "C++",
@@ -88,8 +108,12 @@
   "project_name": "Terminator",
   "position_in_project": "Senior Gamedev",
   "description": "Game 1",
-  "start": 1543689227,
-  "end": 1606847627,
+  "start": {
+    "$numberLong": "1514754000000"
+  },
+  "end": {
+    "$numberLong": "1590958800000"
+  },
   "links": [],
   "tech_stack": [
     "C++",
@@ -104,8 +128,12 @@
   "project_name": "Project 1",
   "position_in_project": "Junior Backend",
   "description": "Backend project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1606847627000"
+  },
+  "end": {
+    "$numberLong": "1649919627000"
+  },
   "links": [],
   "tech_stack": [
     "Kotlin",
@@ -119,8 +147,12 @@
   "project_name": "Project 2",
   "position_in_project": "DevOps Junior",
   "description": "DevOps project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1586847627000"
+  },
+  "end": {
+    "$numberLong": "1629919627003"
+  },
   "links": [],
   "tech_stack": [
     "Java",
@@ -136,8 +168,12 @@
   "project_name": "Project 4",
   "position_in_project": "Expert DevOps",
   "description": "DevOps project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1586847602070"
+  },
+  "end": {
+    "$numberLong": "1629919620070"
+  },
   "links": [],
   "tech_stack": [
     "Python",
@@ -153,8 +189,12 @@
   "project_name": "Project 5",
   "position_in_project": "TeamLead Backend",
   "description": "Backend project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1566847602070"
+  },
+  "end": {
+    "$numberLong": "1617990195627"
+  },
   "links": [],
   "tech_stack": [
     "Python",
@@ -169,8 +209,12 @@
   "project_name": "To-Do List",
   "position_in_project": "Frontend",
   "description": "My first react project",
-  "start": 1606847627,
-  "end": 1669919627,
+  "start": {
+    "$numberLong": "1566847602070"
+  },
+  "end": {
+    "$numberLong": "1617990195627"
+  },
   "links": [],
   "tech_stack": [
     "JavaScript",

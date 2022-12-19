@@ -107,7 +107,7 @@
 
 
         &--info {
-            flex: 1 1 360px;
+            flex: 1 0 220px;
         }
 
         &--infos {
@@ -122,6 +122,13 @@
         &--item {
             border: none;
             border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+
+        &--list {
+            display: flex;
+            gap: 4px;
+            flex-direction: column;
+            color: map-get($map: $secondary, $key: 'light');
         }
     }
 }

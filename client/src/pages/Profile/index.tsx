@@ -1,10 +1,11 @@
 import Avatar from '../../shared/components/Form/Avatar';
 import avatar from '../../asserts/avatar.jpg';
 import './style.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AddButton, ExperienceCard } from '@components';
 import MenuList from './components/MenuList';
 import { useNavigate } from 'react-router-dom';
+import { profileAPIs } from '../../shared/APIs';
 
 export default function ProfilePage() {
     const [specialityModal, setSpecialityModal] = useState(false);
@@ -20,6 +21,51 @@ export default function ProfilePage() {
     const [country, city] = ['Russia', 'St.Petersburg'];
     const created_at = '10.12.2022';
     const updated_at = '11.12.2022';
+
+    const [data, setData] = useState({
+        email: '',
+        last_name: '',
+        first_name: '',
+        birth_date: Date.now(),
+        information: {
+            city: '',
+            country: '',
+            about: '',
+            specialties: [{ direction: '', level: '' }],
+            contacts: [{ type: '', value: '' }],
+            education: [
+                {
+                    name: '',
+                    type: '',
+                    specialization: '',
+                    level: '',
+                    start: '',
+                    finish: ''
+                }
+            ],
+            favorites: [],
+            experiences: [
+                {
+                    company: '',
+                    project_name: '',
+                    position_in_project: '',
+                    description: '',
+                    start: Date.now(),
+                    end: Date.now(),
+                    links: [],
+                    tech_stack: []
+                }
+            ],
+            languages: [{ title: '', level: '' }],
+            skills: [{ title: '', level: '' }]
+        }
+    });
+
+    // useEffect(() => {
+    //     profileAPIs.getUserInfo().then((value) => {
+    //         setData(value);
+    //     });
+    // }, []);
 
     return (
         <div className="profile--page">
@@ -94,7 +140,7 @@ export default function ProfilePage() {
                         />
                     </div>
                 </div>
-                <div className="profile--page__experiences__item">
+                {/* <div className="profile--page__experiences__item">
                     <ExperienceCard
                         title="Google"
                         position="Senior Frontend"
@@ -138,7 +184,7 @@ export default function ProfilePage() {
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         techStack={['React', 'Redux', 'TypeScript', 'SCSS']}
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     );
