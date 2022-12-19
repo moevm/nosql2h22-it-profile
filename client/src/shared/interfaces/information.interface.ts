@@ -3,7 +3,8 @@ import {
     IEducation,
     IExperience,
     ISpecialty,
-    ISkills
+    ISkills,
+    ILanguage
 } from '@interfaces';
 
 export interface IInformation {
@@ -15,6 +16,6 @@ export interface IInformation {
     educations: IEducation[]; //   список образований
     favorites: string[]; //   список избранных пользователей
     experiences: IExperience[]; //   список проектов (опыт работы)
-    languages: string[]; //   список языков
+    languages: ILanguage[]; //   список языков
     skills: ISkills[]; //   список навыков
 }

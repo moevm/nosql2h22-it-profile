@@ -37,7 +37,7 @@ export class CommonService {
         };
       }
 
-      console.log(params.specialization)
+      console.log(params.specialization);
     }
 
     if (params?.language) {
@@ -58,7 +58,7 @@ export class CommonService {
           $in: params.level,
         };
       } else {
-        searchedUsers["information.specialties"]["$elemMatch"] = {
+        searchedUsers["information.specialties"] = {
           $elemMatch: { level: { $in: params.level } },
         };
       }
@@ -75,7 +75,9 @@ export class CommonService {
     //   searchedUsers.experience_to = params.experience_to;
     // }
 
-    console.log(JSON.stringify(searchedUsers));
+    // console.log(JSON.stringify(searchedUsers));
+
+    searchedUsers["role"] = { $in: ['USER']}
 
     return await this.userService.getUsers(searchedUsers, limit, skip);
   }

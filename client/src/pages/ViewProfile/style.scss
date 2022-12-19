@@ -7,6 +7,9 @@
     gap: 80px;
     max-width: 1200px;
     margin: auto;
+    // width: fill-available;
+    // width: -webkit-fill-available;
+    // width: -moz-available;
 
     &__title {
         font-weight: bold;
@@ -24,6 +27,9 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        align-items: stretch;
+        width: 1000px;
+
         &--title {
             background-color: map-get($map: $primary, $key: 'main');
             top: 0;
@@ -99,8 +105,9 @@
         gap: 12px;
         margin-top: 28px;
 
+
         &--info {
-            flex: 1 1 360px;
+            flex: 1 0 220px;
         }
 
         &--infos {
@@ -115,6 +122,13 @@
         &--item {
             border: none;
             border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
+        }
+
+        &--list {
+            display: flex;
+            gap: 4px;
+            flex-direction: column;
+            color: map-get($map: $secondary, $key: 'light');
         }
     }
 }

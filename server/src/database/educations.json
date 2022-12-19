@@ -1,5 +1,141 @@
-[
-    {
-        
-    }
-]
+[{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e98"
+  },
+  "name": "ETU LETI",
+  "type": "University",
+  "specialization": "Software engineer",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1535749200000"
+  },
+  "finish": {
+    "$numberLong": "1656622800000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e99"
+  },
+  "name": "ETU LETI",
+  "type": "University",
+  "specialization": "Applied Mathematics",
+  "level": "Master",
+  "start": {
+    "$numberLong": "1472677200000"
+  },
+  "finish": {
+    "$numberLong": "1656622800000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9a"
+  },
+  "name": "ETU LETI",
+  "type": "University",
+  "specialization": "Software engineer",
+  "level": "Master",
+  "start": {
+    "$numberLong": "1472677200000"
+  },
+  "finish": {
+    "$numberLong": "1656622800000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9b"
+  },
+  "name": "ITMO",
+  "type": "University",
+  "specialization": "Informatics and Computer Engineering",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1504213200000"
+  },
+  "finish": {
+    "$numberLong": "1630443600000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9c"
+  },
+  "name": "ETU LETI",
+  "type": "University",
+  "specialization": "Informatics and Computer Engineering",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1504213200000"
+  },
+  "finish": {
+    "$numberLong": "1630443600000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9d"
+  },
+  "name": "ITMO",
+  "type": "University",
+  "specialization": "Software engineer",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1535749200000"
+  },
+  "finish": {
+    "$numberLong": "1661979600000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9e"
+  },
+  "name": "St. Petersburg State University",
+  "type": "University",
+  "specialization": "Modern programming",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1535749200000"
+  },
+  "finish": {
+    "$numberLong": "1661979600000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616e9f"
+  },
+  "name": "ITMO",
+  "type": "University",
+  "specialization": "Software engineer",
+  "level": "Master",
+  "start": {
+    "$numberLong": "1441054800000"
+  },
+  "finish": {
+    "$numberLong": "1630443600000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616ea0"
+  },
+  "name": "ETU LETI",
+  "type": "University",
+  "specialization": "Applied Mathematics",
+  "level": "Bachelor",
+  "start": {
+    "$numberLong": "1535749200000"
+  },
+  "finish": {
+    "$numberLong": "1656622800000"
+  }
+},{
+  "_id": {
+    "$oid": "639ef6acc35d8c7f2e616ea1"
+  },
+  "name": "St. Petersburg State University",
+  "type": "University",
+  "specialization": "Applied Mathematics",
+  "level": "Master",
+  "start": {
+    "$numberLong": "1441054800000"
+  },
+  "finish": {
+    "$numberLong": "1630443600000"
+  }
+}]

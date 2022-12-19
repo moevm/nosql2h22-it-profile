@@ -24,39 +24,39 @@ export default function ExperienceCard({
     return (
         <div className="exp--card">
             <div className="exp--card__header">
-                <div className='exp--card__title'>
-                    {title}
-                </div>
-                <div className='exp--card__sub--title'>
+                <div className="exp--card__title">{title}</div>
+                <div className="exp--card__sub--title">
                     {position} | {period}
-
                 </div>
             </div>
             <div className="exp--card__descr">{description}</div>
             <div className="exp--card__tech">
-                <div className="exp--card__tech--title">
-                    Tech Stack:
-                </div>
+                <div className="exp--card__tech--title">Tech Stack:</div>
                 <Chips values={techStack} />
             </div>
             <div className="exp--card__bottom">
                 <div className="exp--card__bottom__links">
                     {links?.map((link) => (
-                        <Link
-                            to={link.to}
+                        <a
+                            href={link.to}
                             key={link.to}
-                            className="exp--card__bottom__item--link">
+                            className="exp--card__bottom__item--link"
+                            target="_blank">
                             {link.title}
-                        </Link>
+                        </a>
                     ))}
                 </div>
                 {!onView && (
                     <div className="exp--card__bottom__btns">
                         <div>
-                            <Button type="button" variant='primary'>Remove</Button>
+                            <Button type="button" variant="primary">
+                                Remove
+                            </Button>
                         </div>
                         <div>
-                            <Button type="button" variant='primary'>Edit</Button>
+                            <Button type="button" variant="primary">
+                                Edit
+                            </Button>
                         </div>
                     </div>
                 )}

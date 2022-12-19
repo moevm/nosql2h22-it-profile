@@ -10,27 +10,43 @@ import './style.scss';
 export default function ViewProfilePage() {
     const { userId } = useParams();
 
-    const [data, setData] = useState(() => ({
-        email: 'mr.loykonen@mail.ru',
-        last_name: 'Loykonen',
-        first_name: 'Mikhail',
-        birth_date: '2001-09-15',
+    const [data, setData] = useState({
+        email: '',
+        last_name: '',
+        first_name: '',
+        birth_date: Date.now(),
         information: {
-            city: 'St.Petersburg',
-            country: 'Russia',
-            specialties: [{ direction: 'Frontend', level: 'Junior' }],
-            about: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
-            contacts: [
-                { type: 'phone', value: '+79219843946' },
-                { type: 'email', value: 'mr.loykonen@mail.ru' }
-            ]
+            city: '',
+            country: '',
+            about: '',
+            specialties: [{ direction: '', level: '' }],
+            contacts: [{ type: '', value: '' }],
+            educations: [
+                {
+                    name: '',
+                    type: '',
+                    specialization: '',
+                    level: '',
+                    start: Date.now(),
+                    finish: Date.now()
+                }
+            ],
+            favorites: [],
+            experiences: [
+                {
+                    company: '',
+                    project_name: '',
+                    position_in_project: '',
+                    description: '',
+                    start: Date.now(),
+                    end: Date.now(),
+                    links: [],
+                    tech_stack: []
+                }
+            ],
+            languages: [{ title: '', level: '' }],
+            skills: [{ title: '', level: '' }]
         }
-    }));
-
-    const [age, setAge] = useState(() => {
-        const diff =
-            new Date().getFullYear() - new Date(data.birth_date).getFullYear();
-        return diff;
     });
 
     useEffect(() => {
@@ -39,9 +55,16 @@ export default function ViewProfilePage() {
         if (userId) {
             usersAPIs.getUser('/' + userId).then((value) => {
                 setData(value);
+                setAge(
+                    new Date().getFullYear() -
+                        new Date(value.birth_date).getFullYear()
+                );
+                console.log(data);
             });
         }
     }, []);
+
+    const [age, setAge] = useState(0);
 
     return (
         <div className="view--page">
@@ -59,7 +82,7 @@ export default function ViewProfilePage() {
                         </div>
                     </div>
                     <div className="view--page__user--specialty">
-                        {data.information.specialties[0]?.level ?? ''}
+                        {data.information.specialties[0]?.level ?? ''}{' '}
                         {data.information.specialties[0]?.direction ?? ''}
                     </div>
                 </div>
@@ -91,28 +114,45 @@ export default function ViewProfilePage() {
                         EXPERIENCES
                     </div>
                     <div className="view--page__experiences">
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i, index) => (
-                            <div
-                                key={index}
-                                className="view--page__experiences--item">
-                                <ExperienceCard
-                                    viewOnly={true}
-                                    title={'ooo studo'}
-                                    position={'Team Lid'}
-                                    period={'2019-2022'}
-                                    description={
-                                        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit hic labore a tempore porro inventore pariatur deserunt animi dignissimos nam similique, laudantium aliquam magnam molestias fugit minima cum commodi molestiae?'
-                                    }
-                                    techStack={['div']}
-                                    links={[
-                                        {
-                                            to: 'https://github.com',
-                                            title: 'GitHub'
-                                        }
-                                    ]}
-                                />
-                            </div>
-                        ))}
+                        {data.information.experiences.map(
+                            (i, index) =>
+                                i.project_name && (
+                                    <div
+                                        key={index}
+                                        className="view--page__experiences--item">
+                                        <ExperienceCard
+                                            viewOnly={true}
+                                            title={
+                                                i.company +
+                                                ' | ' +
+                                                i.project_name
+                                            }
+                                            position={i.position_in_project}
+                                            period={
+                                                new Date(
+                                                    i.start
+                                                ).toLocaleDateString('en-us', {
+                                                    year: 'numeric',
+                                                    month: 'short'
+                                                }) +
+                                                ' - ' +
+                                                new Date(
+                                                    i.end
+                                                ).toLocaleDateString('en-us', {
+                                                    year: 'numeric',
+                                                    month: 'short'
+                                                })
+                                            }
+                                            description={i.description}
+                                            techStack={i.tech_stack}
+                                            links={i.links.map((link) => ({
+                                                to: link,
+                                                title: 'link'
+                                            }))}
+                                        />
+                                    </div>
+                                )
+                        )}
                     </div>
                 </div>
                 <span className="view--page__separator"></span>
@@ -121,12 +161,33 @@ export default function ViewProfilePage() {
                         <div className="view--page__addition--item view--page__title">
                             EDUCATION
                         </div>
+                        <div className="view--page__addition--list">
+                            {data.information.educations.map((item) => (
+                                <div>
+                                    <div>
+                                        {new Date(item.start).getFullYear() +
+                                            ' - ' +
+                                            new Date(item.finish).getFullYear()}
+                                    </div>
+                                    <div>{item.name}</div>
+                                    <div>{item.specialization}</div>
+                                </div>
+                            ))}
+                        </div>
                         <div className="view--page__addition--item view--page__title">
                             SKILLS
+                        </div>
+                        <div className="view--page__addition--list">
+                            {data.information.skills.map((item) => (
+                                <li>
+                                    {item.title} ({item.level})
+                                </li>
+                            ))}
                         </div>
                         <div className="view--page__addition--item view--page__title">
                             ACCOUNT
                         </div>
+                        <div className="view--page__addition--list">{}</div>
                     </div>
                 </div>
             </div>
