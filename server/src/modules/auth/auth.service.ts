@@ -14,7 +14,7 @@ export class AuthService {
 
     const information = await new InformationModel({}).save();
 
-    const new_user = await UserModel.create({
+    await UserModel.create({
       password: password_hash,
       email: props.email,
       first_name: props.first_name,
@@ -45,6 +45,7 @@ export class AuthService {
       access: jwt.sign(
         {
           sub: user.id,
+          roles: user.roles,
         },
         "secret",
         {
