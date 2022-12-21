@@ -41,11 +41,14 @@ export default function LoginPage() {
                 let decodedJwtJsonData = window.atob(jwtData);
                 let decodedJwtData = JSON.parse(decodedJwtJsonData);
                 
+                setIsAuthorized(true);
                 if (decodedJwtData.roles.includes('ADMIN')) {
                     setIsAdmin(true);
+                    navigate('/admin-page');
                 }
-                setIsAuthorized(true);
-                navigate('/profile');
+                else {
+                    navigate('/profile');
+                }
             });
         }
     };

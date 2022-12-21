@@ -1,5 +1,5 @@
 import { UnauthorizedError, Action } from "routing-controllers";
-import { UserDocument, UserModel } from "../models/users";
+import { UserDocument, UsersModel } from "../models/users";
 import * as jwt from "jsonwebtoken";
 
 export async function currentUserChecker(
@@ -13,7 +13,7 @@ export async function currentUserChecker(
 
   const decoded = jwt.verify(token, "secret");
   const user_id = decoded.sub;
-  const user = await UserModel.findById(user_id)
+  const user = await UsersModel.findById(user_id)
     .select({
       password: 0,
       __v: 0,

@@ -3,9 +3,18 @@ version: "3.8"
 services:
   backend:
     build:
-      context: ./server
-      dockerfile: ./docker/prod.dockerfile
-    container_name: it-profile__prod-server
+      context: ../server
+      dockerfile: docker/dev.dockerfile
+    container_name: it-profile__dev-server
+    ports:
+      - 55000:80
+
+    environment:
+      DATABASE__USERNAME: admin
+      DATABASE__PASSWORD: password
+      DATABASE__URL: "mongodb://database"
+      DATABASE__NAME: "it-profile"
+
     networks:
       server-database:
         ipv4_address: 178.70.200.2
@@ -13,45 +22,45 @@ services:
       client-server:
         ipv4_address: 178.70.100.2
 
-    environment:
-      MONGODB_USERNAME: admin
-      MONGODB_PASSWORD: password
-      MONGODB_URL: mongodb://178.70.200.3:27017/
-
     depends_on:
       - database
 
   frontend:
     build:
-      context: ./client
-      dockerfile: ./docker/prod.dockerfile
+      context: ../client
+      dockerfile: docker/dev.dockerfile
 
-    container_name: it-profile__prod-client
+    container_name: it-profile__dev-client
+
+    environment:
+      SERVER__URL: "http://backend"
 
     ports:
       - 8080:8080
 
-    networks:
-      - client-server
-
     depends_on:
       - backend
 
+    networks:
+      - client-server
+
   database:
     image: mongo
-    container_name: it-profile__prod-database
+    container_name: it-profile__dev-database
     restart: always
 
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: it-profile
+
+    volumes:
+      - ../server/src/database:/database
+      - ../server/src/database/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
 
     networks:
       server-database:
-        ipv4_address: 178.70.200.3
-
-    ports:
-      - 57017:21017
+        ipv4_address: 178.70.200.5
 
 networks:
   server-database:

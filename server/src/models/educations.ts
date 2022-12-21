@@ -24,7 +24,7 @@ const EducationSchema = new Schema(
   }
 );
 
-export const EducationModel = model<EducationDocument>(
+export const EducationsModel = model<EducationDocument>(
   "educations",
   EducationSchema
 );

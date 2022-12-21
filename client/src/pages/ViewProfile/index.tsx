@@ -185,6 +185,16 @@ export default function ViewProfilePage() {
                             ))}
                         </div>
                         <div className="view--page__addition--item view--page__title">
+                            LANGUAGES
+                        </div>
+                        <div className="view--page__addition--list">
+                            {data.information.languages.map((item) => (
+                                <li>
+                                    {item.title} ({item.level})
+                                </li>
+                            ))}
+                        </div>
+                        <div className="view--page__addition--item view--page__title">
                             ACCOUNT
                         </div>
                         <div className="view--page__addition--list">{}</div>

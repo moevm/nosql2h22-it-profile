@@ -44,16 +44,12 @@
             }
         }
 
-        // &--list {
-        //     &__head {
-        //         display: flex;
-        //         flex-direction: row;
-        //         justify-content: space-between;
-        //         border: none;
-        //         border-bottom: 1px solid map-get($map: $primary, $key: 'dark');
-        //         padding: 4px 0;
-        //     }
-        // }
+        &--list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: map-get($map: $secondary, $key: 'light');
+        }
     }
 
     &__experiences {

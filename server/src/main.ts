@@ -11,6 +11,10 @@ import cookieParser from "cookie-parser";
 import express = require("express");
 import { authorizationChecker } from "./middlewares/authorizationChecker";
 import { currentUserChecker } from "./middlewares/currentUserChecker";
+import { EducationsModel, ExperiencesModel, UsersModel, InformationsModel } from "./models";
+import fs from "node:fs";
+import { Db } from "mongodb";
+import { usersjson, experiencesjson, educationsjson, informationsjson } from "./database";
 
 dotenv.config({
   path: path.resolve(__dirname, "..", `.${process.env.NODE_ENV}.env`),
@@ -43,13 +47,14 @@ async function serve(server: any, port: number) {
   try {
     mongoose.set("strictQuery", true);
 
-    await mongoose.connect(process.env.DATABASE__URL as string, {
+    const connect = await mongoose.connect(process.env.DATABASE__URL as string, {
       auth: {
         username: process.env.DATABASE__USERNAME,
         password: process.env.DATABASE__PASSWORD,
       },
       dbName: process.env.DATABASE__NAME,
     });
+    // await initDB(mongoose.connection.db);
 
     server.listen(port, () => {
       console.info(`Server is listening on port ${port}`);
@@ -61,3 +66,22 @@ async function serve(server: any, port: number) {
 }
 
 serve(server, (process.env.PORT as any) ?? 80);
+
+async function initDB(db: Db) {
+  if (await db.collection('users').countDocuments() === 0) {
+    const data = JSON.parse(fs.readFileSync('./src/database/data.json', 'utf-8'));
+    try {
+      data.forEach(elem => {
+        elem
+      });
+      console.log('data successfully load')
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
+  else {
+    console.log('data already uploads');
+  }
+
+
+}

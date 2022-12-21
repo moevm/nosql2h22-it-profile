@@ -7,7 +7,7 @@
   "email": "felis.eget.varius@protonmail.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "W",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -25,7 +25,7 @@
   "email": "egestas.nunc@icloud.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "W",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -43,7 +43,7 @@
   "email": "torquent.per@outlook.ca",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -61,7 +61,7 @@
   "email": "eleifend.nunc@aol.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -79,7 +79,7 @@
   "email": "mattis@icloud.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "W",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -97,7 +97,7 @@
   "email": "gravida@hotmail.couk",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "W",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -115,7 +115,7 @@
   "email": "aliquam@aol.com",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -133,7 +133,7 @@
   "email": "arcu@protonmail.edu",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -151,7 +151,7 @@
   "email": "aliquam.enim@aol.org",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -169,7 +169,7 @@
   "email": "molestie.sodales@yahoo.org",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "role": [
+  "roles": [
     "USER"
   ],
   "information": {
@@ -178,4 +178,21 @@
   "birth_date": {
     "$numberLong": "948677660000"
   }
+},{
+  "_id": {
+    "$oid": "63a04d71e10707ef35acce4b"
+  },
+  "first_name": "Admin",
+  "last_name": "Admin",
+  "email": "admin@mail.ru",
+  "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
+  "sex": "M",
+  "information": null,
+  "birth_date": {
+    "$numberLong": "948677660000"
+  },
+  "roles": [
+    "ADMIN",
+    "USER"
+  ]
 }]

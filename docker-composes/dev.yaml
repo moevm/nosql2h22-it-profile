@@ -58,6 +58,11 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: it-profile
+
+    volumes:
+      - ../server/src/database:/database
+      - ../server/src/database/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
 
     ports:
       - 57017:27017

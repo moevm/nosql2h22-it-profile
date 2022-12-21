@@ -1,5 +1,5 @@
 import { UnauthorizedError, Action } from "routing-controllers";
-import { UserModel } from "../models/users";
+import { UsersModel } from "../models/users";
 import * as jwt from "jsonwebtoken";
 
 export async function authorizationChecker(action: Action, roles: string[]) {
@@ -11,22 +11,26 @@ export async function authorizationChecker(action: Action, roles: string[]) {
 
   const decoded = jwt.verify(token, "secret");
   const user_id = decoded.sub;
-  const user = await UserModel.findById(user_id)
+  const user = await UsersModel.findById(user_id)
     .select({
       password: 0,
       __v: 0,
     })
     .exec();
 
-    
-  if (user && roles.length) {
-    for (const role of roles) {
-      if (!user.roles.includes(role)) {
-        return false;
-      }
-    }
-    return true;
+  if (!user) {
+    return false;
   }
 
-  return false;
+  const checkRole = (arr: string[]): boolean => {
+    let boolValues = [];
+    for (const role of roles) {
+      if (user.roles.includes(role)) {
+        boolValues.push(true);
+      }
+    }
+    return boolValues.length > 0;
+  };
+
+  return checkRole(user.roles);
 }

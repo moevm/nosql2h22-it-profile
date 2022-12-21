@@ -7,7 +7,8 @@ import {
     AddExperiencePage,
     SearchPage,
     ViewProfilePage,
-    ProfilePage
+    ProfilePage,
+    AdminPage
 } from '@pages';
 import HomeLayout from './shared/layout/HomeLayout';
 import { Suspense, useContext, useEffect, useState } from 'react';
@@ -62,6 +63,19 @@ function App() {
                         <Route path="/favorites" element={<div />} />
                     </Route>
                 </Route>
+
+                <Route
+                    element={
+                        <ProtectedRoute
+                            isAllowed={isAdmin}
+                            redirectPath="/sign-in"
+                        />
+                    }>
+                    <Route path="/" element={<HomeLayout />}>
+                        <Route path="/admin-page" element={<AdminPage />} />
+                    </Route>
+                </Route>
+
                 <Route path="/" element={<HomeLayout />}>
                     <Route path="/stats" element={<div />} />
                     <Route path="/view">
