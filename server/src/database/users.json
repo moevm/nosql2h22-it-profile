@@ -187,11 +187,12 @@
   "email": "admin@mail.ru",
   "password": "$2a$10$/ArSp.hLAljf1iHtBeuwGeiHUKg8GYKaisiCc00Y2MbtK8Uuo7vN6",
   "sex": "M",
-  "roles": [
-    "ADMIN"
-  ],
   "information": null,
   "birth_date": {
     "$numberLong": "948677660000"
-  }
+  },
+  "roles": [
+    "ADMIN",
+    "USER"
+  ]
 }]

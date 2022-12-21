@@ -1,6 +1,6 @@
 import { IUser } from "../interfaces";
 import { Document, model, Schema, Types } from "mongoose";
-import { InformationModel } from "./informations";
+import { InformationsModel } from "./informations";
 
 export type UserDocument = IUser & Document;
 
@@ -14,7 +14,7 @@ const userSchema = new Schema(
     roles: { type: [String] },
     information: {
       type: Types.ObjectId,
-      ref: InformationModel.modelName,
+      ref: InformationsModel.modelName,
       default: null,
     },
     photo: { type: String, default: null },
@@ -31,4 +31,4 @@ const userSchema = new Schema(
   }
 );
 
-export const UserModel = model<UserDocument>("Users", userSchema);
+export const UsersModel = model<UserDocument>("Users", userSchema);

@@ -3,9 +3,8 @@
 ## Build for development
 ```bash
 
-docker-compose -f ./docker-composes/dev.yaml  build --no-cache 
+docker-compose -f ./docker-composes/dev.yaml  up --build -d 
 
-docker-compose up --force-recreate -d
 ```
 ### frontend
   port: 8080
@@ -15,6 +14,13 @@ docker-compose up --force-recreate -d
 
 ### database
   port: 57017
+
+## Build for production
+```bash
+
+docker-compose -f ./docker-composes/prod.yaml  up --build -d 
+
+```
 
 ### Тестовые пользователи
 

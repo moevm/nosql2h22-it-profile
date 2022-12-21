@@ -75,7 +75,7 @@ export default function ProfilePage() {
                         {new Date(data.birth_date).toLocaleDateString()}
                     </div>
                     <div className="profile--page__menu--text">
-                        {data.information.city}, {data.information.country}
+                        {data.information?.city}, {data.information?.country}
                     </div>
                 </div>
                 <div className="profile--page__menu--times">
@@ -96,7 +96,7 @@ export default function ProfilePage() {
                     <h1>Speciality modal</h1>
                 </MenuList>
                 <div className="profile--page__menu--list">
-                    {data.information.specialties.map((item) => (
+                    {data.information?.specialties.map((item) => (
                         <li>
                             {item.direction} ({item.level})
                         </li>
@@ -109,7 +109,7 @@ export default function ProfilePage() {
                     <h1>Contacts modal</h1>
                 </MenuList>
                 <div className="profile--page__menu--list">
-                    {data.information.contacts.map((item) => (
+                    {data.information?.contacts.map((item) => (
                         <li>{item.value}</li>
                     ))}
                 </div>
@@ -120,7 +120,7 @@ export default function ProfilePage() {
                     <h1>Education modal</h1>
                 </MenuList>
                 <div className="profile--page__menu--list">
-                    {data.information.educations.map((item) => (
+                    {data.information?.educations.map((item) => (
                         <div>
                             <div>
                                 {new Date(item.start).getFullYear() +
@@ -139,7 +139,7 @@ export default function ProfilePage() {
                     <h1>Skills modal</h1>
                 </MenuList>
                 <div className="profile--page__menu--list">
-                    {data.information.skills.map((item) => (
+                    {data.information?.skills.map((item) => (
                         <li>
                             {item.title} ({item.level})
                         </li>
@@ -152,7 +152,7 @@ export default function ProfilePage() {
                     <h1>Languages modal</h1>
                 </MenuList>
                 <div className="profile--page__menu--list">
-                    {data.information.languages.map((item) => (
+                    {data.information?.languages.map((item) => (
                         <li>
                             {item.title} ({item.level})
                         </li>
@@ -169,7 +169,7 @@ export default function ProfilePage() {
                         />
                     </div>
                 </div>
-                {data.information.experiences.map((item) => (
+                {data.information?.experiences.map((item) => (
                     <div className="profile--page__experiences__item">
                         <ExperienceCard
                             title={item.company + ' | ' + item.project_name}

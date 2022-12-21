@@ -22,7 +22,7 @@ import { ProtectedRoute } from './shared/components/ProtectedRoute';
 function App() {
     const [isAuthorized, setIsAuthorized] = useState(false);
 
-    const [isAdmin, setIsAdmin] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
         const token = window.localStorage.getItem('access_token');

@@ -1,6 +1,6 @@
 import { IInformation } from "../interfaces";
 import { model, Schema, Types } from "mongoose";
-import { EducationModel } from "./educations";
+import { EducationsModel } from "./educations";
 import { ExperiencesModel } from "./experiences";
 
 export interface InformationDocument extends IInformation, Document {}
@@ -51,7 +51,7 @@ const InformationSchema = new Schema(
       type: [
         {
           type: Types.ObjectId,
-          ref: EducationModel.modelName,
+          ref: EducationsModel.modelName,
         },
       ],
       default: [],
@@ -86,7 +86,7 @@ const InformationSchema = new Schema(
   }
 );
 
-export const InformationModel = model<InformationDocument>(
+export const InformationsModel = model<InformationDocument>(
   "Informations",
   InformationSchema
 );

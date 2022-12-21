@@ -1,10 +1,10 @@
 import { sign_in__body } from "./zod-schemas/sign-in.schema";
 import { sign_up__body } from "./zod-schemas/sign-up.schema";
 import * as jwt from "jsonwebtoken";
-import { UserModel } from "../../models/users";
+import { UsersModel } from "../../models/users";
 import { BadRequestError, UnauthorizedError } from "routing-controllers";
 import * as bcrypt from "bcrypt";
-import { InformationModel } from "../../models/informations";
+import { InformationsModel } from "../../models/informations";
 
 export class AuthService {
   saltRounds = 10;
@@ -12,9 +12,9 @@ export class AuthService {
   async registration(props: Zod.infer<typeof sign_up__body>) {
     const password_hash = bcrypt.hashSync(props.password, this.saltRounds);
 
-    const information = await new InformationModel({}).save();
+    const information = await new InformationsModel({}).save();
 
-    await UserModel.create({
+    await UsersModel.create({
       password: password_hash,
       email: props.email,
       first_name: props.first_name,
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   async login(props: Zod.infer<typeof sign_in__body>) {
-    const user = await UserModel.findOne({ email: props.email }).exec();
+    const user = await UsersModel.findOne({ email: props.email }).exec();
     if (!user) {
       throw new UnauthorizedError("");
     }

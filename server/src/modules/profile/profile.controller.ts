@@ -34,7 +34,7 @@ import { UserDocument } from "../../models/users";
 import { Response } from "express";
 
 @Controller("/profile")
-@Authorized(["USER"])
+@Authorized(["USER", "ADMIN"])
 export class UsersController {
   private readonly service: UsersService;
 

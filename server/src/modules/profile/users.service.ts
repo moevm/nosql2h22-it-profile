@@ -1,9 +1,9 @@
 import { Types } from "mongoose";
 import {
-  EducationModel,
+  EducationsModel,
   ExperiencesModel,
-  InformationModel,
-  UserModel,
+  InformationsModel,
+  UsersModel,
 } from "../../models";
 import {
   InsertLaguagePropType,
@@ -20,9 +20,9 @@ type mongo_child = {
 
 export class UsersService {
   async addEducation(body: InsertEducationPropType, information_id: string) {
-    const new_education = await EducationModel.create(body);
+    const new_education = await EducationsModel.create(body);
 
-    return await InformationModel.findByIdAndUpdate(information_id, {
+    return await InformationsModel.findByIdAndUpdate(information_id, {
       $push: {
         educations: [new_education._id],
       },
@@ -30,8 +30,8 @@ export class UsersService {
   }
 
   async deleteEducation(id: string, information_id: string) {
-    await EducationModel.findByIdAndDelete(id).exec();
-    return await InformationModel.findByIdAndUpdate(information_id, {
+    await EducationsModel.findByIdAndDelete(id).exec();
+    return await InformationsModel.findByIdAndUpdate(information_id, {
       $pull: {
         educations: [new Types.ObjectId(id)],
       },
@@ -41,7 +41,7 @@ export class UsersService {
   async addExperience(body: InsertExperiencePropType, information_id: string) {
     const new_experience = await ExperiencesModel.create(body);
 
-    await InformationModel.findByIdAndUpdate(information_id, {
+    await InformationsModel.findByIdAndUpdate(information_id, {
       $pull: {
         experiences: [new_experience._id],
       },
@@ -50,7 +50,7 @@ export class UsersService {
 
   async deleteExperience(id: string, information_id: string) {
     await ExperiencesModel.findByIdAndDelete(id).exec();
-    return await InformationModel.findByIdAndUpdate(information_id, {
+    return await InformationsModel.findByIdAndUpdate(information_id, {
       $pull: {
         experiences: [new Types.ObjectId(id)],
       },
@@ -58,7 +58,7 @@ export class UsersService {
   }
 
   async addSpecialty(body: InsertSpecialtyPropType, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       info.specialties.push({
@@ -71,7 +71,7 @@ export class UsersService {
   }
 
   async deleteSpecialty(id: string, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       (info.specialties as unknown as mongo_child).pull(new Types.ObjectId(id));
@@ -81,7 +81,7 @@ export class UsersService {
   }
 
   async addSkill(body: InsertSkillPropType, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       info.skills.push({
@@ -94,7 +94,7 @@ export class UsersService {
   }
 
   async deleteSkill(id: string, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       (info.skills as unknown as mongo_child).pull(new Types.ObjectId(id));
@@ -104,7 +104,7 @@ export class UsersService {
   }
 
   async addContact(body: InsertContactPropType, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       info.contacts.push({
@@ -117,7 +117,7 @@ export class UsersService {
   }
 
   async deleteContact(id: string, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       (info.contacts as unknown as mongo_child).pull(new Types.ObjectId(id));
@@ -127,7 +127,7 @@ export class UsersService {
   }
 
   async deleteLanguage(id: string, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       (info.languages as unknown as mongo_child).pull(new Types.ObjectId(id));
@@ -137,7 +137,7 @@ export class UsersService {
   }
 
   async addLanguage(body: InsertLaguagePropType, information_id: string) {
-    const info = await InformationModel.findById(information_id).exec();
+    const info = await InformationsModel.findById(information_id).exec();
 
     if (info) {
       info.languages.push({
@@ -151,7 +151,7 @@ export class UsersService {
 
   async getUsers(query: any, limit: number, skip: number) {
     
-    return await UserModel.aggregate([
+    return await UsersModel.aggregate([
       {
         $lookup: {
           from: "informations",
@@ -179,7 +179,7 @@ export class UsersService {
   }
 
   async getUserInfo(id: string) {
-    return await UserModel.findById(id)
+    return await UsersModel.findById(id)
       .select("-password -roles")
       .populate({
         path: "information",
@@ -211,7 +211,7 @@ export class UsersService {
   }
 
   async getUserForView(id: string) {
-    return await UserModel.findById(id)
+    return await UsersModel.findById(id)
       .select("-password -roles")
       .populate({
         path: "information",
